@@ -13,7 +13,7 @@ public class Fish : MonoBehaviour
     public float maxIdleDuration = 8f;
     public float pitchAmount = 35f; // Angle for pitching up/down
     public float foodChaseSpeedMultiplier = 2.5f;
-    public float borderBuffer = 0.25f;
+    public float borderBuffer = 0.1f;
 
     private Rigidbody2D rb;
     private bool movingRight = true;
@@ -138,7 +138,7 @@ public class Fish : MonoBehaviour
     {
         Vector2 position = transform.position;
 
-        if (position.x >= 8f - borderBuffer || position.x <= -8f + borderBuffer)
+        if (position.x >= 9f - borderBuffer || position.x <= -9f + borderBuffer)
         {
             if (!hasCollided)
             {

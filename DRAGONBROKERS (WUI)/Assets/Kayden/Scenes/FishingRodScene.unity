@@ -139,9 +139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934e7e6551526404d865933e968558d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SeasonalChance: 0.7
-  RareChance: 0.29
-  LegendaryChance: 0.01
+  SeasonalChance: 0.5
+  RareChance: 0.4
+  LegendaryChance: 0.1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

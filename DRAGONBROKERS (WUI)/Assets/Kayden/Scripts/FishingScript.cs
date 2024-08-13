@@ -21,6 +21,10 @@ public class FishingScript : MonoBehaviour
     public float timeTillCatch = 0.0f;
     public bool winnerAnim;
 
+    public float SeasonalChance = 0.7f;
+    public float RareChance = 0.29f;
+    public float LegendaryChance = 0.01f;
+
     void Start()
     {
         isFishing = false;
@@ -104,15 +108,20 @@ public class FishingScript : MonoBehaviour
 
         // If chance is less than 0.5, play "playerWonFish"; otherwise, play "playerWonFish2"
         // Change the percentage here
-        if (chance < 0.5f)
+        if (chance < SeasonalChance)
         {
             playerAnim.Play("playerWonFish");
-            Debug.Log("Played animation: 1");
+            Debug.Log("Animation Played: 1");
         }
-        else
+        else if (chance < RareChance)
         {
             playerAnim.Play("playerWonFish2");
-            Debug.Log("Played animation: 2");
+            Debug.Log("Animation Played: 2");
+        }
+        else if (chance < LegendaryChance)
+        {
+            playerAnim.Play("playerWonFish3");
+            Debug.Log("Animation Played: 3");
         }
 
         // Reset the game state

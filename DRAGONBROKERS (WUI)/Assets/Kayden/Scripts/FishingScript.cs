@@ -25,7 +25,7 @@ public class FishingScript : MonoBehaviour
     //public float RareChance = 0.29f;
     //public float LegendaryChance = 0.01f;
 
-    public fishingProbability fishingProbability;
+    public FishingProbability fishingProbability;
 
     void Start()
     {
@@ -106,7 +106,8 @@ public class FishingScript : MonoBehaviour
     public void fishGameWon()
     {
         // Use the FishingProbability script to determine the fish animation
-        fishingProbability.FishingRodChance(playerAnim);
+
+        //////////////fishingProbability.FishingRodChance(playerAnim);
 
         //// Generate a random float between 0.0 and 1.0
         //float chance = Random.value;

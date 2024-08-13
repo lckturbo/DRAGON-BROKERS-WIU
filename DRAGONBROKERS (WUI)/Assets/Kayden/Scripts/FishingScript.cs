@@ -21,9 +21,11 @@ public class FishingScript : MonoBehaviour
     public float timeTillCatch = 0.0f;
     public bool winnerAnim;
 
-    public float SeasonalChance = 0.7f;
-    public float RareChance = 0.29f;
-    public float LegendaryChance = 0.01f;
+    //public float SeasonalChance = 0.7f;
+    //public float RareChance = 0.29f;
+    //public float LegendaryChance = 0.01f;
+
+    public fishingProbability fishingProbability;
 
     void Start()
     {
@@ -103,26 +105,29 @@ public class FishingScript : MonoBehaviour
 
     public void fishGameWon()
     {
-        // Generate a random float between 0.0 and 1.0
-        float chance = Random.value;
+        // Use the FishingProbability script to determine the fish animation
+        fishingProbability.FishingRodChance(playerAnim);
 
-        // If chance is less than 0.5, play "playerWonFish"; otherwise, play "playerWonFish2"
-        // Change the percentage here
-        if (chance < SeasonalChance)
-        {
-            playerAnim.Play("playerWonFish");
-            Debug.Log("Animation Played: 1");
-        }
-        else if (chance < RareChance)
-        {
-            playerAnim.Play("playerWonFish2");
-            Debug.Log("Animation Played: 2");
-        }
-        else if (chance < LegendaryChance)
-        {
-            playerAnim.Play("playerWonFish3");
-            Debug.Log("Animation Played: 3");
-        }
+        //// Generate a random float between 0.0 and 1.0
+        //float chance = Random.value;
+
+        //// If chance is less than 0.5, play "playerWonFish"; otherwise, play "playerWonFish2"
+        //// Change the percentage here
+        //if (chance < SeasonalChance)
+        //{
+        //    playerAnim.Play("playerWonFish");
+        //    Debug.Log("Animation Played: 1");
+        //}
+        //else if (chance < RareChance)
+        //{
+        //    playerAnim.Play("playerWonFish2");
+        //    Debug.Log("Animation Played: 2");
+        //}
+        //else if (chance < LegendaryChance)
+        //{
+        //    playerAnim.Play("playerWonFish3");
+        //    Debug.Log("Animation Played: 3");
+        //}
 
         // Reset the game state
         fishGame.SetActive(false);

@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class fishingProbability : MonoBehaviour
 {
-    public float SeasonalChance = 0.5f;
-    public float RareChance = 0.4f;
-    public float LegendaryChance = 0.1f;
+    public float SeasonalChance = 0.6f;
+    public float RareChance = 0.29f;
+    public float NothingChance = 0.1f;
+    public float LegendaryChance = 0.01f;
 
     // Method to determine which animation to play
     public void FishingRodChance(Animator playerAnim)
@@ -17,7 +18,8 @@ public class fishingProbability : MonoBehaviour
         // Calculate cumulative probabilities
         float seasonalThreshold = SeasonalChance;
         float rareThreshold = seasonalThreshold + RareChance;
-        float legendaryThreshold = rareThreshold + LegendaryChance;
+        float nothingThreshold = rareThreshold + NothingChance;
+        float legendaryThreshold = nothingThreshold + LegendaryChance;
 
         // Determine the animation to play based on the chance and thresholds
         if (chance < seasonalThreshold)
@@ -29,6 +31,11 @@ public class fishingProbability : MonoBehaviour
         {
             playerAnim.Play("playerWonFish2");
             Debug.Log("Animation Played: 2");
+        }
+        else if (chance < nothingThreshold)
+        {
+            playerAnim.Play("playerStill");
+            Debug.Log("Animation Played: No fish caught");
         }
         else if (chance < legendaryThreshold)
         {

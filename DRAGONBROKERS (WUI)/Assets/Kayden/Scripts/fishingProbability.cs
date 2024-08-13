@@ -32,35 +32,39 @@ public class FishingProbability : MonoBehaviour
 
     private void Update()
     {
-        // Cycle through environments with 1, 2, 3, 4 keys
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        //Inputs here are meant for debugging
         {
-            SetEnvironment(Environment.Perfect);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SetEnvironment(Environment.SlightDamage);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            SetEnvironment(Environment.ModerateDamage);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            SetEnvironment(Environment.SeverelyDamaged);
+            // Cycle through environments with 1, 2, 3, 4 keys
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                SetEnvironment(Environment.Perfect);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                SetEnvironment(Environment.SlightDamage);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                SetEnvironment(Environment.ModerateDamage);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                SetEnvironment(Environment.SeverelyDamaged);
+            }
+
+            // Roll the chances 100 times with the press of "M"
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                TestFishingProbability(100);
+            }
+
+            // Roll the chances once with the press of "R"
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                FishingChance();
+            }
         }
 
-        // Roll the chances 100 times with the press of "M"
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            TestFishingProbability(100);
-        }
-
-        // Roll the chances once with the press of "R"
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            FishingRodChance();
-        }
     }
 
     // Method to set the environment type and adjust chances
@@ -99,12 +103,47 @@ public class FishingProbability : MonoBehaviour
                 break;
         }
 
-        Debug.Log($"Environment set to: {currentEnvironment}");
-        Debug.Log($"SeasonalChance: {SeasonalChance}, RareChance: {RareChance}, NothingChance: {NothingChance}, LegendaryChance: {LegendaryChance}");
+        // Debug.Log($"Environment set to: {currentEnvironment}");
+        // Debug.Log($"SeasonalChance: {SeasonalChance}, RareChance: {RareChance}, NothingChance: {NothingChance}, LegendaryChance: {LegendaryChance}");
     }
 
-    // Method to determine the result based on the current chances
-    public string FishingRodChance()
+    // Method to determine which animation to play
+    public void FishingRodChance(Animator playerAnim)
+    {
+        // Generate a random float between 0.0 and 1.0
+        float chance = Random.value;
+
+        // Calculate cumulative probabilities
+        float seasonalThreshold = SeasonalChance;
+        float rareThreshold = seasonalThreshold + RareChance;
+        float legendaryThreshold = rareThreshold + LegendaryChance;
+
+        // Determine the animation to play based on the chance and thresholds
+        if (chance < seasonalThreshold)
+        {
+            playerAnim.Play("playerWonFish");
+            Debug.Log("Animation Played: 1");
+        }
+        else if (chance < rareThreshold)
+        {
+            playerAnim.Play("playerWonFish2");
+            Debug.Log("Animation Played: 2");
+        }
+        else if (chance < legendaryThreshold)
+        {
+            playerAnim.Play("playerWonFish3");
+            Debug.Log("Animation Played: 3");
+        }
+    }
+
+    /*
+     Eveything meant for debugging will be below here!
+    | | | |
+    | | | |
+    | | | |
+     */
+    // Method to determine the result based on the current chances (Debugging Only)
+    public string FishingChance()
     {
         // Generate a random float between 0.0 and 1.0 using UnityEngine's Random
         float chance = UnityEngine.Random.value;
@@ -115,34 +154,34 @@ public class FishingProbability : MonoBehaviour
         float nothingThreshold = rareThreshold + NothingChance;
         float legendaryThreshold = nothingThreshold + LegendaryChance;
 
-        Debug.Log($"Chance: {chance}, Thresholds -> Seasonal: {seasonalThreshold}, Rare: {rareThreshold}, Nothing: {nothingThreshold}, Legendary: {legendaryThreshold}");
+        // Debug.Log($"Chance: {chance}, Thresholds -> Seasonal: {seasonalThreshold}, Rare: {rareThreshold}, Nothing: {nothingThreshold}, Legendary: {legendaryThreshold}");
 
         // Determine the result based on the chance and thresholds
         if (chance < seasonalThreshold)
         {
-            Debug.Log("Result: Seasonal Fish");
+            // Debug.Log("Result: Seasonal Fish");
             return "Seasonal Fish";
         }
         else if (chance < rareThreshold)
         {
-            Debug.Log("Result: Rare Fish");
+            // Debug.Log("Result: Rare Fish");
             return "Rare Fish";
         }
         else if (chance < nothingThreshold)
         {
-            Debug.Log("Result: No Fish Caught");
+            // Debug.Log("Result: No Fish Caught");
             return "No Fish";
         }
         else if (chance < legendaryThreshold)
         {
-            Debug.Log("Result: Legendary Fish");
+            // Debug.Log("Result: Legendary Fish");
             return "Legendary Fish";
         }
 
         return "Unknown";
     }
 
-    // Method to test the probability by rolling it multiple times
+    // Method to test the probability by rolling it multiple times (Debugging Only)
     public void TestFishingProbability(int rolls)
     {
         int seasonalCount = 0;
@@ -152,7 +191,7 @@ public class FishingProbability : MonoBehaviour
 
         for (int i = 0; i < rolls; i++)
         {
-            string result = FishingRodChance();
+            string result = FishingChance();
             switch (result)
             {
                 case "Seasonal Fish":
@@ -170,10 +209,10 @@ public class FishingProbability : MonoBehaviour
             }
         }
 
-        Debug.Log($"Results after {rolls} rolls:");
-        Debug.Log($"Seasonal Fish: {seasonalCount} times");
-        Debug.Log($"Rare Fish: {rareCount} times");
-        Debug.Log($"No Fish: {nothingCount} times");
-        Debug.Log($"Legendary Fish: {legendaryCount} times");
+        // Debug.Log($"Results after {rolls} rolls:");
+        // Debug.Log($"Seasonal Fish: {seasonalCount} times");
+        // Debug.Log($"Rare Fish: {rareCount} times");
+        // Debug.Log($"No Fish: {nothingCount} times");
+        // Debug.Log($"Legendary Fish: {legendaryCount} times");
     }
 }

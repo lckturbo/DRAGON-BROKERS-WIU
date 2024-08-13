@@ -106,29 +106,7 @@ public class FishingScript : MonoBehaviour
     public void fishGameWon()
     {
         // Use the FishingProbability script to determine the fish animation
-
-        //////////////fishingProbability.FishingRodChance(playerAnim);
-
-        //// Generate a random float between 0.0 and 1.0
-        //float chance = Random.value;
-
-        //// If chance is less than 0.5, play "playerWonFish"; otherwise, play "playerWonFish2"
-        //// Change the percentage here
-        //if (chance < SeasonalChance)
-        //{
-        //    playerAnim.Play("playerWonFish");
-        //    Debug.Log("Animation Played: 1");
-        //}
-        //else if (chance < RareChance)
-        //{
-        //    playerAnim.Play("playerWonFish2");
-        //    Debug.Log("Animation Played: 2");
-        //}
-        //else if (chance < LegendaryChance)
-        //{
-        //    playerAnim.Play("playerWonFish3");
-        //    Debug.Log("Animation Played: 3");
-        //}
+        fishingProbability.FishingRodChance(playerAnim);
 
         // Reset the game state
         fishGame.SetActive(false);
@@ -138,36 +116,32 @@ public class FishingScript : MonoBehaviour
         timeTillCatch = 0;
     }
 
-    /*
-     public void fishGameWon()
-{
-    // Generate a random float between 0.0 and 1.0
-    float chance = Random.value;
+    //public void fishGameWon()
+    //{
+    //    // Generate a random float between 0.0 and 1.0
+    //    float chance = Random.value;
 
-    // Determine which animation to play based on the weighted probabilities
-    if (chance < 0.2f)
-    {
-        playerAnim.Play("playerWonFish");
-    }
-    else if (chance < 0.5f)
-    {
-        playerAnim.Play("playerWonFish2");
-    }
-    else
-    {
-        playerAnim.Play("playerWonFish3");
-    }
+    //    // Determine which animation to play based on the weighted probabilities
+    //    if (chance < 0.2f)
+    //    {
+    //        playerAnim.Play("playerWonFish");
+    //    }
+    //    else if (chance < 0.5f)
+    //    {
+    //        playerAnim.Play("playerWonFish2");
+    //    }
+    //    else
+    //    {
+    //        playerAnim.Play("playerWonFish3");
+    //    }
 
-    // Reset the game state
-    fishGame.SetActive(false);
-    poleBack = false;
-    throwBobber = false;
-    isFishing = false;
-    timeTillCatch = 0;
-}
-
-     */
-
+    //    // Reset the game state
+    //    fishGame.SetActive(false);
+    //    poleBack = false;
+    //    throwBobber = false;
+    //    isFishing = false;
+    //    timeTillCatch = 0;
+    //}
 
     public void fishGameLost()
     {

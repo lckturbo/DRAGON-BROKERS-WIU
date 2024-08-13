@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 391221559386493119}
   - component: {fileID: 1312209244253799068}
   - component: {fileID: 1770903910244911420}
-  - component: {fileID: 8668789359686368201}
   m_Layer: 0
   m_Name: fish
   m_TagString: Untagged
@@ -149,29 +148,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
---- !u!114 &8668789359686368201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3047077325036644975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d887b97faacdc3b4987d3a48c4fc587e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  yMin: -5.67
-  yMax: -0.331
-  detectionRange: 5
-  foodLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  minChangeDirectionInterval: 2
-  maxChangeDirectionInterval: 5
-  minIdleDuration: 1
-  maxIdleDuration: 3
-  pitchAmount: 15
-  foodChaseSpeedMultiplier: 1.5
-  borderBuffer: 0.5

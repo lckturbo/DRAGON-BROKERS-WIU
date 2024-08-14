@@ -30,7 +30,7 @@ public class Fish : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         SetRandomIntervals();
-        TransitionToState(State.Idle);
+        TransitionToState(State.Swimming); // Start in the Swimming state
     }
 
     private void Update()

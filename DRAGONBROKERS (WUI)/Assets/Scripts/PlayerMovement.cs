@@ -7,11 +7,13 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     private Rigidbody2D myRigidbody;
     private Vector3 change;
+    public VectorValue startingPosition;
 
     // Start is called before the first frame update
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
+        transform.position = startingPosition.initialValue;
     }
 
     // Update is called once per frame

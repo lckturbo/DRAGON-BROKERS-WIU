@@ -15,7 +15,7 @@ public class EnterFishing : MonoBehaviour
             Debug.Log("Player has entered the port. Loading Fishing scene...");
 
             // Load the scene called "Home"
-            SceneManager.LoadScene("FishingRodScene");
+            SceneManager.LoadScene("FishingPort");
         }
     }
 }

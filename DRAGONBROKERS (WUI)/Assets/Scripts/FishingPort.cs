@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; // Import the SceneManagement namespace
 
-public class EnterHouse : MonoBehaviour
+public class FishingPort : MonoBehaviour
 {
     // This method is called when another collider enters the trigger collider attached to the object where this script is attached
     private void OnTriggerEnter2D(Collider2D other)
@@ -11,11 +11,8 @@ public class EnterHouse : MonoBehaviour
         // Check if the player is the one entering the house
         if (other.CompareTag("Player"))
         {
-            // Print a debug message to the console
-            Debug.Log("Player has entered the house. Loading Home scene...");
-
             // Load the scene called "Home"
-            SceneManager.LoadScene("Home");
+            SceneManager.LoadScene("FishingPort");
         }
     }
 }

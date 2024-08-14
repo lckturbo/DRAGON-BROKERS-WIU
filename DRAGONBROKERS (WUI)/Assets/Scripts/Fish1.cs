@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Fish1 : MonoBehaviour
+public class fish1 : MonoBehaviour
 {
     public float speed = 2f;
     public float yMin = -4.5f;

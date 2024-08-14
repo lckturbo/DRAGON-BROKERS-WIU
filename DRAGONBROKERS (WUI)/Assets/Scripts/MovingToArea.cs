@@ -32,6 +32,20 @@ public class MovingToArea : MonoBehaviour
 
             // Move the player by the defined offset
             other.transform.position += playerChange;
+
+            if (needText)
+            {
+                StartCoroutine(placeNameCo());
+            }
         }
+    }
+
+    private IEnumerator placeNameCo()
+    {
+        text.SetActive(true);
+        placeText.text = placeName;
+
+        yield return new WaitForSeconds(4f);
+        text.SetActive(false);
     }
 }

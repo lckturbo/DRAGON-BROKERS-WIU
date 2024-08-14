@@ -32,29 +32,24 @@ public class FishSpawner : MonoBehaviour
             float screenWidth = screenHeight * Camera.main.aspect;
 
             Vector3 spawnPosition;
-            Vector3 targetPosition;
 
             if (Random.value < 0.5f)
             {
                 // Spawn on the left, move to the right
                 spawnPosition = new Vector3(-screenWidth / 2 - 1, Random.Range(-screenHeight / 2, screenHeight / 2), 0);
-                targetPosition = new Vector3(screenWidth / 2 + 1, spawnPosition.y, 0);
             }
             else
             {
                 // Spawn on the right, move to the left
                 spawnPosition = new Vector3(screenWidth / 2 + 1, Random.Range(-screenHeight / 2, screenHeight / 2), 0);
-                targetPosition = new Vector3(-screenWidth / 2 - 1, spawnPosition.y, 0);
             }
 
             GameObject fish = Instantiate(fishPrefab, spawnPosition, Quaternion.identity);
             FishFSM fishFSM = fish.GetComponent<FishFSM>();
-            fishFSM.SetFishType(fishType);
-            fishFSM.SetTargetPosition(targetPosition);
+            fishFSM.SetFishType(fishType); // Set the type for behavior
 
             InteractFish interactFish = fish.GetComponent<InteractFish>();
             interactFish.SetFishType(fishType); // Set the type for interaction
-
         }
     }
 }

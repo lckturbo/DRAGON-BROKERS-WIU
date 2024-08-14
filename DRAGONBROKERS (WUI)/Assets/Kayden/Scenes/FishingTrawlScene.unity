@@ -7284,8 +7284,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400887404}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 15.28, y: 13.1, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 11.2, y: 13.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8356,7 +8356,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.19142771, y: 0.0073274374}
-  m_ConnectedAnchor: {x: 0.108571984, y: 0.0073270733}
+  m_ConnectedAnchor: {x: 0.10857294, y: 0.0073270733}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -10284,7 +10284,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.19142771, y: 0.0073274374}
-  m_ConnectedAnchor: {x: 0.12857148, y: 0.0073270723}
+  m_ConnectedAnchor: {x: 0.12857243, y: 0.0073270723}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -11231,8 +11231,8 @@ SceneRoots:
   - {fileID: 2082540101}
   - {fileID: 1463208750}
   - {fileID: 9020456962837399780}
-  - {fileID: 1400887405}
   - {fileID: 8606429}
+  - {fileID: 1400887405}
   - {fileID: 8325149680493626716}
   - {fileID: 2248030793580644583}
   - {fileID: 516519472}

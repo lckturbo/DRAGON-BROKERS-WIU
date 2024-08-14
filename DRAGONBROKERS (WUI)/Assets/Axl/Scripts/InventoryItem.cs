@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Item : MonoBehaviour
+public class InventoryItem : MonoBehaviour
 {
     public string itemName;
     public int quantity;

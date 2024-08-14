@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InventoryItem : MonoBehaviour
@@ -5,19 +6,24 @@ public class InventoryItem : MonoBehaviour
     public string itemName;
     public int quantity;
     public Sprite sprite;
-    public InventoryManager inventoryManager;
+    private InventoryManager inventoryManager;
+    private FishingProbability fishingProbability;
 
     private void Start()
     {
-        inventoryManager = GameObject.Find("Inventory Canvas").GetComponent<InventoryManager>();
+        inventoryManager = GameObject.Find("Inventory Canvas Variant").GetComponent<InventoryManager>();
+        fishingProbability = GetComponent<FishingProbability>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Update()
     {
-        if (collision.gameObject.tag == "Player")
+        // Check if the addToInv boolean is true before adding the item
+        Debug.Log("Checking addToInv: " + fishingProbability.addToInv); // Add this to see when Update() checks addToInv
+        if (fishingProbability.addToInv)
         {
+            Debug.Log("IT IS TRYING TO ADD ITEM");
             inventoryManager.AddItem(itemName, quantity, sprite);
-            Destroy(gameObject);
+            fishingProbability.addToInv = false; // Reset it after adding the item
         }
     }
 }

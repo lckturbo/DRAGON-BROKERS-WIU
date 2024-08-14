@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class FishingProbability : MonoBehaviour
@@ -15,7 +16,8 @@ public class FishingProbability : MonoBehaviour
     private float LegendaryChance;
 
     private Environment currentEnvironment;
-    private InventoryManager inventoryManager;
+
+    public bool addToInv = true;
 
     public enum Environment
     {
@@ -153,6 +155,7 @@ public class FishingProbability : MonoBehaviour
     {
         // Generate a random float between 0.0 and 1.0 using UnityEngine's Random
         float chance = UnityEngine.Random.value;
+
 
         // Calculate cumulative probabilities
         float seasonalThreshold = SeasonalChance;

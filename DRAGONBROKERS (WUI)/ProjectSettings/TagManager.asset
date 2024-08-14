@@ -8,6 +8,7 @@ TagManager:
   - FishingSurface
   - TrawlerArm
   - food
+  - groundFishing
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - Player
   - 
   - 
-  - 
-  - 
+  - RobotArm
+  - groundFishing
   - 
   - 
   - 

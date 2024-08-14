@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - fish
-  - food
+  - FishingSurface
+  - TrawlerArm
   layers:
   - Default
   - TransparentFX

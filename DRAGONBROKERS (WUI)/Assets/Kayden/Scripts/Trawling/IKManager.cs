@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.Intrinsics;
+using UnityEditor;
 using UnityEngine;
 
 public class IKManager : MonoBehaviour
@@ -19,17 +21,24 @@ public class IKManager : MonoBehaviour
 
     public int m_steps = 20;
 
+    // Method to calculate the slope (sensitivity) of the end effector's distance to the target
+    // helps the arm decide how much to rotate each joint to move the hand in the right direction, getting it closer to the target with each step
     float CalculateSlope(TrawlJoint _joint)
     {
         float deltaTheta = 0.01f;
+
+        // the distance from the end effector to the target before rotating the joint
         float distance1 = GetDistance(m_end.transform.position, GetMouseWorldPosition());
 
         _joint.Rotate(deltaTheta);
 
+        // Distance from the end to the target/ start after rotating the joint
         float distance2 = GetDistance(m_end.transform.position, GetMouseWorldPosition());
 
+        // Rotate the joint back to its original position
         _joint.Rotate(-deltaTheta);
 
+        // Calculate and return the change in distance per change in angle)
         return (distance2 - distance1) / deltaTheta;
     }
 
@@ -38,6 +47,7 @@ public class IKManager : MonoBehaviour
     {
         for (int i = 0; i < m_steps; ++i)
         {
+            // if the end effector is not close enough to the target
             if (GetDistance(m_end.transform.position, GetMouseWorldPosition()) > m_threshold)
             {
                 TrawlJoint current = m_root;

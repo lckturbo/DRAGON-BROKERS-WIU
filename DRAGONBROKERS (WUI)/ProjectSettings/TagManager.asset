@@ -7,6 +7,7 @@ TagManager:
   - fish
   - FishingSurface
   - TrawlerArm
+  - food
   layers:
   - Default
   - TransparentFX

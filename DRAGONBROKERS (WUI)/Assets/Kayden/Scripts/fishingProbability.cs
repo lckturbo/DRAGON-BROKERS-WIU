@@ -15,6 +15,7 @@ public class FishingProbability : MonoBehaviour
     private float LegendaryChance;
 
     private Environment currentEnvironment;
+    private InventoryManager inventoryManager;
 
     public enum Environment
     {

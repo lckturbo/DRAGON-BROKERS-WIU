@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class InventoryItem : MonoBehaviour
+public class FishingItem : MonoBehaviour
 {
     public string itemName;
     public int quantity;

@@ -12,15 +12,18 @@ public class FishManager : MonoBehaviour
     public Sprite commonFishSprite;
     public Sprite rareFishSprite;
     public InventoryManager inventoryManager;
+    public FishingProbability fishingProbability;
     public string commonFish;
     public string rareFish;
+    public GameObject seasonalFish;
+
 
     //To add to other scripts
     //public fishManager _fishManager;
 
     private void Start()
     {
-        inventoryManager = GameObject.Find("Inventory Canvas").GetComponent<InventoryManager>();
+        inventoryManager = GameObject.Find("Inventory Canvas Variant").GetComponent<InventoryManager>();
     }
 
     private void Update()

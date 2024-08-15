@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Build.Content;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class FishingProbability : MonoBehaviour
 {
@@ -15,7 +16,23 @@ public class FishingProbability : MonoBehaviour
     private float NothingChance;
     private float LegendaryChance;
 
+    public string seasonalItemName;
+    public int seasonalQuantity;
+    public Sprite seasonalSprite;
+    [TextArea] public string seasonalItemDescription;
+
+    public string rareItemName;
+    public int rareQuantity;
+    public Sprite rareSprite;
+    [TextArea] public string rareItemDescription;
+
+    public string legendaryItemName;
+    public int legendaryQuantity;
+    public Sprite legendarySprite;
+    [TextArea] public string legendaryItemDescription;
+
     private Environment currentEnvironment;
+    private InventoryManager inventoryManager;
 
     public bool addToInv = true;
 
@@ -31,6 +48,7 @@ public class FishingProbability : MonoBehaviour
     {
         // Initialize to a default environment, e.g., Perfect
         SetEnvironment(Environment.Perfect);
+        inventoryManager = GameObject.Find("Inventory Canvas Variant").GetComponent<InventoryManager>();
     }
 
     private void Update()
@@ -124,11 +142,13 @@ public class FishingProbability : MonoBehaviour
         // Determine the animation to play based on the chance and thresholds
         if (chance < seasonalThreshold)
         {
+            inventoryManager.AddItem(seasonalItemName, seasonalQuantity, seasonalSprite, seasonalItemDescription);
             playerAnim.Play("playerWonFish");
             Debug.Log("Animation Played: 1");
         }
         else if (chance < rareThreshold)
         {
+            inventoryManager.AddItem(rareItemName, rareQuantity, rareSprite, rareItemDescription);
             playerAnim.Play("playerWonFish2");
             Debug.Log("Animation Played: 2");
         }
@@ -139,6 +159,7 @@ public class FishingProbability : MonoBehaviour
         }
         else if (chance < legendaryThreshold)
         {
+            inventoryManager.AddItem(legendaryItemName, legendaryQuantity, legendarySprite, legendaryItemDescription);
             playerAnim.Play("playerWonFish3");
             Debug.Log("Animation Played: 3");
         }

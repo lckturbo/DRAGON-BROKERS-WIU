@@ -19,7 +19,6 @@ public class FishingItem : MonoBehaviour
     private void Update()
     {
         // Check if the addToInv boolean is true before adding the item
-        Debug.Log("Checking addToInv: " + fishingProbability.addToInv); // Add this to see when Update() checks addToInv
         if (fishingProbability.addToInv)
         {
             Debug.Log("IT IS TRYING TO ADD ITEM");

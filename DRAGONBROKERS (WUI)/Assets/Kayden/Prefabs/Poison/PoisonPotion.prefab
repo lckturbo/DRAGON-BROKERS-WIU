@@ -163,3 +163,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poisonSplash: {fileID: 3535425157833790936, guid: 51199d1cd4673c4408bd06aa51cd72d8, type: 3}
   poisonAfterEffect: {fileID: 7854975560810907010, guid: fd844f8e0c64b4a4daf1a2a1b94c0a5b, type: 3}
+  slowDownFactor: 0.8
+  slowDownDuration: 0.2
+  explosionRange: 1.22

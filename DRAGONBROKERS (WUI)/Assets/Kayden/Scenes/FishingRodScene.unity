@@ -2105,7 +2105,8 @@ PrefabInstance:
       propertyPath: goldText
       value: 
       objectReference: {fileID: 482432826}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5365541725443643092, guid: 7c235cd8964567e42989b77395660244, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

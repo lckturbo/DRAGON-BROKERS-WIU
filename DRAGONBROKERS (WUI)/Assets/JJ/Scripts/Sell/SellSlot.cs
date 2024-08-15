@@ -1,42 +1,45 @@
 using TMPro;
-using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System.Xml.Serialization;
 
-public class ItemSlot : MonoBehaviour, IPointerClickHandler
+public class SellSlot : MonoBehaviour, IPointerClickHandler
 {
-    //ITEM DATA
+    // ITEM DATA
     public string itemName;
     public int quantity;
     public Sprite itemSprite;
     public bool isFull;
     public string itemDescription;
 
-    //ITEM SLOT
+    // ITEM SLOT UI COMPONENTS
     public TMP_Text quantityText;
     public Image itemImage;
-
-    //ITEM DESCRIPTION
-    public Image itemDescriptionImage;
-    public TMP_Text ItemDescriptionNameText;
-    public TMP_Text ItemDescriptionText;
 
     public GameObject selectedShader;
     public bool thisItemSelected;
     public InventoryManager inventoryManager;
 
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        inventoryManager = GameObject.Find("Inventory Canvas Variant").GetComponent<InventoryManager>();
+        inventoryManager = GameObject.Find("Sell_Inventory").GetComponent<InventoryManager>();
     }
 
-    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+    public void AddItem(int index)
     {
-        this.itemName = itemName;
-        this.quantity = quantity;
-        this.itemSprite = itemSprite;
-        this.itemDescription = itemDescription;
+        if (index < 0 || index >= inventoryManager.itemSlot.Length)
+        {
+            Debug.LogError("Invalid index for itemSlot array.");
+            return;
+        }
+
+        ItemSlot selectedItem = inventoryManager.itemSlot[index];
+
+        itemName = selectedItem.itemName;
+        quantity = selectedItem.quantity;
+        itemSprite = selectedItem.itemSprite;
+        itemDescription = selectedItem.itemDescription;
         isFull = true;
 
         quantityText.text = quantity.ToString();
@@ -59,19 +62,14 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
-
     public void OnLeftClick()
     {
         inventoryManager.DeselectAllSlots();
         selectedShader.SetActive(true);
         thisItemSelected = true;
-        ItemDescriptionNameText.text = itemName;
-        ItemDescriptionText.text = itemDescription;
-        itemDescriptionImage.sprite = itemSprite;
     }
 
     public void OnRightClick()
     {
-
     }
 }

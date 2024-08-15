@@ -10,6 +10,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public int quantity;
     public Sprite itemSprite;
     public bool isFull;
+    public string itemDescription;
 
     //ITEM SLOT
     public TMP_Text quantityText;
@@ -29,11 +30,12 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         inventoryManager = GameObject.Find("Inventory Canvas Variant").GetComponent<InventoryManager>();
     }
 
-    public void AddItem(string itemName, int quantity, Sprite itemSprite)
+    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
         this.itemName = itemName;
         this.quantity = quantity;
         this.itemSprite = itemSprite;
+        this.itemDescription = itemDescription;
         isFull = true;
 
         quantityText.text = quantity.ToString();
@@ -62,6 +64,9 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         inventoryManager.DeselectAllSlots();
         selectedShader.SetActive(true);
         thisItemSelected = true;
+        ItemDescriptionNameText.text = itemName;
+        ItemDescriptionText.text = itemDescription;
+        itemDescriptionImage.sprite = itemSprite;
     }
 
     public void OnRightClick()

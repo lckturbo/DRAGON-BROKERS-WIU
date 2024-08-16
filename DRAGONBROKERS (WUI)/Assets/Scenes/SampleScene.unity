@@ -217,8 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 0}
-  contextOff: {fileID: 0}
+  contextOn: {fileID: 11400000, guid: 4bd1043ad512ffb4f8a6f2ff3fe6893f, type: 2}
+  contextOff: {fileID: 11400000, guid: 5a88b336989d10c4c9375f66e70735f9, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
   dialog: Axl
@@ -820,92 +820,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &352264289
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 352264290}
-  - component: {fileID: 352264292}
-  - component: {fileID: 352264291}
-  m_Layer: 0
-  m_Name: Goat
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &352264290
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 352264289}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.95, y: -5.316, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 385688990}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &352264291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 352264289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contextOn: {fileID: 11400000, guid: 4bd1043ad512ffb4f8a6f2ff3fe6893f, type: 2}
-  contextOff: {fileID: 11400000, guid: 5a88b336989d10c4c9375f66e70735f9, type: 2}
-  dialogBox: {fileID: 125313197}
-  dialogText: {fileID: 1247918206}
-  dialog: ALL HAIL THE NEW KING!!!
-  playerInRange: 0
---- !u!58 &352264292
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 352264289}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.7838867, y: 0.6908295}
-  serializedVersion: 2
-  m_Radius: 1.7
 --- !u!1 &360035042
 GameObject:
   m_ObjectHideFlags: 0
@@ -28312,7 +28226,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 352264290}
   - {fileID: 1455852727}
   - {fileID: 673391279}
   - {fileID: 75363249}
@@ -28833,8 +28746,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 0}
-  contextOff: {fileID: 0}
+  contextOn: {fileID: 11400000, guid: 4bd1043ad512ffb4f8a6f2ff3fe6893f, type: 2}
+  contextOff: {fileID: 11400000, guid: 5a88b336989d10c4c9375f66e70735f9, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
   dialog: Hi
@@ -31138,8 +31051,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 0}
-  contextOff: {fileID: 0}
+  contextOn: {fileID: 11400000, guid: 4bd1043ad512ffb4f8a6f2ff3fe6893f, type: 2}
+  contextOff: {fileID: 11400000, guid: 5a88b336989d10c4c9375f66e70735f9, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
   dialog: In Memory Of Ck
@@ -31409,11 +31322,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 0}
-  contextOff: {fileID: 0}
+  contextOn: {fileID: 11400000, guid: 4bd1043ad512ffb4f8a6f2ff3fe6893f, type: 2}
+  contextOff: {fileID: 11400000, guid: 5a88b336989d10c4c9375f66e70735f9, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
-  dialog: Kayden
+  dialog: In Loving Memory of Kayden
   playerInRange: 0
 --- !u!1 &1391650930
 GameObject:
@@ -31626,8 +31539,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 0}
-  contextOff: {fileID: 0}
+  contextOn: {fileID: 11400000, guid: 4bd1043ad512ffb4f8a6f2ff3fe6893f, type: 2}
+  contextOff: {fileID: 11400000, guid: 5a88b336989d10c4c9375f66e70735f9, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
   dialog: Hi

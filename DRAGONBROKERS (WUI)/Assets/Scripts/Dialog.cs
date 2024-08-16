@@ -27,7 +27,8 @@ public class Dialog : MonoBehaviour
             if (dialogBox.activeInHierarchy)
             {
                 dialogBox.SetActive(false);
-            }else
+            }
+            else
             {
                 dialogBox.SetActive(true);
                 dialogText.text = dialog;

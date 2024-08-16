@@ -49,20 +49,20 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            for (int i = 0; i < itemSlot.Length; i++)
-            {
-                if (itemSlot[i] != null)
-                {
-                    Debug.Log($"Slot {i}: {itemSlot[i].itemName} - Quantity: {itemSlot[i].quantity}");
-                }
-                else
-                {
-                    Debug.Log($"Slot {i}: Empty or null");
-                }
-            }
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    for (int i = 0; i < itemSlot.Length; i++)
+        //    {
+        //        if (itemSlot[i] != null)
+        //        {
+        //            Debug.Log($"Slot {i}: {itemSlot[i].itemName} - Quantity: {itemSlot[i].quantity}");
+        //        }
+        //        else
+        //        {
+        //            Debug.Log($"Slot {i}: Empty or null");
+        //        }
+        //    }
+        //}
 
 
     }

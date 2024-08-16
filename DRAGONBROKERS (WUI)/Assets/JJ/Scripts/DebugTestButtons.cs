@@ -33,22 +33,22 @@ public class DebugTestButtons : MonoBehaviour
             inventoryManager.AddItem(itemName, quantity, sprite, description, worth);
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (BG_Panel != null)
-            {
-                BG_Panel.SetActive(!BG_Panel.activeSelf);
-            }
-            else
-            {
-                Debug.LogWarning("BG_Panel reference is not set!");
-            }
-        }
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    if (BG_Panel != null)
+        //    {
+        //        BG_Panel.SetActive(!BG_Panel.activeSelf);
+        //    }
+        //    else
+        //    {
+        //        Debug.LogWarning("BG_Panel reference is not set!");
+        //    }
+        //}
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            inventoryManager.shopOpen = !inventoryManager.shopOpen;
-        }
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    inventoryManager.shopOpen = !inventoryManager.shopOpen;
+        //}
 
     }
 }

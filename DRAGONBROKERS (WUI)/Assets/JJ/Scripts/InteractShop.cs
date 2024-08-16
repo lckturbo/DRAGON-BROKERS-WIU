@@ -5,17 +5,15 @@ using UnityEngine;
 public class InteractShop : MonoBehaviour
 {
     public GameObject BG_Panel;
+    public GameObject SellNPC;
+    public GameObject BuyNPC;
     InventoryManager inventoryManager;
 
     // Start is called before the first frame update
     void Start()
     {
         inventoryManager = GameObject.Find("Inventory Canvas Variant").GetComponent<InventoryManager>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
         if (inventoryManager == null)
         {
             Debug.LogError("InventoryManager is not found!");
@@ -23,25 +21,50 @@ public class InteractShop : MonoBehaviour
         }
     }
 
-    public void CollideSell(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            inventoryManager.shopOpen = !inventoryManager.shopOpen;
+            if (gameObject == SellNPC)
+            {
+                inventoryManager.shopOpen = !inventoryManager.shopOpen;
+                Debug.Log("Toggled shopOpen state for SellNPC.");
+            }
+            else if (gameObject == BuyNPC)
+            {
+                if (BG_Panel != null)
+                {
+                    BG_Panel.SetActive(!BG_Panel.activeSelf);
+                    Debug.Log("Toggled BG_Panel visibility for BuyNPC.");
+                }
+                else
+                {
+                    Debug.LogWarning("BG_Panel reference is not set!");
+                }
+            }
         }
     }
 
-    public void CollideShop(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            if (BG_Panel != null)
+            if (gameObject == SellNPC)
             {
-                BG_Panel.SetActive(!BG_Panel.activeSelf);
+                inventoryManager.shopOpen = false;
+                Debug.Log("Closed shop for SellNPC.");
             }
-            else
+            else if (gameObject == BuyNPC)
             {
-                Debug.LogWarning("BG_Panel reference is not set!");
+                if (BG_Panel != null)
+                {
+                    BG_Panel.SetActive(false);
+                    Debug.Log("Closed BG_Panel for BuyNPC.");
+                }
+                else
+                {
+                    Debug.LogWarning("BG_Panel reference is not set!");
+                }
             }
         }
     }

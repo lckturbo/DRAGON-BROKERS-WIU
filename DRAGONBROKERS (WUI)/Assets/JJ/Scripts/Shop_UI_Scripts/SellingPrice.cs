@@ -83,4 +83,18 @@ public class SellingPrice : MonoBehaviour
         // Return -1 if the item is not found
         return -1;
     }
+
+    //For Closing Selling Shop Only *Do Not Touch*
+    public void CloseShop()
+    {
+        if (inventoryManager != null)
+        {
+            inventoryManager.shopOpen = false;
+            Debug.Log("Shop closed via button click.");
+        }
+        else
+        {
+            Debug.LogError("InventoryManager is not found when trying to close the shop.");
+        }
+    }
 }

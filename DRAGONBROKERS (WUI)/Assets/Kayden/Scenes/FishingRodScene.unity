@@ -227,14 +227,17 @@ MonoBehaviour:
   seasonalQuantity: 0
   seasonalSprite: {fileID: 0}
   seasonalItemDescription: 
+  sworth: 0
   rareItemName: 
   rareQuantity: 0
   rareSprite: {fileID: 0}
   rareItemDescription: 
+  rworth: 0
   legendaryItemName: 
   legendaryQuantity: 0
   legendarySprite: {fileID: 0}
   legendaryItemDescription: 
+  lworth: 0
   addToInv: 0
 --- !u!1 &303311400 stripped
 GameObject:
@@ -261,14 +264,17 @@ MonoBehaviour:
   seasonalQuantity: 1
   seasonalSprite: {fileID: -2139780386, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
   seasonalItemDescription: fskjfnsf common fish dsecsipriton
+  sworth: 0
   rareItemName: Rare Fish
   rareQuantity: 1
   rareSprite: {fileID: 935802225, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
   rareItemDescription: sdfbdf sd bfskjbe hsdfkj
+  rworth: 0
   legendaryItemName: Legendary Fish
   legendaryQuantity: 1
   legendarySprite: {fileID: 1506719059, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
   legendaryItemDescription: dsfgdsfgfs fdfsgdfg sgfdsgf
+  lworth: 0
   addToInv: 0
 --- !u!61 &303311410
 BoxCollider2D:
@@ -425,14 +431,17 @@ MonoBehaviour:
   seasonalQuantity: 1
   seasonalSprite: {fileID: -2139780386, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
   seasonalItemDescription: sdfsdkhbf sdkjbskjcnd efjsdf
+  sworth: 0
   rareItemName: Rare Fish
   rareQuantity: 1
   rareSprite: {fileID: 935802225, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
   rareItemDescription: rare fish sjdfn
+  rworth: 0
   legendaryItemName: Legendary Fish
   legendaryQuantity: 1
   legendarySprite: {fileID: 1506719059, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
   legendaryItemDescription: legendary skjfkjcnkjdncsoiefjn asdkj
+  lworth: 0
   addToInv: 0
 --- !u!114 &482432826 stripped
 MonoBehaviour:
@@ -2136,7 +2145,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079531468}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -2216,14 +2225,17 @@ MonoBehaviour:
   seasonalQuantity: 0
   seasonalSprite: {fileID: 0}
   seasonalItemDescription: 
+  sworth: 0
   rareItemName: 
   rareQuantity: 0
   rareSprite: {fileID: 0}
   rareItemDescription: 
+  rworth: 0
   legendaryItemName: 
   legendaryQuantity: 0
   legendarySprite: {fileID: 0}
   legendaryItemDescription: 
+  lworth: 0
   addToInv: 0
 --- !u!1 &2082540099
 GameObject:

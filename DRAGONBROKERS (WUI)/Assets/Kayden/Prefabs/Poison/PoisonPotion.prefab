@@ -163,6 +163,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poisonSplash: {fileID: 3535425157833790936, guid: 51199d1cd4673c4408bd06aa51cd72d8, type: 3}
   poisonAfterEffect: {fileID: 7854975560810907010, guid: fd844f8e0c64b4a4daf1a2a1b94c0a5b, type: 3}
+  smokePrefab: {fileID: 3790811616418332497, guid: 18a70690dfcdc864da984a96f907b9a6, type: 3}
+  cloudsPrefab: {fileID: 104760628244185477, guid: 33a5f2306265ada429096c29ef9f8f98, type: 3}
+  poisonWaterCloudPrefab: {fileID: 7461485302530355864, guid: b5220d3eac37f4b44a6430cd5a7489b1, type: 3}
+  poisonWaterCloudPosition: {x: 3.76, y: -5.19, z: 25}
   slowDownFactor: 0.8
   slowDownDuration: 0.2
   explosionRange: 1.22
+  presetYPosition: 1.03

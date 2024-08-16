@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6302812726727631825}
   - component: {fileID: 5046300689371698072}
   m_Layer: 0
-  m_Name: Context Clue
+  m_Name: ContextClue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,9 +97,9 @@ GameObject:
   - component: {fileID: 3798988706647157236}
   - component: {fileID: 2531101195043269400}
   - component: {fileID: 1483918288472561597}
-  - component: {fileID: 7000840488029732347}
-  - component: {fileID: 2598522880495660570}
-  - component: {fileID: 8354490808966612604}
+  - component: {fileID: 7514741267109734445}
+  - component: {fileID: 1280487306423288587}
+  - component: {fileID: 8623314599466287317}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -261,63 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   startingPosition: {fileID: 11400000, guid: 1013baca13ce83146943591e81051623, type: 2}
---- !u!114 &7000840488029732347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2513769724754720817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93bf0baeaed7182449c415d50d626dc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  signal: {fileID: 11400000, guid: 4bd1043ad512ffb4f8a6f2ff3fe6893f, type: 2}
-  signalEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8354490808966612604}
-        m_TargetAssemblyTypeName: ContextClue, Assembly-CSharp
-        m_MethodName: Enable
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2598522880495660570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2513769724754720817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93bf0baeaed7182449c415d50d626dc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  signal: {fileID: 11400000, guid: 5a88b336989d10c4c9375f66e70735f9, type: 2}
-  signalEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8354490808966612604}
-        m_TargetAssemblyTypeName: ContextClues, Assembly-CSharp
-        m_MethodName: Disable
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &8354490808966612604
+--- !u!114 &7514741267109734445
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -330,3 +274,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contextClue: {fileID: 1168731337023025633}
+--- !u!114 &1280487306423288587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2513769724754720817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93bf0baeaed7182449c415d50d626dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: 1d70315fa3a43d64b9865d0955b048cc, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7514741267109734445}
+        m_TargetAssemblyTypeName: ContextClue, Assembly-CSharp
+        m_MethodName: Enable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8623314599466287317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2513769724754720817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93bf0baeaed7182449c415d50d626dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7514741267109734445}
+        m_TargetAssemblyTypeName: ContextClue, Assembly-CSharp
+        m_MethodName: Disable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

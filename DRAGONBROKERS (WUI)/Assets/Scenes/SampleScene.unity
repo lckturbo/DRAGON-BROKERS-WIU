@@ -217,8 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 11400000, guid: 4bd1043ad512ffb4f8a6f2ff3fe6893f, type: 2}
-  contextOff: {fileID: 11400000, guid: 5a88b336989d10c4c9375f66e70735f9, type: 2}
+  contextOn: {fileID: 11400000, guid: 1d70315fa3a43d64b9865d0955b048cc, type: 2}
+  contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
   dialog: Axl
@@ -548,8 +548,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 0}
-  contextOff: {fileID: 0}
+  contextOn: {fileID: 11400000, guid: 1d70315fa3a43d64b9865d0955b048cc, type: 2}
+  contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
   dialog: GIMME FISH PS
@@ -666,6 +666,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8738351, y: 0.37597036}
   m_EdgeRadius: 0
+--- !u!114 &297012146 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7514741267109734445, guid: 4575a228521faa840a07c1d567a34383, type: 3}
+  m_PrefabInstance: {fileID: 191460590182879336}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe4418e1866558247a7bbd19daf2c874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &300568617
 GameObject:
   m_ObjectHideFlags: 0
@@ -28746,8 +28757,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 11400000, guid: 4bd1043ad512ffb4f8a6f2ff3fe6893f, type: 2}
-  contextOff: {fileID: 11400000, guid: 5a88b336989d10c4c9375f66e70735f9, type: 2}
+  contextOn: {fileID: 11400000, guid: 1d70315fa3a43d64b9865d0955b048cc, type: 2}
+  contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
   dialog: Hi
@@ -31051,8 +31062,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 11400000, guid: 4bd1043ad512ffb4f8a6f2ff3fe6893f, type: 2}
-  contextOff: {fileID: 11400000, guid: 5a88b336989d10c4c9375f66e70735f9, type: 2}
+  contextOn: {fileID: 11400000, guid: 1d70315fa3a43d64b9865d0955b048cc, type: 2}
+  contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
   dialog: In Memory Of Ck
@@ -31322,8 +31333,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 11400000, guid: 4bd1043ad512ffb4f8a6f2ff3fe6893f, type: 2}
-  contextOff: {fileID: 11400000, guid: 5a88b336989d10c4c9375f66e70735f9, type: 2}
+  contextOn: {fileID: 11400000, guid: 1d70315fa3a43d64b9865d0955b048cc, type: 2}
+  contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
   dialog: In Loving Memory of Kayden
@@ -31539,8 +31550,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 11400000, guid: 4bd1043ad512ffb4f8a6f2ff3fe6893f, type: 2}
-  contextOff: {fileID: 11400000, guid: 5a88b336989d10c4c9375f66e70735f9, type: 2}
+  contextOn: {fileID: 11400000, guid: 1d70315fa3a43d64b9865d0955b048cc, type: 2}
+  contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
   dialog: Hi
@@ -31657,17 +31668,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 520737327}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &1625413174 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8354490808966612604, guid: 4575a228521faa840a07c1d567a34383, type: 3}
-  m_PrefabInstance: {fileID: 191460590182879336}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe4418e1866558247a7bbd19daf2c874, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1682909499
 GameObject:
   m_ObjectHideFlags: 0
@@ -77230,6 +77230,38 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1280487306423288587, guid: 4575a228521faa840a07c1d567a34383, type: 3}
+      propertyPath: signalgame
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d70315fa3a43d64b9865d0955b048cc, type: 2}
+    - target: {fileID: 1280487306423288587, guid: 4575a228521faa840a07c1d567a34383, type: 3}
+      propertyPath: signalEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280487306423288587, guid: 4575a228521faa840a07c1d567a34383, type: 3}
+      propertyPath: signalEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280487306423288587, guid: 4575a228521faa840a07c1d567a34383, type: 3}
+      propertyPath: signalEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 297012146}
+    - target: {fileID: 1280487306423288587, guid: 4575a228521faa840a07c1d567a34383, type: 3}
+      propertyPath: signalEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280487306423288587, guid: 4575a228521faa840a07c1d567a34383, type: 3}
+      propertyPath: signalEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Enable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280487306423288587, guid: 4575a228521faa840a07c1d567a34383, type: 3}
+      propertyPath: signalEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ContextClue, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280487306423288587, guid: 4575a228521faa840a07c1d567a34383, type: 3}
+      propertyPath: signalEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2513769724754720817, guid: 4575a228521faa840a07c1d567a34383, type: 3}
       propertyPath: m_Name
       value: Player
@@ -77237,7 +77269,7 @@ PrefabInstance:
     - target: {fileID: 2598522880495660570, guid: 4575a228521faa840a07c1d567a34383, type: 3}
       propertyPath: signalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1625413174}
+      objectReference: {fileID: 0}
     - target: {fileID: 3966322362675933324, guid: 4575a228521faa840a07c1d567a34383, type: 3}
       propertyPath: m_SortingOrder
       value: 5
@@ -77289,7 +77321,11 @@ PrefabInstance:
     - target: {fileID: 7000840488029732347, guid: 4575a228521faa840a07c1d567a34383, type: 3}
       propertyPath: signalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1625413174}
+      objectReference: {fileID: 0}
+    - target: {fileID: 8623314599466287317, guid: 4575a228521faa840a07c1d567a34383, type: 3}
+      propertyPath: signalgame
+      value: 
+      objectReference: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

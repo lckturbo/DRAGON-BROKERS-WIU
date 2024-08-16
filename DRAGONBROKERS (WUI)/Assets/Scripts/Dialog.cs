@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Dialog : MonoBehaviour
 {
-    public Signal contextOn;
-    public Signal contextOff;
+    public SignalGame contextOn;
+    public SignalGame contextOff;
 
     public GameObject dialogBox;
     public Text dialogText;

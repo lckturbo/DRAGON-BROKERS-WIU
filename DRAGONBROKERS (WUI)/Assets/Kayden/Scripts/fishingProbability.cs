@@ -20,16 +20,19 @@ public class FishingProbability : MonoBehaviour
     public int seasonalQuantity;
     public Sprite seasonalSprite;
     [TextArea] public string seasonalItemDescription;
+    public int sworth;
 
     public string rareItemName;
     public int rareQuantity;
     public Sprite rareSprite;
     [TextArea] public string rareItemDescription;
+    public int rworth;
 
     public string legendaryItemName;
     public int legendaryQuantity;
     public Sprite legendarySprite;
     [TextArea] public string legendaryItemDescription;
+    public int lworth;
 
     private Environment currentEnvironment;
     private InventoryManager inventoryManager;
@@ -124,8 +127,8 @@ public class FishingProbability : MonoBehaviour
                 break;
         }
 
-        // Debug.Log($"Environment set to: {currentEnvironment}");
-        // Debug.Log($"SeasonalChance: {SeasonalChance}, RareChance: {RareChance}, NothingChance: {NothingChance}, LegendaryChance: {LegendaryChance}");
+        Debug.Log($"Environment set to: {currentEnvironment}");
+        Debug.Log($"SeasonalChance: {SeasonalChance}, RareChance: {RareChance}, NothingChance: {NothingChance}, LegendaryChance: {LegendaryChance}");
     }
 
     public void FishingRodChance(Animator playerAnim)
@@ -142,13 +145,13 @@ public class FishingProbability : MonoBehaviour
         // Determine the animation to play based on the chance and thresholds
         if (chance < seasonalThreshold)
         {
-            inventoryManager.AddItem(seasonalItemName, seasonalQuantity, seasonalSprite, seasonalItemDescription);
+            inventoryManager.AddItem(seasonalItemName, seasonalQuantity, seasonalSprite, seasonalItemDescription, sworth);
             playerAnim.Play("playerWonFish");
             Debug.Log("Animation Played: 1");
         }
         else if (chance < rareThreshold)
         {
-            inventoryManager.AddItem(rareItemName, rareQuantity, rareSprite, rareItemDescription);
+            inventoryManager.AddItem(rareItemName, rareQuantity, rareSprite, rareItemDescription, rworth);
             playerAnim.Play("playerWonFish2");
             Debug.Log("Animation Played: 2");
         }
@@ -159,7 +162,7 @@ public class FishingProbability : MonoBehaviour
         }
         else if (chance < legendaryThreshold)
         {
-            inventoryManager.AddItem(legendaryItemName, legendaryQuantity, legendarySprite, legendaryItemDescription);
+            inventoryManager.AddItem(legendaryItemName, legendaryQuantity, legendarySprite, legendaryItemDescription, lworth);
             playerAnim.Play("playerWonFish3");
             Debug.Log("Animation Played: 3");
         }
@@ -184,27 +187,27 @@ public class FishingProbability : MonoBehaviour
         float nothingThreshold = rareThreshold + NothingChance;
         float legendaryThreshold = nothingThreshold + LegendaryChance;
 
-        // Debug.Log($"Chance: {chance}, Thresholds -> Seasonal: {seasonalThreshold}, Rare: {rareThreshold}, Nothing: {nothingThreshold}, Legendary: {legendaryThreshold}");
+        Debug.Log($"Chance: {chance}, Thresholds -> Seasonal: {seasonalThreshold}, Rare: {rareThreshold}, Nothing: {nothingThreshold}, Legendary: {legendaryThreshold}");
 
         // Determine the result based on the chance and thresholds
         if (chance < seasonalThreshold)
         {
-            // Debug.Log("Result: Seasonal Fish");
+            Debug.Log("Result: Seasonal Fish");
             return "Seasonal Fish";
         }
         else if (chance < rareThreshold)
         {
-            // Debug.Log("Result: Rare Fish");
+            Debug.Log("Result: Rare Fish");
             return "Rare Fish";
         }
         else if (chance < nothingThreshold)
         {
-            // Debug.Log("Result: No Fish Caught");
+            Debug.Log("Result: No Fish Caught");
             return "No Fish";
         }
         else if (chance < legendaryThreshold)
         {
-            // Debug.Log("Result: Legendary Fish");
+            Debug.Log("Result: Legendary Fish");
             return "Legendary Fish";
         }
 
@@ -239,10 +242,10 @@ public class FishingProbability : MonoBehaviour
             }
         }
 
-        // Debug.Log($"Results after {rolls} rolls:");
-        // Debug.Log($"Seasonal Fish: {seasonalCount} times");
-        // Debug.Log($"Rare Fish: {rareCount} times");
-        // Debug.Log($"No Fish: {nothingCount} times");
-        // Debug.Log($"Legendary Fish: {legendaryCount} times");
+        Debug.Log($"Results after {rolls} rolls:");
+        Debug.Log($"Seasonal Fish: {seasonalCount} times");
+        Debug.Log($"Rare Fish: {rareCount} times");
+        Debug.Log($"No Fish: {nothingCount} times");
+        Debug.Log($"Legendary Fish: {legendaryCount} times");
     }
 }

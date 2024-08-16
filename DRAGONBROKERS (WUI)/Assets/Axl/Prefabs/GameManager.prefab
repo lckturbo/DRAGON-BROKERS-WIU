@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5833080655468639841}
   - component: {fileID: 9181714579972955367}
-  - component: {fileID: 5365541725443643092}
   - component: {fileID: 7201163017358685218}
   m_Layer: 0
   m_Name: GameManager
@@ -48,22 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldCount: 0
   goldText: {fileID: 0}
---- !u!114 &5365541725443643092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3829929350829119513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 630895ebecf7eb543a2268c24b12eb45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  commonFishCount: 0
-  commonFishText: {fileID: 0}
-  rareFishCount: 0
-  rareFishText: {fileID: 0}
 --- !u!114 &7201163017358685218
 MonoBehaviour:
   m_ObjectHideFlags: 0

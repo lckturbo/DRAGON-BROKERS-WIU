@@ -5,16 +5,14 @@ using static UnityEditor.Progress;
 
 public class DebugTestButtons : MonoBehaviour
 {
-    public GameObject BG_Panel; // Reference to the BG_Panel GameObject
-    public GameObject Sell_Panel;
-
-    public bool isShop;
+    public GameObject BG_Panel;
 
     private InventoryManager inventoryManager;
     public string itemName;
     public int quantity;
     public Sprite sprite;
     [TextArea] public string description;
+    public int worth;
 
     private void Start()
     {
@@ -30,16 +28,13 @@ public class DebugTestButtons : MonoBehaviour
             return;
         }
 
-        // Check if the '0' key is pressed
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
-            inventoryManager.AddItem(itemName, quantity, sprite, description);
+            inventoryManager.AddItem(itemName, quantity, sprite, description, worth);
         }
 
-        // Check if the 'E' key is pressed
         if (Input.GetKeyDown(KeyCode.E))
         {
-            // Toggle the active state of the BG_Panel
             if (BG_Panel != null)
             {
                 BG_Panel.SetActive(!BG_Panel.activeSelf);
@@ -52,19 +47,8 @@ public class DebugTestButtons : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            isShop = !isShop;
-
-            // Toggle the active state of the BG_Panel
-            if (Sell_Panel != null)
-            {
-                Sell_Panel.SetActive(isShop);
-            }
-            else
-            {
-                Debug.LogWarning("Sell_Panel reference is not set!");
-            }
-
-            Debug.Log("Shop is " + (isShop ? "open" : "closed"));
+            inventoryManager.shopOpen = !inventoryManager.shopOpen;
         }
+
     }
 }

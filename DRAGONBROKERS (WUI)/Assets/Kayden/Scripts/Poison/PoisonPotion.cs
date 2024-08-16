@@ -85,7 +85,15 @@ public class PoisonPotion : MonoBehaviour
 
             if (collider.CompareTag("fish"))
             {
-                Debug.Log("Fish in range of explosion, destroying poison potion");
+                Debug.Log("Fish in range of explosion, stopping fish movement and destroying poison potion");
+
+                // Stop the fish's movement and start moving it upwards
+                TestFishMovement fishMovement = collider.GetComponent<TestFishMovement>();
+                if (fishMovement != null)
+                {
+                    fishMovement.StopMovement();
+                    fishMovement.ChangeColor(Color.green); // Change fish color to green
+                }
 
                 // Play the Smoke particle effect before destroying the potion
                 Instantiate(smokePrefab, transform.position, Quaternion.identity);

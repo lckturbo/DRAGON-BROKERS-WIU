@@ -9,6 +9,7 @@ TagManager:
   - TrawlerArm
   - food
   - groundFishing
+  - PoisonWater
   layers:
   - Default
   - TransparentFX

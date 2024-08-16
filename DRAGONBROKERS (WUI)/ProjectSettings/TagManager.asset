@@ -9,6 +9,7 @@ TagManager:
   - TrawlerArm
   - food
   - groundFishing
+  - PoisonWater
   layers:
   - Default
   - TransparentFX
@@ -43,6 +44,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: SortingLayerTexture
+    uniqueID: 683376607
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

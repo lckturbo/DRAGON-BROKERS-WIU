@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6302812726727631825}
   - component: {fileID: 5046300689371698072}
   m_Layer: 6
-  m_Name: Context Clue
+  m_Name: Context Clues
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,7 +97,9 @@ GameObject:
   - component: {fileID: 3798988706647157236}
   - component: {fileID: 2531101195043269400}
   - component: {fileID: 1483918288472561597}
-  - component: {fileID: 6914920834640679699}
+  - component: {fileID: 3619302825705358688}
+  - component: {fileID: 7000840488029732347}
+  - component: {fileID: 2598522880495660570}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -259,7 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   startingPosition: {fileID: 11400000, guid: 1013baca13ce83146943591e81051623, type: 2}
---- !u!114 &6914920834640679699
+--- !u!114 &3619302825705358688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -272,3 +274,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contextClue: {fileID: 1168731337023025633}
+--- !u!114 &7000840488029732347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2513769724754720817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93bf0baeaed7182449c415d50d626dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: 4bd1043ad512ffb4f8a6f2ff3fe6893f, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3619302825705358688}
+        m_TargetAssemblyTypeName: ContextClues, Assembly-CSharp
+        m_MethodName: Enable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2598522880495660570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2513769724754720817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93bf0baeaed7182449c415d50d626dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: 5a88b336989d10c4c9375f66e70735f9, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3619302825705358688}
+        m_TargetAssemblyTypeName: ContextClues, Assembly-CSharp
+        m_MethodName: Disable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

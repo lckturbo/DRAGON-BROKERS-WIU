@@ -14,12 +14,12 @@ public class SignalListener : MonoBehaviour
         signalEvent.Invoke();
     }
 
-    private void OnEnable()
+    private void Enable()
     {
        signal.RegisterListener(this);
     }
 
-    private void OnDisable()
+    private void Disable()
     {
         signal.DeRegisterListener(this); 
     }

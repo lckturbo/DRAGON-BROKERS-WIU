@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6302812726727631825}
   - component: {fileID: 5046300689371698072}
-  m_Layer: 6
-  m_Name: Context Clues
+  m_Layer: 0
+  m_Name: Context Clue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,9 +97,9 @@ GameObject:
   - component: {fileID: 3798988706647157236}
   - component: {fileID: 2531101195043269400}
   - component: {fileID: 1483918288472561597}
-  - component: {fileID: 3619302825705358688}
   - component: {fileID: 7000840488029732347}
   - component: {fileID: 2598522880495660570}
+  - component: {fileID: 8354490808966612604}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -261,19 +261,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   startingPosition: {fileID: 11400000, guid: 1013baca13ce83146943591e81051623, type: 2}
---- !u!114 &3619302825705358688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2513769724754720817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe4418e1866558247a7bbd19daf2c874, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contextClue: {fileID: 1168731337023025633}
 --- !u!114 &7000840488029732347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,8 +277,8 @@ MonoBehaviour:
   signalEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3619302825705358688}
-        m_TargetAssemblyTypeName: ContextClues, Assembly-CSharp
+      - m_Target: {fileID: 8354490808966612604}
+        m_TargetAssemblyTypeName: ContextClue, Assembly-CSharp
         m_MethodName: Enable
         m_Mode: 1
         m_Arguments:
@@ -318,7 +305,7 @@ MonoBehaviour:
   signalEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3619302825705358688}
+      - m_Target: {fileID: 8354490808966612604}
         m_TargetAssemblyTypeName: ContextClues, Assembly-CSharp
         m_MethodName: Disable
         m_Mode: 1
@@ -330,3 +317,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8354490808966612604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2513769724754720817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe4418e1866558247a7bbd19daf2c874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contextClue: {fileID: 1168731337023025633}

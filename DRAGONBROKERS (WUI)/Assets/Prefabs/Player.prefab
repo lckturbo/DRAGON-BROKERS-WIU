@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 10
   m_Sprite: {fileID: 1578282638, guid: 78c8e45ca1c26f541966fc552859af11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93bf0baeaed7182449c415d50d626dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signal: {fileID: 11400000, guid: 1d70315fa3a43d64b9865d0955b048cc, type: 2}
+  signalgame: {fileID: 0}
   signalEvent:
     m_PersistentCalls:
       m_Calls:
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93bf0baeaed7182449c415d50d626dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signal: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
+  signalgame: {fileID: 0}
   signalEvent:
     m_PersistentCalls:
       m_Calls:

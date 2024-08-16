@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1330341672994895131}
   m_Layer: 0
   m_Name: PoisonPotion
-  m_TagString: Untagged
+  m_TagString: PoisonPotion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

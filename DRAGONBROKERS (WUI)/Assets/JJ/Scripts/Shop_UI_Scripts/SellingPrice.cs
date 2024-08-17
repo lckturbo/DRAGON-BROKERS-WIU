@@ -10,13 +10,41 @@ public class SellingPrice : MonoBehaviour
     private void Start()
     {
         inventoryManager = GameObject.Find("Inventory Canvas Variant").GetComponent<InventoryManager>();
-        // Find the SeasonalWorthText GameObject and get the TMP_Text component
-        SeasonalWorth = GameObject.Find("SeasonalWorth").GetComponent<TMP_Text>();
+        //SeasonalWorth = GameObject.Find("SeasonalWorth").GetComponent<TMP_Text>();
     }
 
     void Update()
     {
-        DisplayItemWorth("Fish");
+        CheckInventoryAndDisplayWorth();
+    }
+
+    // Method to check inventory and display worth if there are more than one item
+    private void CheckInventoryAndDisplayWorth()
+    {
+        int itemCount = 0;
+
+        // Loop through the inventory array
+        foreach (var item in inventoryManager.itemSlot)
+        {
+            if (item != null) // Assuming itemSlot contains null for empty slots
+            {
+                itemCount++;
+            }
+        }
+
+        // If there is more than one item in the inventory
+        if (itemCount > 1)
+        {
+            GameObject seasonalWorthObject = GameObject.Find("SeasonalWorth");
+            if (seasonalWorthObject != null && seasonalWorthObject.TryGetComponent(out SeasonalWorth))
+            {
+                DisplayItemWorth("Fish");
+            }
+            //else
+            //{
+            //    Debug.Log("SeasonalWorth GameObject or TMP_Text component not found.");
+            //}
+        }
     }
 
     // Method to set the worth of items based on their itemName

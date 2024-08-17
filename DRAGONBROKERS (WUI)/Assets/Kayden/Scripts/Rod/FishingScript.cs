@@ -21,10 +21,6 @@ public class FishingScript : MonoBehaviour
     public float timeTillCatch = 0.0f;
     public bool winnerAnim;
 
-    //public float SeasonalChance = 0.7f;
-    //public float RareChance = 0.29f;
-    //public float LegendaryChance = 0.01f;
-
     public FishingProbability fishingProbability;
 
     void Start()
@@ -78,7 +74,8 @@ public class FishingScript : MonoBehaviour
             targetTime += Time.deltaTime;
         }
 
-        if (isFishing == true)
+        // Check if the playerSwingBack animation has finished
+        if (isFishing == true && !IsAnimationPlaying("playerSwingBack"))
         {
             if (throwBobber == true)
             {
@@ -103,9 +100,14 @@ public class FishingScript : MonoBehaviour
         }
     }
 
+    // Method to check if a specific animation is playing
+    private bool IsAnimationPlaying(string animationName)
+    {
+        return playerAnim.GetCurrentAnimatorStateInfo(0).IsName(animationName) && playerAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f;
+    }
+
     public void fishGameWon()
     {
-        // Use the FishingProbability script to determine the fish animation
         fishingProbability.FishingRodChance(playerAnim);
 
         // Reset the game state
@@ -115,33 +117,6 @@ public class FishingScript : MonoBehaviour
         isFishing = false;
         timeTillCatch = 0;
     }
-
-    //public void fishGameWon()
-    //{
-    //    // Generate a random float between 0.0 and 1.0
-    //    float chance = Random.value;
-
-    //    // Determine which animation to play based on the weighted probabilities
-    //    if (chance < 0.2f)
-    //    {
-    //        playerAnim.Play("playerWonFish");
-    //    }
-    //    else if (chance < 0.5f)
-    //    {
-    //        playerAnim.Play("playerWonFish2");
-    //    }
-    //    else
-    //    {
-    //        playerAnim.Play("playerWonFish3");
-    //    }
-
-    //    // Reset the game state
-    //    fishGame.SetActive(false);
-    //    poleBack = false;
-    //    throwBobber = false;
-    //    isFishing = false;
-    //    timeTillCatch = 0;
-    //}
 
     public void fishGameLost()
     {

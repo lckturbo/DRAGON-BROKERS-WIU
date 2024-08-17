@@ -11,6 +11,7 @@ TagManager:
   - groundFishing
   - PoisonWater
   - PoisonPotion
+  - FishHook
   layers:
   - Default
   - TransparentFX

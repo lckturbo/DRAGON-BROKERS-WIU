@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FishingScript : MonoBehaviour
 {
-    // Start is called before the first frame update
     public Animator playerAnim;
     public bool isFishing;
     public bool poleBack;
@@ -23,6 +22,12 @@ public class FishingScript : MonoBehaviour
 
     public FishingProbability fishingProbability;
 
+    // Reference to the CameraShake script
+    public CameraShake cameraShake;
+
+    // Flag to track if camera shake has occurred
+    private bool hasShakenCamera = false;
+
     void Start()
     {
         isFishing = false;
@@ -33,7 +38,6 @@ public class FishingScript : MonoBehaviour
         extraBobberDistance = 0.0f;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isFishing == false && winnerAnim == false)
@@ -46,6 +50,13 @@ public class FishingScript : MonoBehaviour
             if (timeTillCatch >= 3)
             {
                 fishGame.SetActive(true);
+
+                // Trigger the camera shake only once
+                if (!hasShakenCamera)
+                {
+                    cameraShake.ShakeCamera();
+                    hasShakenCamera = true;
+                }
             }
         }
 
@@ -74,7 +85,6 @@ public class FishingScript : MonoBehaviour
             targetTime += Time.deltaTime;
         }
 
-        // Check if the playerSwingBack animation has finished
         if (isFishing == true && !IsAnimationPlaying("playerSwingBack"))
         {
             if (throwBobber == true)
@@ -100,7 +110,6 @@ public class FishingScript : MonoBehaviour
         }
     }
 
-    // Method to check if a specific animation is playing
     private bool IsAnimationPlaying(string animationName)
     {
         return playerAnim.GetCurrentAnimatorStateInfo(0).IsName(animationName) && playerAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f;
@@ -110,12 +119,14 @@ public class FishingScript : MonoBehaviour
     {
         fishingProbability.FishingRodChance(playerAnim);
 
-        // Reset the game state
         fishGame.SetActive(false);
         poleBack = false;
         throwBobber = false;
         isFishing = false;
         timeTillCatch = 0;
+
+        // Reset the shake flag
+        hasShakenCamera = false;
     }
 
     public void fishGameLost()
@@ -126,5 +137,8 @@ public class FishingScript : MonoBehaviour
         throwBobber = false;
         isFishing = false;
         timeTillCatch = 0;
+
+        // Reset the shake flag
+        hasShakenCamera = false;
     }
 }

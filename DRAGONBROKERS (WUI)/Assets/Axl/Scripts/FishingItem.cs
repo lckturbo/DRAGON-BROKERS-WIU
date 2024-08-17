@@ -8,7 +8,7 @@ public class FishingItem : MonoBehaviour
     public Sprite sprite;
     [TextArea] public string itemDescription;
 
-    public int worth; // JJ
+    public int worth;
 
     private InventoryManager inventoryManager;
     private FishingProbability fishingProbability;
@@ -25,7 +25,17 @@ public class FishingItem : MonoBehaviour
         if (fishingProbability.addToInv)
         {
             Debug.Log("IT IS TRYING TO ADD ITEM");
-            inventoryManager.AddItem(itemName, quantity, sprite, itemDescription, worth);
+
+            int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription, worth);
+            if (leftOverItems <= 0)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                quantity = leftOverItems;
+            }
+
             fishingProbability.addToInv = false; // Reset it after adding the item
         }
     }

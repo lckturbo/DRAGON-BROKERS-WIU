@@ -12,6 +12,7 @@ public class BuyItems : MonoBehaviour
     public Sprite PoisonSprite;
     [TextArea] public string PoisonDescription;
     public int PoisonWorth;
+    public float PosionWeight;
 
     private void Start()
     {
@@ -24,7 +25,7 @@ public class BuyItems : MonoBehaviour
         if (inventoryManager != null)
         {
             goldManager.goldCount -= 10;
-            inventoryManager.AddItem(PoisonName, PoisonQuantity, PoisonSprite, PoisonDescription, PoisonWorth);
+            inventoryManager.AddItem(PoisonName, PoisonQuantity, PoisonSprite, PoisonDescription, PoisonWorth, PosionWeight);
         }
         else
         {

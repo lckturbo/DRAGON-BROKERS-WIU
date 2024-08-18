@@ -16,6 +16,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public int maxNumberOfItems;
 
     public int worth;
+    public float weight;
 
     //ITEM SLOT
     public TMP_Text quantityText;
@@ -28,31 +29,36 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     public GameObject selectedShader;
     public bool thisItemSelected;
-    public InventoryManager inventoryManager;
 
+    //REFERENCED SCRIPTS
+    public InventoryManager inventoryManager;
     public GoldManager _goldManager;
+    public WeightManager weightManager;
 
     private void Start()
     {
         inventoryManager = GameObject.Find("Inventory Canvas Variant").GetComponent<InventoryManager>();
-
         _goldManager = GameObject.FindObjectOfType<GoldManager>();
+        weightManager = GameObject.FindObjectOfType<WeightManager>();
 
         if (inventoryManager == null)
         {
             Debug.LogError("InventoryManager not found!");
         }
-
         if (_goldManager == null)
         {
             Debug.LogError("GoldManager not found!");
         }
+        if (weightManager == null)
+        {
+            Debug.LogError("InventoryWeightManager not found!");
+        }
     }
 
-    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription, int worth) // Added int worth
+    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription, int worth, float weight) // Added int worth
     {
         //Check to see if slot is full
-        if (isFull)
+        if (isFull || !weightManager.CanAddItem(weight, quantity))
         {
             return quantity;
         }
@@ -62,6 +68,9 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         itemImage.sprite = itemSprite;
         this.itemDescription = itemDescription;
         this.worth = worth;
+        this.weight = weight;
+
+        weightManager.AddWeight(weight, quantity);
 
         this.quantity += quantity;
         if (this.quantity >= maxNumberOfItems)
@@ -119,6 +128,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             {
                 // Reduce the quantity by 1
                 quantity--;
+                weightManager.RemoveWeight(weight, 1); // Remove the weight of the sold item
 
                 // Update the gold count
                 _goldManager.goldCount += worth;
@@ -141,6 +151,8 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     void ClearSlot()
     {
+        weightManager.RemoveWeight(weight, quantity);
+
         itemName = null;
         quantity = 0;
         itemSprite = null;

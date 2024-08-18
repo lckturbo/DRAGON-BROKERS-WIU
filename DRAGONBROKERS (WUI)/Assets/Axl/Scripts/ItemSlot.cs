@@ -113,18 +113,29 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     {
         if (inventoryManager.shopOpen)
         {
-                int index = System.Array.IndexOf(inventoryManager.itemSlot, this);
+            int index = System.Array.IndexOf(inventoryManager.itemSlot, this);
 
-                if (index >= 0)
+            if (index >= 0)
+            {
+                // Reduce the quantity by 1
+                quantity--;
+
+                // Update the gold count
+                _goldManager.goldCount += worth;
+                Debug.Log($"Item '{itemName}' worth: {worth}");
+
+                // Update the UI
+                if (quantity > 0)
                 {
-                    // Debug the worth value before adding it to goldCount
-                    Debug.Log($"Item '{itemName}' worth: {worth}");
-                    _goldManager.goldCount += worth;
-
-                    ClearSlot();
-                    //inventoryManager.itemSlot[index] = null;
-                    inventoryManager.DeselectAllSlots();
+                    quantityText.text = quantity.ToString();
                 }
+                else
+                {
+                    ClearSlot();
+                }
+
+                inventoryManager.DeselectAllSlots();
+            }
         }
     }
 

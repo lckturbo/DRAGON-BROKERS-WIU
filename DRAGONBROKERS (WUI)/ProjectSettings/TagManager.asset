@@ -33,7 +33,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - FoodLayer
   - 
   - 
   - 
@@ -46,6 +46,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Backdrop
+    uniqueID: 4005817279
+    locked: 0
   - name: SortingLayerTexture
     uniqueID: 683376607
     locked: 0

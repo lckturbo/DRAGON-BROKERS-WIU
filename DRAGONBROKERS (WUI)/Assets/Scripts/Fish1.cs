@@ -7,19 +7,19 @@ public class fish1 : MonoBehaviour
     public float yMax = 4.5f;
     public float detectionRange = 1.3f;
     public LayerMask foodLayer;
-    public float minChangeDirectionInterval = 4f;
-    public float maxChangeDirectionInterval = 8f;
-    public float minIdleDuration = 4f;
-    public float maxIdleDuration = 8f;
+    // public float minChangeDirectionInterval = 4f; // Commented out
+    // public float maxChangeDirectionInterval = 8f; // Commented out
+    public float minIdleDuration = 0.25f;
+    public float maxIdleDuration = 0.75f;
     public float pitchAmount = 35f; // Angle for pitching up/down
-    public float foodChaseSpeedMultiplier = 2.5f;
-    public float borderBuffer = 0.1f;
+    public float foodChaseSpeedMultiplier = 1.5f;
+    public float borderBuffer = 0.25f;
 
     private Rigidbody2D rb;
-    private bool movingLeft = true;
+    private bool movingLeft = true; // Indicates current direction
     private Transform targetFood;
     private float stateTimer;
-    private float changeDirectionInterval;
+    // private float changeDirectionInterval; // Commented out
     private float idleDuration;
     private bool hasCollided = false;
 
@@ -29,7 +29,7 @@ public class fish1 : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        SetRandomIntervals();
+        //SetRandomIntervals();
         TransitionToState(State.Swimming);
     }
 
@@ -65,7 +65,7 @@ public class fish1 : MonoBehaviour
     {
         if (Time.time >= stateTimer)
         {
-            SetRandomDirection();
+            //SetRandomDirection();
             TransitionToState(State.Idle);
             return;
         }
@@ -86,7 +86,7 @@ public class fish1 : MonoBehaviour
         Vector2 direction = (targetFood.position - transform.position).normalized;
         rb.velocity = direction * speed * foodChaseSpeedMultiplier;
 
-        if (Vector2.Distance(transform.position, targetFood.position) < 0.1f)
+        if (Vector2.Distance(transform.position, targetFood.position) < 1.0f)
         {
             EatFood();
         }
@@ -102,7 +102,7 @@ public class fish1 : MonoBehaviour
                 stateTimer = Time.time + idleDuration;
                 break;
             case State.Swimming:
-                stateTimer = Time.time + changeDirectionInterval;
+                //stateTimer = Time.time + changeDirectionInterval;
                 break;
             case State.ChasingFood:
                 // No timer, will exit based on conditions
@@ -121,11 +121,11 @@ public class fish1 : MonoBehaviour
         transform.position = clampedPosition;
     }
 
-    private void SetRandomDirection()
-    {
-        movingLeft = Random.value > 0.5f;
-        FlipSprite();
-    }
+    //private void SetRandomDirection()
+    //{
+    //    movingLeft = Random.value > 0.5f;
+    //    FlipSprite();
+    //}
 
     private void FlipSprite()
     {
@@ -173,9 +173,13 @@ public class fish1 : MonoBehaviour
 
     private void EatFood()
     {
-        Destroy(targetFood.gameObject);
-        targetFood = null;
-        TransitionToState(State.Idle);
+        if (targetFood != null)
+        {
+            Debug.Log("Eating food: " + targetFood.name);
+            Destroy(targetFood.gameObject);
+            targetFood = null;
+            TransitionToState(State.Idle);
+        }
     }
 
     private void ApplyPitch()
@@ -197,11 +201,11 @@ public class fish1 : MonoBehaviour
         }
     }
 
-    private void SetRandomIntervals()
-    {
-        changeDirectionInterval = Random.Range(minChangeDirectionInterval, maxChangeDirectionInterval);
-        idleDuration = Random.Range(minIdleDuration, maxIdleDuration);
-    }
+    //private void SetRandomIntervals()
+    //{
+    //    changeDirectionInterval = Random.Range(minChangeDirectionInterval, maxChangeDirectionInterval);
+    //    idleDuration = Random.Range(minIdleDuration, maxIdleDuration);
+    //}
 
     private void OnDrawGizmosSelected()
     {

@@ -15,6 +15,8 @@ public class Fish : MonoBehaviour
     public float foodChaseSpeedMultiplier = 1.5f;
     public float borderBuffer = 0.25f;
 
+    public float sizeIncreaseAmount = 10.0f; // Amount to increase size each time the fish eats
+
     private Rigidbody2D rb;
     private bool movingRight = true; // Indicates current direction
     private Transform targetFood;
@@ -179,6 +181,8 @@ public class Fish : MonoBehaviour
             Debug.Log("Eating food: " + targetFood.name);
             Destroy(targetFood.gameObject);
             targetFood = null;
+            // Increase the fish's size
+            transform.localScale += new Vector3(sizeIncreaseAmount, sizeIncreaseAmount, 0);
             TransitionToState(State.Idle);
         }
     }

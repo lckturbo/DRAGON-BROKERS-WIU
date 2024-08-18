@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FishingScript : MonoBehaviour
 {
-    // Start is called before the first frame update
     public Animator playerAnim;
     public bool isFishing;
     public bool poleBack;
@@ -21,11 +20,19 @@ public class FishingScript : MonoBehaviour
     public float timeTillCatch = 0.0f;
     public bool winnerAnim;
 
-    //public float SeasonalChance = 0.7f;
-    //public float RareChance = 0.29f;
-    //public float LegendaryChance = 0.01f;
-
     public FishingProbability fishingProbability;
+
+    // Reference to the CameraShake script
+    public CameraShake cameraShake;
+
+    // Flag to track if camera shake has occurred
+    private bool hasShakenCamera = false;
+
+    // References to the win/lose effects GameObjects and Particle Systems
+    public GameObject winEffect;
+    public GameObject loseEffect;
+    private ParticleSystem winParticleSystem;
+    private ParticleSystem loseParticleSystem;
 
     void Start()
     {
@@ -35,9 +42,16 @@ public class FishingScript : MonoBehaviour
         targetTime = 0.0f;
         savedTargetTime = 0.0f;
         extraBobberDistance = 0.0f;
+
+        // Initialize the Particle Systems
+        winParticleSystem = winEffect.GetComponentInChildren<ParticleSystem>();
+        loseParticleSystem = loseEffect.GetComponentInChildren<ParticleSystem>();
+
+        // Make sure the effects are not visible at the start
+        winEffect.SetActive(false);
+        loseEffect.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isFishing == false && winnerAnim == false)
@@ -50,6 +64,13 @@ public class FishingScript : MonoBehaviour
             if (timeTillCatch >= 3)
             {
                 fishGame.SetActive(true);
+
+                // Trigger the camera shake only once
+                if (!hasShakenCamera)
+                {
+                    cameraShake.ShakeCamera();
+                    hasShakenCamera = true;
+                }
             }
         }
 
@@ -78,7 +99,7 @@ public class FishingScript : MonoBehaviour
             targetTime += Time.deltaTime;
         }
 
-        if (isFishing == true)
+        if (isFishing == true && !IsAnimationPlaying("playerSwingBack"))
         {
             if (throwBobber == true)
             {
@@ -103,45 +124,27 @@ public class FishingScript : MonoBehaviour
         }
     }
 
+    private bool IsAnimationPlaying(string animationName)
+    {
+        return playerAnim.GetCurrentAnimatorStateInfo(0).IsName(animationName) && playerAnim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f;
+    }
+
     public void fishGameWon()
     {
-        // Use the FishingProbability script to determine the fish animation
         fishingProbability.FishingRodChance(playerAnim);
 
-        // Reset the game state
         fishGame.SetActive(false);
         poleBack = false;
         throwBobber = false;
         isFishing = false;
         timeTillCatch = 0;
+
+        // Trigger the win effect
+        PlayEffect(winEffect, winParticleSystem);
+
+        // Reset the shake flag
+        hasShakenCamera = false;
     }
-
-    //public void fishGameWon()
-    //{
-    //    // Generate a random float between 0.0 and 1.0
-    //    float chance = Random.value;
-
-    //    // Determine which animation to play based on the weighted probabilities
-    //    if (chance < 0.2f)
-    //    {
-    //        playerAnim.Play("playerWonFish");
-    //    }
-    //    else if (chance < 0.5f)
-    //    {
-    //        playerAnim.Play("playerWonFish2");
-    //    }
-    //    else
-    //    {
-    //        playerAnim.Play("playerWonFish3");
-    //    }
-
-    //    // Reset the game state
-    //    fishGame.SetActive(false);
-    //    poleBack = false;
-    //    throwBobber = false;
-    //    isFishing = false;
-    //    timeTillCatch = 0;
-    //}
 
     public void fishGameLost()
     {
@@ -151,5 +154,26 @@ public class FishingScript : MonoBehaviour
         throwBobber = false;
         isFishing = false;
         timeTillCatch = 0;
+
+        // Trigger the lose effect
+        PlayEffect(loseEffect, loseParticleSystem);
+
+        // Reset the shake flag
+        hasShakenCamera = false;
+    }
+
+    private void PlayEffect(GameObject effect, ParticleSystem particleSystem)
+    {
+        effect.SetActive(true);
+        particleSystem.Play();
+
+        // Optionally, you can set a timer to disable the effect after a certain duration
+        StartCoroutine(DisableEffectAfterTime(effect, particleSystem.main.duration));
+    }
+
+    private IEnumerator DisableEffectAfterTime(GameObject effect, float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        effect.SetActive(false);
     }
 }

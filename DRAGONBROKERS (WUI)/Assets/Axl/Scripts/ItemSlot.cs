@@ -13,7 +13,9 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public bool isFull;
     public string itemDescription;
 
-    public int worth; // JJ
+    public int maxNumberOfItems;
+
+    public int worth;
 
     //ITEM SLOT
     public TMP_Text quantityText;
@@ -28,8 +30,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public bool thisItemSelected;
     public InventoryManager inventoryManager;
 
-    // JJ
-    public  GoldManager _goldManager;
+    public GoldManager _goldManager;
 
     private void Start()
     {
@@ -48,19 +49,38 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription, int worth) // Added int worth, JJ
+    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription, int worth) // Added int worth
     {
+        //Check to see if slot is full
+        if (isFull)
+        {
+            return quantity;
+        }
+
         this.itemName = itemName;
-        this.quantity = quantity;
         this.itemSprite = itemSprite;
-        this.itemDescription = itemDescription;
-        isFull = true;
-
-        this.worth = worth; // JJ
-
-        quantityText.text = quantity.ToString();
-        quantityText.enabled = true;
         itemImage.sprite = itemSprite;
+        this.itemDescription = itemDescription;
+        this.worth = worth;
+
+        this.quantity += quantity;
+        if (this.quantity >= maxNumberOfItems)
+        {
+            quantityText.text = maxNumberOfItems.ToString();
+            quantityText.enabled = true;
+            isFull = true;
+
+            //Return leftovers
+            int extraItems = this.quantity - maxNumberOfItems;
+            this.quantity = maxNumberOfItems;
+            return extraItems;
+        }
+
+        //Update quantity text
+        quantityText.text = this.quantity.ToString();
+        quantityText.enabled = true;
+
+        return 0;
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -91,7 +111,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     public void OnRightClick()
     {
-        if (inventoryManager.shopOpen) // JJ
+        if (inventoryManager.shopOpen)
         {
                 int index = System.Array.IndexOf(inventoryManager.itemSlot, this);
 
@@ -108,7 +128,6 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    // Method to clear this slot's data, JJ
     void ClearSlot()
     {
         itemName = null;

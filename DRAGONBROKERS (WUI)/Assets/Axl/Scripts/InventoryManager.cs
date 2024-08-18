@@ -3,10 +3,10 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     public GameObject InventoryMenu;
-    public GameObject DescriptionPortion; // JJ
-    public GameObject Prices; // JJ
+    public GameObject DescriptionPortion;
+    public GameObject Prices;
     public bool menuActivated;
-    public bool shopOpen; // JJ
+    public bool shopOpen;
     public bool shopActivated;
     public ItemSlot[] itemSlot;
 
@@ -38,7 +38,7 @@ public class InventoryManager : MonoBehaviour
                 Time.timeScale = 1;
                 InventoryMenu.SetActive(false);
                 menuActivated = false;
-                DescriptionPortion.SetActive(false); // JJ
+                DescriptionPortion.SetActive(false);
             }
             else
             {
@@ -67,17 +67,22 @@ public class InventoryManager : MonoBehaviour
 
     }
 
-    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription, int worth) // Added int worth, JJ
+    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription, int worth) // Added int worth
     {
         Debug.Log("itemName = " + itemName + "quantity = " + quantity + "itemSprite = " + itemSprite + "Worth = " + worth);
         for (int i = 0; i < itemSlot.Length; i++)
         {
-            if (itemSlot[i].isFull == false)
+            if (itemSlot[i].isFull == false && itemSlot[i].itemName == itemName || itemSlot[i].quantity == 0)
             {
-                itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription, worth);
-                return;
+                int leftOverItems = itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription, worth);
+                if (leftOverItems > 0)
+                {
+                    leftOverItems = AddItem(itemName, leftOverItems, itemSprite, itemDescription, worth);
+                }
+                return leftOverItems;
             }
         }
+        return quantity;
     }
 
     public void DeselectAllSlots()

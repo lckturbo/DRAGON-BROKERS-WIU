@@ -1731,8 +1731,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: SampleScene
-  playerPosition: {x: -3.5, y: -16.5}
-  playerStorageposition: {fileID: 11400000, guid: 8b3862bbd46dbfe489e3bee63a6def58, type: 2}
+  playerPosition: {x: -3.5, y: 16.5}
+  playerStorageposition: {fileID: 11400000, guid: 1013baca13ce83146943591e81051623, type: 2}
   fadeInPanel: {fileID: 0}
   fadeOutPanel: {fileID: 0}
   fadeWait: 0

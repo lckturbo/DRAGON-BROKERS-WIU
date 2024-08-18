@@ -28,6 +28,12 @@ public class FishingScript : MonoBehaviour
     // Flag to track if camera shake has occurred
     private bool hasShakenCamera = false;
 
+    // References to the win/lose effects GameObjects and Particle Systems
+    public GameObject winEffect;
+    public GameObject loseEffect;
+    private ParticleSystem winParticleSystem;
+    private ParticleSystem loseParticleSystem;
+
     void Start()
     {
         isFishing = false;
@@ -36,6 +42,14 @@ public class FishingScript : MonoBehaviour
         targetTime = 0.0f;
         savedTargetTime = 0.0f;
         extraBobberDistance = 0.0f;
+
+        // Initialize the Particle Systems
+        winParticleSystem = winEffect.GetComponentInChildren<ParticleSystem>();
+        loseParticleSystem = loseEffect.GetComponentInChildren<ParticleSystem>();
+
+        // Make sure the effects are not visible at the start
+        winEffect.SetActive(false);
+        loseEffect.SetActive(false);
     }
 
     void Update()
@@ -125,6 +139,9 @@ public class FishingScript : MonoBehaviour
         isFishing = false;
         timeTillCatch = 0;
 
+        // Trigger the win effect
+        PlayEffect(winEffect, winParticleSystem);
+
         // Reset the shake flag
         hasShakenCamera = false;
     }
@@ -138,7 +155,25 @@ public class FishingScript : MonoBehaviour
         isFishing = false;
         timeTillCatch = 0;
 
+        // Trigger the lose effect
+        PlayEffect(loseEffect, loseParticleSystem);
+
         // Reset the shake flag
         hasShakenCamera = false;
+    }
+
+    private void PlayEffect(GameObject effect, ParticleSystem particleSystem)
+    {
+        effect.SetActive(true);
+        particleSystem.Play();
+
+        // Optionally, you can set a timer to disable the effect after a certain duration
+        StartCoroutine(DisableEffectAfterTime(effect, particleSystem.main.duration));
+    }
+
+    private IEnumerator DisableEffectAfterTime(GameObject effect, float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        effect.SetActive(false);
     }
 }

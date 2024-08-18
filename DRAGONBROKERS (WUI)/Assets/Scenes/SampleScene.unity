@@ -33132,11 +33132,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 980690917}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a84587ddd427e04a86510aa64c6f133, type: 3}
+  m_Script: {fileID: 11500000, guid: 6482a410b7f2c01479b0acfd07eba181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: FishTank
+  playerPosition: {x: 0, y: 0}
+  playerStorageposition: {fileID: 11400000, guid: 8b3862bbd46dbfe489e3bee63a6def58, type: 2}
   fadeInPanel: {fileID: 0}
+  fadeOutPanel: {fileID: 0}
+  fadeWait: 0
 --- !u!1 &991173680
 GameObject:
   m_ObjectHideFlags: 0

@@ -397,7 +397,8 @@ MonoBehaviour:
   contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
-  dialog: Axl
+  dialogues:
+  - Axl
   playerInRange: 0
 --- !u!1 &85394482
 GameObject:
@@ -30548,7 +30549,8 @@ MonoBehaviour:
   contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
-  dialog: Hi
+  dialogues:
+  - Hi
   playerInRange: 0
 --- !u!1 &697072351
 GameObject:
@@ -33137,7 +33139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: FishTank
   playerPosition: {x: 0, y: 0}
-  playerStorageposition: {fileID: 11400000, guid: 8b3862bbd46dbfe489e3bee63a6def58, type: 2}
+  playerStorageposition: {fileID: 11400000, guid: 1013baca13ce83146943591e81051623, type: 2}
   fadeInPanel: {fileID: 0}
   fadeOutPanel: {fileID: 0}
   fadeWait: 0
@@ -35601,7 +35603,8 @@ MonoBehaviour:
   contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
-  dialog: In Memory Of Ck
+  dialogues:
+  - In Memory of CK
   playerInRange: 0
 --- !u!1 &1220327909
 GameObject:
@@ -36253,7 +36256,8 @@ MonoBehaviour:
   contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
-  dialog: In Loving Memory of Kayden
+  dialogues:
+  - In Loving Memory of Kayden
   playerInRange: 0
 --- !u!1 &1363477982
 GameObject:
@@ -37364,7 +37368,9 @@ MonoBehaviour:
   contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
-  dialog: Hi
+  dialogues:
+  - Hi
+  - Welcome to Singapura Fishing Village
   playerInRange: 0
 --- !u!58 &1455852729
 CircleCollider2D:
@@ -38491,7 +38497,7 @@ MonoBehaviour:
   contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
-  dialog: GIMME FISH PS
+  dialogues: []
   playerInRange: 0
 --- !u!58 &1640243723
 CircleCollider2D:

@@ -6,21 +6,60 @@ using UnityEngine.U2D;
 
 public class FishingProbability : MonoBehaviour
 {
-    public float BaseSeasonalChance = 0.6f;
-    public float BaseRareChance = 0.29f;
-    public float BaseNothingChance = 0.1f;
-    public float BaseLegendaryChance = 0.01f;
+    //Inventory
+    public bool addToInv = true;
 
-    private float SeasonalChance;
-    private float RareChance;
-    private float NothingChance;
-    private float LegendaryChance;
+    //OverFishing Count
+    private int fishingCount = 0;
 
-    public string seasonalItemName;
-    public int seasonalQuantity;
-    public Sprite seasonalSprite;
-    [TextArea] public string seasonalItemDescription;
-    public int sworth;
+    //Environment
+    public enum Environment
+    {
+        Perfect,
+        SlightDamage,
+        ModerateDamage,
+        SeverelyDamaged
+    }
+
+    private Environment currentEnvironment;
+    private InventoryManager inventoryManager;
+
+    //Seasons
+    public enum Season
+    {
+        Spring,
+        Summer,
+        Autumn,
+        Winter
+    }
+
+    public Season currentSeason;
+
+    //Fish Init
+    // Seasonal fish for each season
+    public string springFishName;
+    public int springFishQuantity;
+    public Sprite springFishSprite;
+    [TextArea] public string springFishDescription;
+    public int springFishWorth;
+
+    public string summerFishName;
+    public int summerFishQuantity;
+    public Sprite summerFishSprite;
+    [TextArea] public string summerFishDescription;
+    public int summerFishWorth;
+
+    public string autumnFishName;
+    public int autumnFishQuantity;
+    public Sprite autumnFishSprite;
+    [TextArea] public string autumnFishDescription;
+    public int autumnFishWorth;
+
+    public string winterFishName;
+    public int winterFishQuantity;
+    public Sprite winterFishSprite;
+    [TextArea] public string winterFishDescription;
+    public int winterFishWorth;
 
     public string rareItemName;
     public int rareQuantity;
@@ -34,46 +73,75 @@ public class FishingProbability : MonoBehaviour
     [TextArea] public string legendaryItemDescription;
     public int lworth;
 
-    private Environment currentEnvironment;
-    private InventoryManager inventoryManager;
+    //Fish Base Chances
+    public float BaseSeasonalChance = 0.6f;
+    public float BaseRareChance = 0.29f;
+    public float BaseNothingChance = 0.1f;
+    public float BaseLegendaryChance = 0.01f;
 
-    public bool addToInv = true;
+    // Chance modifier for off-season fish
+    public float offSeasonModifier = 0.1f;
 
-    public enum Environment
-    {
-        Perfect,
-        SlightDamage,
-        ModerateDamage,
-        SeverelyDamaged
-    }
+    private float SeasonalChance;
+    private float RareChance;
+    private float NothingChance;
+    private float LegendaryChance;
 
+    //START
     private void Start()
     {
-        // Initialize to a default environment, e.g., Perfect
+        // Initialize to a default environment (Start with Perfect)
         SetEnvironment(Environment.Perfect);
+
+        // Init the Season
+        SetSeason(Season.Summer);
+
         inventoryManager = GameObject.Find("Inventory Canvas Variant").GetComponent<InventoryManager>();
     }
 
+    //UPDATE
     private void Update()
     {
         //Inputs here are meant for debugging
         {
-            // Cycle through environments with 1, 2, 3, 4 keys
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            //Cycle ENVIRONMENT
             {
-                SetEnvironment(Environment.Perfect);
+                if (Input.GetKeyDown(KeyCode.Alpha1))
+                {
+                    SetEnvironment(Environment.Perfect);
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha2))
+                {
+                    SetEnvironment(Environment.SlightDamage);
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha3))
+                {
+                    SetEnvironment(Environment.ModerateDamage);
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha4))
+                {
+                    SetEnvironment(Environment.SeverelyDamaged);
+                }
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
+
+            //Cycel SEASON
             {
-                SetEnvironment(Environment.SlightDamage);
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                SetEnvironment(Environment.ModerateDamage);
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                SetEnvironment(Environment.SeverelyDamaged);
+                if (Input.GetKeyDown(KeyCode.Alpha5))
+                {
+                    SetSeason(Season.Spring);
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha6))
+                {
+                    SetSeason(Season.Summer);
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha7))
+                {
+                    SetSeason(Season.Autumn);
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha8))
+                {
+                    SetSeason(Season.Winter);
+                }
             }
 
             // Roll the chances 100 times with the press of "M"
@@ -83,7 +151,7 @@ public class FishingProbability : MonoBehaviour
             }
 
             // Roll the chances once with the press of "R"
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.N))
             {
                 FishingChance();
             }
@@ -91,7 +159,7 @@ public class FishingProbability : MonoBehaviour
 
     }
 
-    // Method to set the environment type and adjust chances
+    // Method to set the environment type [ENVIRONMENT]
     public void SetEnvironment(Environment environment)
     {
         currentEnvironment = environment;
@@ -128,7 +196,59 @@ public class FishingProbability : MonoBehaviour
         }
 
         Debug.Log($"Environment set to: {currentEnvironment}");
-        Debug.Log($"SeasonalChance: {SeasonalChance}, RareChance: {RareChance}, NothingChance: {NothingChance}, LegendaryChance: {LegendaryChance}");
+        Debug.Log($"SeasonChance: {SeasonalChance}, RareChance: {RareChance}, NothingChance: {NothingChance}, LegendaryChance: {LegendaryChance}");
+
+        // Calculate on-season and off-season chances
+        float onSeasonChance = SeasonalChance * (1.0f - offSeasonModifier); // Portion for on-season fish
+        float offSeasonChance = SeasonalChance * offSeasonModifier; // Portion for off-season fish
+        Debug.Log($"On-Season Chance: {onSeasonChance}, Off-Season Chance: {offSeasonChance}");
+    }
+
+    // Method to set the season type [SEASON]
+    public void SetSeason(Season newSeason)
+    {
+        currentSeason = newSeason;
+        Debug.Log($"Season set to: {currentSeason}");
+    }
+
+    // Method to worsen the environment by 1 level each time
+    private void DegradeEnvironment()
+    {
+        switch (currentEnvironment)
+        {
+            case Environment.Perfect:
+                SetEnvironment(Environment.SlightDamage);
+                break;
+            case Environment.SlightDamage:
+                SetEnvironment(Environment.ModerateDamage);
+                break;
+            case Environment.ModerateDamage:
+                SetEnvironment(Environment.SeverelyDamaged);
+                break;
+            case Environment.SeverelyDamaged:
+                Debug.Log("Environment is already at the lowest level: Severely Damaged.");
+                break;
+        }
+    }
+
+    private void AddFishToInventory(string fishName, int fishQuantity, Sprite fishSprite, string fishDescription, int fishWorth, Animator playerAnim)
+    {
+        float offSeasonChance = SeasonalChance * offSeasonModifier;
+        float offSeasonRandom = Random.value;
+
+        if (offSeasonRandom < offSeasonChance)
+        {
+            inventoryManager.AddItem(fishName, fishQuantity, fishSprite, fishDescription, fishWorth);
+            playerAnim.Play("playerWonFish");
+            Debug.Log($"Caught off-season {fishName}");
+        }
+        else
+        {
+            // Regular in-season catch
+            inventoryManager.AddItem(fishName, fishQuantity, fishSprite, fishDescription, fishWorth);
+            playerAnim.Play("playerWonFish");
+            Debug.Log($"Caught {fishName}");
+        }
     }
 
     public void FishingRodChance(Animator playerAnim)
@@ -145,9 +265,22 @@ public class FishingProbability : MonoBehaviour
         // Determine the animation to play based on the chance and thresholds
         if (chance < seasonalThreshold)
         {
-            inventoryManager.AddItem(seasonalItemName, seasonalQuantity, seasonalSprite, seasonalItemDescription, sworth);
-            playerAnim.Play("playerWonFish");
-            Debug.Log("Animation Played: 1");
+            // Determine which seasonal fish to catch based on the current season
+            switch (currentSeason)
+            {
+                case Season.Spring:
+                    AddFishToInventory(springFishName, springFishQuantity, springFishSprite, springFishDescription, springFishWorth, playerAnim);
+                    break;
+                case Season.Summer:
+                    AddFishToInventory(summerFishName, summerFishQuantity, summerFishSprite, summerFishDescription, summerFishWorth, playerAnim);
+                    break;
+                case Season.Autumn:
+                    AddFishToInventory(autumnFishName, autumnFishQuantity, autumnFishSprite, autumnFishDescription, autumnFishWorth, playerAnim);
+                    break;
+                case Season.Winter:
+                    AddFishToInventory(winterFishName, winterFishQuantity, winterFishSprite, winterFishDescription, winterFishWorth, playerAnim);
+                    break;
+            }
         }
         else if (chance < rareThreshold)
         {
@@ -166,6 +299,16 @@ public class FishingProbability : MonoBehaviour
             playerAnim.Play("playerWonFish3");
             Debug.Log("Animation Played: 3");
         }
+
+        // Increment the fishing attempt count
+        fishingCount++;
+
+        // Check if it's time to degrade the environment
+        if (fishingCount >= 100)
+        {
+            fishingCount = 0; // Reset the count after degrading the environment
+            DegradeEnvironment();
+        }
     }
 
     /*
@@ -180,44 +323,97 @@ public class FishingProbability : MonoBehaviour
         // Generate a random float between 0.0 and 1.0 using UnityEngine's Random
         float chance = UnityEngine.Random.value;
 
+        // Calculate probabilities within the SeasonalChance
+        float onSeasonChance = SeasonalChance * (1.0f - offSeasonModifier); // Portion for on-season fish
+        float offSeasonChance = SeasonalChance * offSeasonModifier; // Portion for off-season fish
 
         // Calculate cumulative probabilities
-        float seasonalThreshold = SeasonalChance;
-        float rareThreshold = seasonalThreshold + RareChance;
+        float onSeasonThreshold = onSeasonChance;
+        float offSeasonThreshold = onSeasonThreshold + offSeasonChance;
+        float rareThreshold = offSeasonThreshold + RareChance;
         float nothingThreshold = rareThreshold + NothingChance;
         float legendaryThreshold = nothingThreshold + LegendaryChance;
 
-        Debug.Log($"Chance: {chance}, Thresholds -> Seasonal: {seasonalThreshold}, Rare: {rareThreshold}, Nothing: {nothingThreshold}, Legendary: {legendaryThreshold}");
+        //Debug.Log($"Chance: {chance}, Thresholds -> On-Season: {onSeasonThreshold}, Off-Season: {offSeasonThreshold}, Rare: {rareThreshold}, Nothing: {nothingThreshold}, Legendary: {legendaryThreshold}");
 
         // Determine the result based on the chance and thresholds
-        if (chance < seasonalThreshold)
+        if (chance < onSeasonThreshold)
         {
-            Debug.Log("Result: Seasonal Fish");
-            return "Seasonal Fish";
+            // On-season fish
+            //Debug.Log("Result: On-Season Fish");
+            return GetOnSeasonFishName();
+        }
+        else if (chance < offSeasonThreshold)
+        {
+            // Off-season fish
+            //Debug.Log("Result: Off-Season Fish");
+            return GetOffSeasonFishName();
         }
         else if (chance < rareThreshold)
         {
-            Debug.Log("Result: Rare Fish");
+            //Debug.Log("Result: Rare Fish");
             return "Rare Fish";
         }
         else if (chance < nothingThreshold)
         {
-            Debug.Log("Result: No Fish Caught");
+            //Debug.Log("Result: No Fish Caught");
             return "No Fish";
         }
         else if (chance < legendaryThreshold)
         {
-            Debug.Log("Result: Legendary Fish");
+            //Debug.Log("Result: Legendary Fish");
             return "Legendary Fish";
         }
 
         return "Unknown";
     }
 
+    // Helper method to get the on-season fish name based on the current season
+    private string GetOnSeasonFishName()
+    {
+        switch (currentSeason)
+        {
+            case Season.Spring:
+                return "Spring Fish";
+            case Season.Summer:
+                return "Summer Fish";
+            case Season.Autumn:
+                return "Autumn Fish";
+            case Season.Winter:
+                return "Winter Fish";
+        }
+        return "Unknown Fish";
+    }
+
+    // Helper method to get an off-season fish name (random season other than the current one)
+    private string GetOffSeasonFishName()
+    {
+        var offSeasons = new List<Season> { Season.Spring, Season.Summer, Season.Autumn, Season.Winter };
+        offSeasons.Remove(currentSeason);
+
+        Season randomOffSeason = offSeasons[UnityEngine.Random.Range(0, offSeasons.Count)];
+
+        switch (randomOffSeason)
+        {
+            case Season.Spring:
+                return "Spring Fish";
+            case Season.Summer:
+                return "Summer Fish";
+            case Season.Autumn:
+                return "Autumn Fish";
+            case Season.Winter:
+                return "Winter Fish";
+        }
+        return "Unknown Fish";
+    }
+
     // Method to test the probability by rolling it multiple times (Debugging Only)
     public void TestFishingProbability(int rolls)
     {
-        int seasonalCount = 0;
+        int springFishCount = 0;
+        int summerFishCount = 0;
+        int autumnFishCount = 0;
+        int winterFishCount = 0;
         int rareCount = 0;
         int nothingCount = 0;
         int legendaryCount = 0;
@@ -227,8 +423,17 @@ public class FishingProbability : MonoBehaviour
             string result = FishingChance();
             switch (result)
             {
-                case "Seasonal Fish":
-                    seasonalCount++;
+                case "Spring Fish":
+                    springFishCount++;
+                    break;
+                case "Summer Fish":
+                    summerFishCount++;
+                    break;
+                case "Autumn Fish":
+                    autumnFishCount++;
+                    break;
+                case "Winter Fish":
+                    winterFishCount++;
                     break;
                 case "Rare Fish":
                     rareCount++;
@@ -243,9 +448,15 @@ public class FishingProbability : MonoBehaviour
         }
 
         Debug.Log($"Results after {rolls} rolls:");
-        Debug.Log($"Seasonal Fish: {seasonalCount} times");
+        Debug.Log($"Spring Fish: {springFishCount} times");
+        Debug.Log($"Summer Fish: {summerFishCount} times");
+        Debug.Log($"Autumn Fish: {autumnFishCount} times");
+        Debug.Log($"Winter Fish: {winterFishCount} times");
         Debug.Log($"Rare Fish: {rareCount} times");
         Debug.Log($"No Fish: {nothingCount} times");
         Debug.Log($"Legendary Fish: {legendaryCount} times");
+
+        // Degrade the environment after 100 rolls
+        DegradeEnvironment();
     }
 }

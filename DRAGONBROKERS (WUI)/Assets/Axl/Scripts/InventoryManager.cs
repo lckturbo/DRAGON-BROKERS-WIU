@@ -21,9 +21,9 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
-        //LoadInventory();
-
         InventoryMenu.SetActive(false);
+
+        LoadInventory();
     }
 
     private void Update()
@@ -101,10 +101,13 @@ public class InventoryManager : MonoBehaviour
 
     public void SaveInventory()
     {
+        // Clear the current list to avoid duplicating items
         Data.items.Clear();
+
+        // Iterate through each slot and save its data if it contains an item (quantity > 0)
         foreach (ItemSlot slot in itemSlot)
         {
-            if (slot.isFull)
+            if (slot.quantity > 0)  // Check if there's any item in the slot
             {
                 ItemSlotData slotData = new ItemSlotData
                 {
@@ -120,11 +123,26 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+
     public void LoadInventory()
     {
+        // Check if Data is null or if it contains no items
+        if (Data == null)
+        {
+            Debug.LogError("InventoryData ScriptableObject is not assigned.");
+            return;
+        }
+
+        if (Data.items == null || Data.items.Count == 0)
+        {
+            Debug.Log("No items to load into inventory.");
+            return;
+        }
+
+        // Load items from Data into item slots
         for (int i = 0; i < Data.items.Count; i++)
         {
-            if (i < itemSlot.Length)
+            if (i < itemSlot.Length && Data.items[i] != null)
             {
                 itemSlot[i].AddItem(
                     Data.items[i].itemName,

@@ -17,7 +17,7 @@ public class SceneSwitching : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            //inventoryManager.SaveInventory();
+            inventoryManager.SaveInventory();
             SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
         }
 

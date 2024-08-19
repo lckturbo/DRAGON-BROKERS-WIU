@@ -8331,9 +8331,9 @@ RectTransform:
   - {fileID: 1077818153}
   m_Father: {fileID: 1797434961}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 395, y: -59.99997}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1765645111
@@ -8553,7 +8553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2177574141186915912, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2519213545427868022, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
@@ -8934,7 +8934,7 @@ PrefabInstance:
     - target: {fileID: 6226333345226059170, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: weightManager
       value: 
-      objectReference: {fileID: 1981963936}
+      objectReference: {fileID: 1797434966}
     - target: {fileID: 6226333345226059170, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: DescriptionPortion
       value: 
@@ -9303,7 +9303,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3787147899088224391, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1981963936}
+      addedObject: {fileID: 1797434966}
     - targetCorrespondingSourceObject: {fileID: 2177574141186915912, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1797434965}
@@ -9352,6 +9352,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SeasonalWorth: {fileID: 364258337}
+--- !u!114 &1797434966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797434960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccb1b815ac539747afdee9d82e280bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weightText: {fileID: 1077818151}
+  MaxWeight: 100
 --- !u!1 &1804431005
 GameObject:
   m_ObjectHideFlags: 0
@@ -9640,20 +9654,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
---- !u!114 &1981963936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797434960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ccb1b815ac539747afdee9d82e280bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weightText: {fileID: 1077818151}
-  MaxWeight: 100
 --- !u!1 &2050266204
 GameObject:
   m_ObjectHideFlags: 0

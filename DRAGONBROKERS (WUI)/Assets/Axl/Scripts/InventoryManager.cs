@@ -21,7 +21,9 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
-        LoadInventory();
+        //LoadInventory();
+
+        InventoryMenu.SetActive(false);
     }
 
     private void Update()

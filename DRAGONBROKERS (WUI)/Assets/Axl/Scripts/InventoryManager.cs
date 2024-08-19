@@ -24,7 +24,6 @@ public class InventoryManager : MonoBehaviour
         {
             if (!shopActivated)
             {
-                Time.timeScale = 0;
                 InventoryMenu.SetActive(true);
                 shopActivated = true;
                 Prices.SetActive(true);
@@ -33,7 +32,6 @@ public class InventoryManager : MonoBehaviour
         else if (!shopOpen && shopActivated)
         {
             // Close the inventory if shopOpen is false and the menu is active
-            Time.timeScale = 1;
             InventoryMenu.SetActive(false);
             shopActivated = false;
             Prices.SetActive(false);
@@ -42,14 +40,12 @@ public class InventoryManager : MonoBehaviour
         {
             if (menuActivated)
             {
-                Time.timeScale = 1;
                 InventoryMenu.SetActive(false);
                 menuActivated = false;
                 DescriptionPortion.SetActive(false);
             }
             else
             {
-                Time.timeScale = 0;
                 InventoryMenu.SetActive(true);
                 menuActivated = true;
                 DescriptionPortion.SetActive(true); // Show Description when opened via Tab

@@ -13,6 +13,7 @@ public class DebugTestButtons : MonoBehaviour
     public Sprite sprite;
     [TextArea] public string description;
     public int worth;
+    public float weight;
 
     private void Start()
     {
@@ -30,7 +31,7 @@ public class DebugTestButtons : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
-            inventoryManager.AddItem(itemName, quantity, sprite, description, worth);
+            inventoryManager.AddItem(itemName, quantity, sprite, description, worth, weight);
         }
 
         //if (Input.GetKeyDown(KeyCode.E))

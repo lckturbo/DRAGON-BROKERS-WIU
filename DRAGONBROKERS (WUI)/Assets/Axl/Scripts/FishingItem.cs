@@ -9,6 +9,7 @@ public class FishingItem : MonoBehaviour
     [TextArea] public string itemDescription;
 
     public int worth;
+    public float weight;
 
     private InventoryManager inventoryManager;
     private FishingProbability fishingProbability;
@@ -26,7 +27,7 @@ public class FishingItem : MonoBehaviour
         {
             Debug.Log("IT IS TRYING TO ADD ITEM");
 
-            int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription, worth);
+            int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription, worth, weight);
             if (leftOverItems <= 0)
             {
                 Destroy(gameObject);

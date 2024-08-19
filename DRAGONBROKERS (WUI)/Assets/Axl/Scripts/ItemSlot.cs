@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.Collections;
 using System.Xml.Serialization;
 
 public class ItemSlot : MonoBehaviour, IPointerClickHandler
@@ -16,6 +17,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public int maxNumberOfItems;
 
     public int worth;
+    public float weight;
 
     //ITEM SLOT
     public TMP_Text quantityText;
@@ -28,31 +30,60 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     public GameObject selectedShader;
     public bool thisItemSelected;
-    public InventoryManager inventoryManager;
 
+    //REFERENCED SCRIPTS
+    public InventoryManager inventoryManager;
     public GoldManager _goldManager;
+    public WeightManager weightManager;
 
     private void Start()
     {
         inventoryManager = GameObject.Find("Inventory Canvas Variant").GetComponent<InventoryManager>();
-
-        _goldManager = GameObject.FindObjectOfType<GoldManager>();
-
         if (inventoryManager == null)
         {
             Debug.LogError("InventoryManager not found!");
         }
 
+        _goldManager = GameObject.FindObjectOfType<GoldManager>();
         if (_goldManager == null)
         {
             Debug.LogError("GoldManager not found!");
         }
+
+        weightManager = GameObject.FindObjectOfType<WeightManager>();
+        if (weightManager == null)
+        {
+            Debug.LogError("InventoryWeightManager not found!");
+            // If not found, search again in Update
+            StartCoroutine(LookForWeightManager());
+        }
     }
 
-    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription, int worth) // Added int worth
+    private IEnumerator LookForWeightManager()
     {
+        yield return new WaitForSeconds(1f); // Wait for 1 second or next frame
+
+        weightManager = FindObjectOfType<WeightManager>();
+        if (weightManager == null)
+        {
+            Debug.LogError("WeightManager still not found! Ensure it exists in the scene.");
+        }
+        else
+        {
+            Debug.Log("WeightManager found successfully.");
+        }
+    }
+
+    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription, int worth, float weight) // Added int worth
+    {
+        if (weightManager == null)
+        {
+            Debug.LogError("WeightManager is not assigned or found.");
+            return quantity;
+        }
+
         //Check to see if slot is full
-        if (isFull)
+        if (isFull || !weightManager.CanAddItem(weight, quantity))
         {
             return quantity;
         }
@@ -62,6 +93,9 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         itemImage.sprite = itemSprite;
         this.itemDescription = itemDescription;
         this.worth = worth;
+        this.weight = weight;
+
+        weightManager.AddWeight(weight, quantity);
 
         this.quantity += quantity;
         if (this.quantity >= maxNumberOfItems)
@@ -119,6 +153,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             {
                 // Reduce the quantity by 1
                 quantity--;
+                weightManager.RemoveWeight(weight, 1); // Remove the weight of the sold item
 
                 // Update the gold count
                 _goldManager.goldCount += worth;
@@ -141,6 +176,8 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     void ClearSlot()
     {
+        weightManager.RemoveWeight(weight, quantity);
+
         itemName = null;
         quantity = 0;
         itemSprite = null;

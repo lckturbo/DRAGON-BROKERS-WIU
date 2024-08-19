@@ -29,17 +29,14 @@ public class WaterTriggerHandler : MonoBehaviour
                 Vector2 hitObjectPos = collision.transform.position;
                 Bounds hitObjectBounds = collision.bounds;
 
-                Vector3 spawnPos = hitObjectPos;
-                float waterSurfaceY = _edgeColl.bounds.max.y + localPos.y;
-
-                // Adjust spawn position to be just above or below the water surface depending on the direction of the object
-                if (rb.velocity.y > 0)
+                Vector3 spawnPos = Vector3.zero;
+                if (collision.transform.position.y >= _edgeColl.points[1].y + _edgeColl.offset.y + localPos.y)
                 {
-                    spawnPos.y = waterSurfaceY + hitObjectBounds.extents.y;
+                    spawnPos = hitObjectPos - new Vector2(0f, hitObjectBounds.extents.y);
                 }
                 else
                 {
-                    spawnPos.y = waterSurfaceY - hitObjectBounds.extents.y;
+                    spawnPos = hitObjectPos + new Vector2(0f, hitObjectBounds.extents.y);
                 }
 
                 Debug.Log("Splash spawn position: " + spawnPos); // Log the splash spawn position

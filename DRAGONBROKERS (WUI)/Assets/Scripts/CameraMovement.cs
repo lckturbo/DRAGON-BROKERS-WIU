@@ -24,7 +24,7 @@ public class CameraMovement : MonoBehaviour
             Vector3 targetPosition = new Vector3(target.position.x,
                                                  target.position.y, 
                                                  transform.position.z);
-            
+
             targetPosition.x = Mathf.Clamp(targetPosition.x, 
                                            minPosition.x, 
                                            maxPosition.x);
@@ -35,7 +35,9 @@ public class CameraMovement : MonoBehaviour
 
             transform.position = Vector3.Lerp(transform.position,
                                                 targetPosition, smoothing);
-        
+
+
+            Debug.Log(transform.position + ", " + targetPosition + ", " + smoothing);
         }
     }
 }

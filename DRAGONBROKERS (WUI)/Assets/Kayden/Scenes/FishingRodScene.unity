@@ -6122,37 +6122,37 @@ MonoBehaviour:
   springFishSprite: {fileID: 1631992957, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
   springFishDescription: spring ishis gkjsenfkjsnefkje
   springFishWorth: 0
-  springFishWeight: 0
+  springFishWeight: 5
   summerFishName: Summer Fish
   summerFishQuantity: 1
   summerFishSprite: {fileID: -1356672625, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
   summerFishDescription: summer skjnfskjdfnsd fjnsdkjcse kjsndf
   summerFishWorth: 0
-  summerFishWeight: 0
+  summerFishWeight: 5
   autumnFishName: Autumn fish
   autumnFishQuantity: 1
   autumnFishSprite: {fileID: 1619523391, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
   autumnFishDescription: sdskjdnf skdjnvske
   autumnFishWorth: 0
-  autumnFishWeight: 0
+  autumnFishWeight: 5
   winterFishName: Winter Fish
   winterFishQuantity: 1
   winterFishSprite: {fileID: -1131299430, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
   winterFishDescription: winter fish skjdvnsekfjn
   winterFishWorth: 0
-  winterFishWeight: 0
+  winterFishWeight: 5
   rareItemName: Rare Fish
   rareQuantity: 1
   rareSprite: {fileID: 935802225, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
   rareItemDescription: sdfbdf sd bfskjbe hsdfkj
   rworth: 0
-  rWeight: 0
+  rWeight: 10
   legendaryItemName: Legendary Fish
   legendaryQuantity: 1
   legendarySprite: {fileID: 1506719059, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
   legendaryItemDescription: dsfgdsfgfs fdfsgdfg sgfdsgf
   lworth: 0
-  lWeight: 0
+  lWeight: 20
   BaseSeasonalChance: 0.6
   BaseRareChance: 0.29
   BaseNothingChance: 0.1

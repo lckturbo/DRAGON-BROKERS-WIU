@@ -138,6 +138,7 @@ MonoBehaviour:
   pitchAmount: 35
   foodChaseSpeedMultiplier: 1.5
   borderBuffer: 0.25
+  sizeIncreaseAmount: 1
 --- !u!58 &1770903910244911420
 CircleCollider2D:
   m_ObjectHideFlags: 0

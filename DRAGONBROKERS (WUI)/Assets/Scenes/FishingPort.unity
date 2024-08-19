@@ -8676,6 +8676,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1636590121}
     - target: {fileID: 9181714579972955367, guid: 7c235cd8964567e42989b77395660244, type: 3}
+      propertyPath: goldData
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d95fbfde1b9fbf4eb188938ea452630, type: 2}
+    - target: {fileID: 9181714579972955367, guid: 7c235cd8964567e42989b77395660244, type: 3}
       propertyPath: goldText
       value: 
       objectReference: {fileID: 2102210897}

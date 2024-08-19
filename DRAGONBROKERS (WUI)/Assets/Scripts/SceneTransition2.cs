@@ -9,6 +9,8 @@ public class SceneTransition2 : MonoBehaviour
 
     public string sceneToLoad;
     public GameObject fadeInPanel;
+    public InventoryManager inventoryManager;
+    public GoldManager goldManager;
 
 
     public void Awake()
@@ -23,6 +25,8 @@ public class SceneTransition2 : MonoBehaviour
     {
         if (other.CompareTag("Player") && !other.isTrigger)
         {
+            inventoryManager.SaveInventory();
+            goldManager.SaveGold();
             SceneManager.LoadScene(sceneToLoad);
         }
     }

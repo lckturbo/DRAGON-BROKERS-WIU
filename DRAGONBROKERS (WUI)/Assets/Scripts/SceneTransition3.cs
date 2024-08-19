@@ -10,6 +10,8 @@ public class SceneTransition3 : MonoBehaviour
     public GameObject fadeInPanel;
     public GameObject fadeOutPanel;
     public float fadeWait;
+    public InventoryManager inventoryManager;
+    public GoldManager goldManager;
 
     public void Awake()
     {
@@ -23,12 +25,16 @@ public class SceneTransition3 : MonoBehaviour
     // Call this method from the button click event
     public void OnButtonClick()
     {
-        playerStorageposition.initialValue = playerPosition;
         StartCoroutine(FadeCo());
     }
 
     private IEnumerator FadeCo()
     {
+        // Save the player's inventory, gold, and position before transitioning
+        inventoryManager.SaveInventory();
+        goldManager.SaveGold();
+        playerStorageposition.initialValue = playerPosition;
+
         if (fadeOutPanel != null)
         {
             Instantiate(fadeOutPanel, Vector3.zero, Quaternion.identity);

@@ -30326,6 +30326,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: FishingPort
   fadeInPanel: {fileID: 0}
+  inventoryManager: {fileID: 1955292960}
+  goldManager: {fileID: 1891541960}
 --- !u!1 &649203289
 GameObject:
   m_ObjectHideFlags: 0
@@ -33131,6 +33133,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9181714579972955367, guid: 7c235cd8964567e42989b77395660244, type: 3}
+      propertyPath: goldData
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d95fbfde1b9fbf4eb188938ea452630, type: 2}
+    - target: {fileID: 9181714579972955367, guid: 7c235cd8964567e42989b77395660244, type: 3}
       propertyPath: goldText
       value: 
       objectReference: {fileID: 784897905}
@@ -33339,6 +33345,8 @@ MonoBehaviour:
   fadeInPanel: {fileID: 0}
   fadeOutPanel: {fileID: 0}
   fadeWait: 0
+  inventoryManager: {fileID: 1955292960}
+  goldManager: {fileID: 1891541960}
 --- !u!1 &991173680
 GameObject:
   m_ObjectHideFlags: 0
@@ -36265,6 +36273,8 @@ MonoBehaviour:
   fadeInPanel: {fileID: 7922292711763469248, guid: 69ef4cdd12398a642a5e3b37875e62a1, type: 3}
   fadeOutPanel: {fileID: 6841311583196868766, guid: 983d550bf19a1a8468a0d9fcd62d9e60, type: 3}
   fadeWait: 0.33
+  inventoryManager: {fileID: 1955292960}
+  goldManager: {fileID: 1891541960}
 --- !u!1 &1263188067
 GameObject:
   m_ObjectHideFlags: 0
@@ -86687,6 +86697,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045aa700eebb9f748b2c16e3a98fec63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1891541960 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9181714579972955367, guid: 7c235cd8964567e42989b77395660244, type: 3}
+  m_PrefabInstance: {fileID: 962605606}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891541956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e2b5b358902f24ebe9af705e24e32f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1913171556
 GameObject:
   m_ObjectHideFlags: 0
@@ -86962,6 +86983,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weightText: {fileID: 1934387555}
   MaxWeight: 100
+--- !u!114 &1955292960 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6226333345226059170, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+  m_PrefabInstance: {fileID: 1665356947}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955292954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7e0ef369110dd41a5283188dfafdd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1962665884
 GameObject:
   m_ObjectHideFlags: 0

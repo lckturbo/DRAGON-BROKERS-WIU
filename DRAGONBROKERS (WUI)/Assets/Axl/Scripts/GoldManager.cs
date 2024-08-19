@@ -1,12 +1,17 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GoldManager : MonoBehaviour
 {
     public int goldCount = 0;
     public TMP_Text goldText;
+    public GoldData goldData; // This will reference the ScriptableObject to save/load gold
+
+    private void Start()
+    {
+        LoadGold(); // Load gold data when the game starts
+        UpdateGoldUI(); // Update the UI with the loaded gold value
+    }
 
     private void Update()
     {
@@ -14,8 +19,27 @@ public class GoldManager : MonoBehaviour
         {
             goldCount += 25;
             Debug.Log(goldCount);
+            UpdateGoldUI(); // Update the UI every time the gold count changes
         }
+    }
 
+    public void SaveGold()
+    {
+        // Save the current gold count to the ScriptableObject
+        goldData.gold = goldCount;
+        Debug.Log("Gold saved: " + goldCount);
+    }
+
+    public void LoadGold()
+    {
+        // Load the gold count from the ScriptableObject
+        goldCount = goldData.gold;
+        Debug.Log("Gold loaded: " + goldCount);
+    }
+
+    private void UpdateGoldUI()
+    {
+        // Update the UI text to reflect the current gold count
         goldText.text = goldCount.ToString();
     }
 }

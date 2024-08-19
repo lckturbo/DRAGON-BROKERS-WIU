@@ -17,6 +17,8 @@ public class InventoryManager : MonoBehaviour
 
     //Handling weight, Weight Manager
     public WeightManager weightManager;
+
+    //For saving
     public InventoryData Data;
 
     private void Start()

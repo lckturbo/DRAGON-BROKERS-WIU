@@ -13,6 +13,8 @@ public class SceneTransition : MonoBehaviour
     public GameObject fadeInPanel;
     public GameObject fadeOutPanel;
     public float fadeWait;
+    public InventoryManager inventoryManager;
+    public GoldManager goldManager;
 
     public void Awake()
     {
@@ -26,6 +28,8 @@ public class SceneTransition : MonoBehaviour
     {
         if(other.CompareTag("Player") && !other.isTrigger)
         {
+            inventoryManager.SaveInventory();
+            goldManager.SaveGold();
             playerStorageposition.initialValue = playerPosition;
             StartCoroutine(FadeCo());
             //SceneManager.LoadScene(sceneToLoad);

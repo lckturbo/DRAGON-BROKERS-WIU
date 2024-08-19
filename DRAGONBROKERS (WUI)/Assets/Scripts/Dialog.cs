@@ -10,13 +10,17 @@ public class Dialog : MonoBehaviour
 
     public GameObject dialogBox;
     public Text dialogText;
-    public string dialog;
+    public List<string> dialogues; // List to hold multiple lines of dialogue
+    private int currentDialogueIndex = 0; // Index to keep track of the current line
     public bool playerInRange;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (dialogues.Count > 0)
+        {
+            dialogText.text = dialogues[0];
+        }
     }
 
     // Update is called once per frame
@@ -26,19 +30,28 @@ public class Dialog : MonoBehaviour
         {
             if (dialogBox.activeInHierarchy)
             {
-                dialogBox.SetActive(false);
+                if (currentDialogueIndex < dialogues.Count - 1)
+                {
+                    currentDialogueIndex++;
+                    dialogText.text = dialogues[currentDialogueIndex];
+                }
+                else
+                {
+                    dialogBox.SetActive(false);
+                    currentDialogueIndex = 0; // Reset to the first line if needed
+                }
             }
             else
             {
                 dialogBox.SetActive(true);
-                dialogText.text = dialog;
+                dialogText.text = dialogues[currentDialogueIndex];
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             contextOn.Raise();
             playerInRange = true;

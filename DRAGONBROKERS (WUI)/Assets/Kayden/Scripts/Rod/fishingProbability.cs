@@ -42,36 +42,42 @@ public class FishingProbability : MonoBehaviour
     public Sprite springFishSprite;
     [TextArea] public string springFishDescription;
     public int springFishWorth;
+    public float springFishWeight;
 
     public string summerFishName;
     public int summerFishQuantity;
     public Sprite summerFishSprite;
     [TextArea] public string summerFishDescription;
     public int summerFishWorth;
+    public float summerFishWeight;
 
     public string autumnFishName;
     public int autumnFishQuantity;
     public Sprite autumnFishSprite;
     [TextArea] public string autumnFishDescription;
     public int autumnFishWorth;
+    public float autumnFishWeight;
 
     public string winterFishName;
     public int winterFishQuantity;
     public Sprite winterFishSprite;
     [TextArea] public string winterFishDescription;
     public int winterFishWorth;
+    public float winterFishWeight;
 
     public string rareItemName;
     public int rareQuantity;
     public Sprite rareSprite;
     [TextArea] public string rareItemDescription;
     public int rworth;
+    public int rWeight;
 
     public string legendaryItemName;
     public int legendaryQuantity;
     public Sprite legendarySprite;
     [TextArea] public string legendaryItemDescription;
     public int lworth;
+    public int lWeight;
 
     //Fish Base Chances
     public float BaseSeasonalChance = 0.6f;
@@ -231,21 +237,21 @@ public class FishingProbability : MonoBehaviour
         }
     }
 
-    private void AddFishToInventory(string fishName, int fishQuantity, Sprite fishSprite, string fishDescription, int fishWorth, Animator playerAnim)
+    private void AddFishToInventory(string fishName, int fishQuantity, Sprite fishSprite, string fishDescription, int fishWorth, Animator playerAnim, float weight)
     {
         float offSeasonChance = SeasonalChance * offSeasonModifier;
         float offSeasonRandom = Random.value;
 
         if (offSeasonRandom < offSeasonChance)
         {
-            inventoryManager.AddItem(fishName, fishQuantity, fishSprite, fishDescription, fishWorth);
+            inventoryManager.AddItem(fishName, fishQuantity, fishSprite, fishDescription, fishWorth, weight);
             playerAnim.Play("playerWonFish");
             Debug.Log($"Caught off-season {fishName}");
         }
         else
         {
             // Regular in-season catch
-            inventoryManager.AddItem(fishName, fishQuantity, fishSprite, fishDescription, fishWorth);
+            inventoryManager.AddItem(fishName, fishQuantity, fishSprite, fishDescription, fishWorth, weight);
             playerAnim.Play("playerWonFish");
             Debug.Log($"Caught {fishName}");
         }
@@ -269,22 +275,22 @@ public class FishingProbability : MonoBehaviour
             switch (currentSeason)
             {
                 case Season.Spring:
-                    AddFishToInventory(springFishName, springFishQuantity, springFishSprite, springFishDescription, springFishWorth, playerAnim);
+                    AddFishToInventory(springFishName, springFishQuantity, springFishSprite, springFishDescription, springFishWorth, playerAnim, springFishWeight);
                     break;
                 case Season.Summer:
-                    AddFishToInventory(summerFishName, summerFishQuantity, summerFishSprite, summerFishDescription, summerFishWorth, playerAnim);
+                    AddFishToInventory(summerFishName, summerFishQuantity, summerFishSprite, summerFishDescription, summerFishWorth, playerAnim, summerFishWeight);
                     break;
                 case Season.Autumn:
-                    AddFishToInventory(autumnFishName, autumnFishQuantity, autumnFishSprite, autumnFishDescription, autumnFishWorth, playerAnim);
+                    AddFishToInventory(autumnFishName, autumnFishQuantity, autumnFishSprite, autumnFishDescription, autumnFishWorth, playerAnim, autumnFishWeight);
                     break;
                 case Season.Winter:
-                    AddFishToInventory(winterFishName, winterFishQuantity, winterFishSprite, winterFishDescription, winterFishWorth, playerAnim);
+                    AddFishToInventory(winterFishName, winterFishQuantity, winterFishSprite, winterFishDescription, winterFishWorth, playerAnim, winterFishWeight);
                     break;
             }
         }
         else if (chance < rareThreshold)
         {
-            inventoryManager.AddItem(rareItemName, rareQuantity, rareSprite, rareItemDescription, rworth);
+            inventoryManager.AddItem(rareItemName, rareQuantity, rareSprite, rareItemDescription, rworth, rWeight);
             playerAnim.Play("playerWonFish2");
             Debug.Log("Animation Played: 2");
         }
@@ -295,7 +301,7 @@ public class FishingProbability : MonoBehaviour
         }
         else if (chance < legendaryThreshold)
         {
-            inventoryManager.AddItem(legendaryItemName, legendaryQuantity, legendarySprite, legendaryItemDescription, lworth);
+            inventoryManager.AddItem(legendaryItemName, legendaryQuantity, legendarySprite, legendaryItemDescription, lworth, lWeight);
             playerAnim.Play("playerWonFish3");
             Debug.Log("Animation Played: 3");
         }

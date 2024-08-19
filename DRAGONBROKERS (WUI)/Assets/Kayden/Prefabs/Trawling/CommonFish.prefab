@@ -234,6 +234,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d44477ee6eae8744c8e63802b969a912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: Common Fish
+  quantity: 1
+  sprite: {fileID: -2139780386, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
+  itemDescription: testing testing just a normal fish
+  worth: 0
+  weight: 10
+  fishCaught: 0
 --- !u!114 &8459563568912842280
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,14 +2,21 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
+    //Selective Display of UI elements
     public GameObject InventoryMenu;
     public GameObject DescriptionPortion;
     public GameObject Prices;
+
+    //Booleans to handle UI elements display
     public bool menuActivated;
     public bool shopOpen;
     public bool shopActivated;
+
+    //Array to store items
     public ItemSlot[] itemSlot;
 
+    //Handling weight, Weight Manager
+    public WeightManager weightManager;
     private void Update()
     {
         // Handle shopOpen state first
@@ -44,42 +51,36 @@ public class InventoryManager : MonoBehaviour
                 DescriptionPortion.SetActive(true); // Show Description when opened via Tab
             }
         }
-
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    for (int i = 0; i < itemSlot.Length; i++)
-        //    {
-        //        if (itemSlot[i] != null)
-        //        {
-        //            Debug.Log($"Slot {i}: {itemSlot[i].itemName} - Quantity: {itemSlot[i].quantity}");
-        //        }
-        //        else
-        //        {
-        //            Debug.Log($"Slot {i}: Empty or null");
-        //        }
-        //    }
-        //}
-
-
     }
 
-    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription, int worth) // Added int worth
+public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription, int worth, float weight)
+{
+    Debug.Log("ItemName: " + itemName + ", Quantity: " + quantity + ", ItemSprite: " + itemSprite + ", Worth: " + worth + ", Weight: " + weight);
+
+    for (int i = 0; i < itemSlot.Length; i++)
     {
-        Debug.Log("itemName = " + itemName + "quantity = " + quantity + "itemSprite = " + itemSprite + "Worth = " + worth);
-        for (int i = 0; i < itemSlot.Length; i++)
+        if (!itemSlot[i].isFull && (itemSlot[i].itemName == itemName || itemSlot[i].quantity == 0))
         {
-            if (itemSlot[i].isFull == false && itemSlot[i].itemName == itemName || itemSlot[i].quantity == 0)
+            int leftOverItems = itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription, worth, weight);
+
+            if (leftOverItems > 0)
             {
-                int leftOverItems = itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription, worth);
-                if (leftOverItems > 0)
+                // Prevent infinite loops by ensuring we don't continue indefinitely
+                if (leftOverItems == quantity) 
                 {
-                    leftOverItems = AddItem(itemName, leftOverItems, itemSprite, itemDescription, worth);
+                    Debug.Log("Inventory is full, unable to add all items.");
+                    return leftOverItems;
                 }
-                return leftOverItems;
+                return AddItem(itemName, leftOverItems, itemSprite, itemDescription, worth, weight);
             }
+            return 0;
         }
-        return quantity;
     }
+
+    Debug.Log("Inventory is full, unable to add items.");
+    return quantity;
+}
+
 
     public void DeselectAllSlots()
     {

@@ -15,7 +15,7 @@ public class fish : MonoBehaviour
     public float foodChaseSpeedMultiplier = 1.5f;
     public float borderBuffer = 0.25f;
 
-    public float sizeIncreaseAmount = 0.05f; // Amount to increase size each time the fish eats
+    public float sizeIncreaseAmount = 0.5f; // Amount to increase size each time the fish eats
 
     private Rigidbody2D rb;
     private bool movingRight = true; // Indicates current direction

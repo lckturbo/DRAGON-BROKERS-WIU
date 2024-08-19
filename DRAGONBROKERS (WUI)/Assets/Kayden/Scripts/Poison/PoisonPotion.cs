@@ -6,14 +6,14 @@ public class PoisonPotion : MonoBehaviour
 {
     public GameObject poisonSplash;
     public GameObject poisonAfterEffect;
-    public GameObject smokePrefab; // Reference to the Smoke particle system prefab
-    public GameObject cloudsPrefab; // Reference to the Clouds particle system prefab
-    public GameObject poisonWaterCloudPrefab; // Reference to the PoisonWaterCloud particle system prefab
-    public Vector3 poisonWaterCloudPosition; // Preset position for the PoisonWaterCloud
+    public GameObject smokePrefab;
+    public GameObject cloudsPrefab;
+    public GameObject poisonWaterCloudPrefab;
+    public Vector3 poisonWaterCloudPosition;
     public float slowDownFactor = 0.8f;
     public float slowDownDuration = 0.2f;
-    public float explosionRange = 2f; // Radius of the explosion range
-    public float presetYPosition = 0f; // Preset Y-axis position for particle effects
+    public float explosionRange = 2f;
+    public float presetYPosition = 0f;
 
     private bool isInPoisonWater = false;
     private bool cloudsPlayed = false; // To ensure the Clouds particle system plays only once
@@ -79,13 +79,15 @@ public class PoisonPotion : MonoBehaviour
     void CheckForFishInRange()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRange);
+        bool fishFound = false; // Flag to check if any fish are in range
+
         foreach (Collider2D collider in colliders)
         {
             Debug.Log("Collider found with tag: " + collider.tag);
 
             if (collider.CompareTag("fish"))
             {
-                Debug.Log("Fish in range of explosion, stopping fish movement and destroying poison potion");
+                Debug.Log("Fish in range of explosion, stopping fish movement and changing color");
 
                 // Stop the fish's movement and start moving it upwards
                 TestFishMovement fishMovement = collider.GetComponent<TestFishMovement>();
@@ -95,17 +97,22 @@ public class PoisonPotion : MonoBehaviour
                     fishMovement.ChangeColor(Color.green); // Change fish color to green
                 }
 
-                // Play the Smoke particle effect before destroying the potion
-                Instantiate(smokePrefab, transform.position, Quaternion.identity);
-
-                // Instantiate the PoisonWaterCloud at the preset position
-                Instantiate(poisonWaterCloudPrefab, poisonWaterCloudPosition, Quaternion.identity);
-
-                Destroy(gameObject);
-                break;
+                fishFound = true; // Set the flag to true if at least one fish is found
             }
         }
+
+        if (fishFound)
+        {
+            // Play the Smoke particle effect before destroying the potion
+            Instantiate(smokePrefab, transform.position, Quaternion.identity);
+
+            // Instantiate the PoisonWaterCloud at the preset position
+            Instantiate(poisonWaterCloudPrefab, poisonWaterCloudPosition, Quaternion.identity);
+
+            Destroy(gameObject);
+        }
     }
+
 
     void OnCollisionEnter2D(Collision2D collision)
     {

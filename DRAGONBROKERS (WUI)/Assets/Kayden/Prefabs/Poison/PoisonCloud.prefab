@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1206160090254824428}
   - component: {fileID: 676721053348211509}
   - component: {fileID: 1566177402156774500}
+  - component: {fileID: 5005901304860872519}
   m_Layer: 0
   m_Name: PoisonCloud
   m_TagString: Untagged
@@ -4830,3 +4831,16 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &5005901304860872519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3315164045767588079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231a6e0d5620658439360351e3eff1f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystem: {fileID: 676721053348211509}

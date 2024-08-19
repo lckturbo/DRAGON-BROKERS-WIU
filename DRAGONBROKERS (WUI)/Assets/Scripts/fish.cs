@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Fish : MonoBehaviour
+public class fish : MonoBehaviour
 {
     public float speed = 2f;
     public float yMin = -4.5f;
@@ -15,7 +15,7 @@ public class Fish : MonoBehaviour
     public float foodChaseSpeedMultiplier = 1.5f;
     public float borderBuffer = 0.25f;
 
-    public float sizeIncreaseAmount = 10.0f; // Amount to increase size each time the fish eats
+    public float sizeIncreaseAmount = 0.05f; // Amount to increase size each time the fish eats
 
     private Rigidbody2D rb;
     private bool movingRight = true; // Indicates current direction

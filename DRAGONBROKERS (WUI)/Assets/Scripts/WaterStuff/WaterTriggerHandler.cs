@@ -29,26 +29,26 @@ public class WaterTriggerHandler : MonoBehaviour
                 Vector2 hitObjectPos = collision.transform.position;
                 Bounds hitObjectBounds = collision.bounds;
 
-                Vector3 spawnPos = Vector3.zero;
-                if (collision.transform.position.y >= _edgeColl.points[1].y + _edgeColl.offset.y + localPos.y)
-                {
-                    spawnPos = hitObjectPos - new Vector2(0f, hitObjectBounds.extents.y);
-                }
-                else
-                {
-                    spawnPos = hitObjectPos + new Vector2(0f, hitObjectBounds.extents.y);
-                }
+                //Vector3 spawnPos = Vector3.zero;
+                //if (collision.transform.position.y >= _edgeColl.points[1].y + _edgeColl.offset.y + localPos.y)
+                //{
+                //    spawnPos = hitObjectPos - new Vector2(0f, hitObjectBounds.extents.y);
+                //}
+                //else
+                //{
+                //    spawnPos = hitObjectPos + new Vector2(0f, hitObjectBounds.extents.y);
+                //}
 
-                Debug.Log("Splash spawn position: " + spawnPos); // Log the splash spawn position
+                //Debug.Log("Splash spawn position: " + spawnPos); // Log the splash spawn position
 
-                if (_splashParticles != null)
-                {
-                    Instantiate(_splashParticles, spawnPos, Quaternion.identity);
-                }
-                else
-                {
-                    Debug.LogWarning("Splash particles are not assigned!"); // Warn if splash particles are not set
-                }
+                //if (_splashParticles != null)
+                //{
+                //    Instantiate(_splashParticles, spawnPos, Quaternion.identity);
+                //}
+                //else
+                //{
+                //    Debug.LogWarning("Splash particles are not assigned!"); // Warn if splash particles are not set
+                //}
 
                 int multiplier = 1;
                 if (rb.velocity.y < 0)

@@ -30637,9 +30637,9 @@ RectTransform:
   - {fileID: 1934387554}
   m_Father: {fileID: 1769044701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 395, y: -59.99997}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &748821971
@@ -37633,8 +37633,7 @@ MonoBehaviour:
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
   dialogues:
-  - Hi
-  - Welcome to Singapura Fishing Village
+  - Welcome to Singapura Fishing Village!
   playerInRange: 0
 --- !u!58 &1455852729
 CircleCollider2D:
@@ -39011,7 +39010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2177574141186915912, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2519213545427868022, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
@@ -86681,7 +86680,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -220, y: -185}
+  m_AnchoredPosition: {x: -220, y: -173.8}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1934387555

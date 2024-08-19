@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
+using UnityEngine.SceneManagement;
 using System.Xml.Serialization;
 
 public class ItemSlot : MonoBehaviour, IPointerClickHandler
@@ -35,6 +36,9 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public InventoryManager inventoryManager;
     public GoldManager _goldManager;
     public WeightManager weightManager;
+
+    //FISH PREFAB (Fish Tank)
+    public GameObject fishPrefab;
 
     private void Start()
     {
@@ -132,7 +136,6 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
-
     public void OnLeftClick()
     {
         inventoryManager.DeselectAllSlots();
@@ -171,6 +174,37 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
                 inventoryManager.DeselectAllSlots();
             }
+        }
+
+        if (SceneManager.GetActiveScene().name == "FishTank")
+        {
+            // Logic for the FishTank scene
+            if (quantity > 0)
+            {
+                quantity--;
+                weightManager.RemoveWeight(weight, 1); // Remove the weight of the sold item
+
+                // Instantiate a fish prefab in the scene
+                if (fishPrefab != null)
+                {
+                    Instantiate(fishPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+                }
+                else
+                {
+                    Debug.LogError("Fish prefab is not assigned.");
+                }
+
+                // Update the UI
+                if (quantity > 0)
+                {
+                    quantityText.text = quantity.ToString();
+                }
+                else
+                {
+                    ClearSlot();
+                }
+            }
+            return; // Exit to prevent further execution
         }
     }
 

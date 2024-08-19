@@ -481,17 +481,33 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 863597420399552265, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: fishPrefab
+      value: 
+      objectReference: {fileID: 1843155184}
+    - target: {fileID: 863597420399552265, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 908457769507103070, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: fishPrefab
+      value: 
+      objectReference: {fileID: 1843155184}
     - target: {fileID: 908457769507103070, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 957864398387850603, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: fishPrefab
+      value: 
+      objectReference: {fileID: 1843155184}
+    - target: {fileID: 957864398387850603, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1155688881725262280, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: fishPrefab
+      value: 
+      objectReference: {fileID: 1843155184}
     - target: {fileID: 1155688881725262280, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -521,9 +537,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1720596757130211606, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: fishPrefab
+      value: 
+      objectReference: {fileID: 1843155184}
+    - target: {fileID: 1720596757130211606, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2028823612048595752, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: fishPrefab
+      value: 
+      objectReference: {fileID: 1843155184}
     - target: {fileID: 2028823612048595752, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -532,6 +556,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2519213545427868022, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: fishPrefab
+      value: 
+      objectReference: {fileID: 1843155184}
     - target: {fileID: 2519213545427868022, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -561,9 +589,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3203384186371380016, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: fishPrefab
+      value: 
+      objectReference: {fileID: 1843155184}
+    - target: {fileID: 3203384186371380016, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3378934947048101605, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: fishPrefab
+      value: 
+      objectReference: {fileID: 1843155184}
     - target: {fileID: 3378934947048101605, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -616,6 +652,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3612138743942818161, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: fishPrefab
+      value: 
+      objectReference: {fileID: 1843155184}
     - target: {fileID: 3612138743942818161, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -717,6 +757,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4150497475226441736, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: fishPrefab
+      value: 
+      objectReference: {fileID: 1843155184}
+    - target: {fileID: 4150497475226441736, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: _goldManager
       value: 
       objectReference: {fileID: 0}
@@ -772,6 +816,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4614844674317478136, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: fishPrefab
+      value: 
+      objectReference: {fileID: 1843155184}
     - target: {fileID: 4614844674317478136, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -1001,9 +1049,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7140619658737389388, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: fishPrefab
+      value: 
+      objectReference: {fileID: 1843155184}
+    - target: {fileID: 7140619658737389388, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7183433249879693190, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: fishPrefab
+      value: 
+      objectReference: {fileID: 1843155184}
     - target: {fileID: 7183433249879693190, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -1033,13 +1089,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7590385910816436825, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: fishPrefab
+      value: 
+      objectReference: {fileID: 1843155184}
+    - target: {fileID: 7590385910816436825, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7691187908594320534, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: fishPrefab
+      value: 
+      objectReference: {fileID: 1843155184}
+    - target: {fileID: 7691187908594320534, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7878487570167703584, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: fishPrefab
+      value: 
+      objectReference: {fileID: 1843155184}
     - target: {fileID: 7878487570167703584, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -1084,6 +1152,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8338926488258571306, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: fishPrefab
+      value: 
+      objectReference: {fileID: 1843155184}
     - target: {fileID: 8338926488258571306, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -1257,9 +1329,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8892046319064596622, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: fishPrefab
+      value: 
+      objectReference: {fileID: 1843155184}
+    - target: {fileID: 8892046319064596622, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8913280310473935819, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: fishPrefab
+      value: 
+      objectReference: {fileID: 1843155184}
     - target: {fileID: 8913280310473935819, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -3273,6 +3353,7 @@ GameObject:
   - component: {fileID: 1736564989}
   - component: {fileID: 1736564988}
   - component: {fileID: 1736564991}
+  - component: {fileID: 1736564992}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3398,6 +3479,30 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1736564992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736564987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4008abf0ab214254786e4c31b92d0cc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BG_Panel: {fileID: 0}
+  itemName: Fish
+  quantity: 1
+  sprite: {fileID: -2139780386, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
+  description: hBVnsJVM
+  worth: 1
+  weight: 10
+--- !u!1 &1843155184 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
+  m_PrefabInstance: {fileID: 1421881517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2044218191
 GameObject:
   m_ObjectHideFlags: 0

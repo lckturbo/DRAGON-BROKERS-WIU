@@ -53,6 +53,7 @@ public class Dialog : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Player entered trigger area.");
             contextOn.Raise();
             playerInRange = true;
         }
@@ -62,9 +63,11 @@ public class Dialog : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Player exited trigger area.");
             contextOff.Raise();
             playerInRange = false;
             dialogBox.SetActive(false);
         }
     }
+
 }

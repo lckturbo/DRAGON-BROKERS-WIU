@@ -37,7 +37,7 @@ public class CameraMovement : MonoBehaviour
                                                 targetPosition, smoothing);
 
 
-            Debug.Log(transform.position + ", " + targetPosition + ", " + smoothing);
+            //Debug.Log(transform.position + ", " + targetPosition + ", " + smoothing);
         }
     }
 }

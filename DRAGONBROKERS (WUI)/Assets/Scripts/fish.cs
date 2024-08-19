@@ -7,23 +7,24 @@ public class fish : MonoBehaviour
     public float yMax = 4.5f;
     public float detectionRange = 1.3f;
     public LayerMask foodLayer;
-    // public float minChangeDirectionInterval = 4f; // Commented out
-    // public float maxChangeDirectionInterval = 8f; // Commented out
     public float minIdleDuration = 0.25f;
     public float maxIdleDuration = 0.75f;
     public float pitchAmount = 35f; // Angle for pitching up/down
     public float foodChaseSpeedMultiplier = 1.5f;
     public float borderBuffer = 0.25f;
-
-    public float sizeIncreaseAmount = 0.5f; // Amount to increase size each time the fish eats
+    public float sizeIncreaseAmount = 0.05f; // Amount to increase size each time the fish eats
+    public float breedingCooldown = 15f; // Time before fish can eat or breed again
+    public GameObject fishPrefab; // Prefab for the new fish
 
     private Rigidbody2D rb;
     private bool movingRight = true; // Indicates current direction
     private Transform targetFood;
     private float stateTimer;
-    // private float changeDirectionInterval; // Commented out
     private float idleDuration;
     private bool hasCollided = false;
+    private bool canBreed = true;
+    private bool hasEaten = false;
+    private float breedingTimer;
 
     private enum State { Idle, Swimming, ChasingFood }
     private State currentState;
@@ -31,12 +32,16 @@ public class fish : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //SetRandomIntervals(); // Set intervals for state changes
-        TransitionToState(State.Swimming); // Start in the Swimming state
+        TransitionToState(State.Swimming); // Start in the Swimming state 
     }
 
     private void Update()
     {
+        if (!canBreed && Time.time >= breedingTimer)
+        {
+            canBreed = true;
+        }
+
         switch (currentState)
         {
             case State.Idle:
@@ -49,7 +54,7 @@ public class fish : MonoBehaviour
                 ChasingFoodState();
                 break;
         }
-
+        FlipSprite();
         ApplyPitch();
     }
 
@@ -67,7 +72,6 @@ public class fish : MonoBehaviour
     {
         if (Time.time >= stateTimer)
         {
-            // SetRandomDirection(); // Commented out to stop random direction change
             TransitionToState(State.Idle);
             return;
         }
@@ -104,11 +108,9 @@ public class fish : MonoBehaviour
                 stateTimer = Time.time + idleDuration;
                 break;
             case State.Swimming:
-                // stateTimer = Time.time + changeDirectionInterval; // Commented out
-                stateTimer = Time.time + Random.Range(minIdleDuration, maxIdleDuration); // Resetting state timer for swimming state
+                stateTimer = Time.time + Random.Range(minIdleDuration, maxIdleDuration);
                 break;
             case State.ChasingFood:
-                // No timer, will exit based on conditions
                 break;
         }
     }
@@ -118,23 +120,25 @@ public class fish : MonoBehaviour
         float verticalMovement = Mathf.Sin(Time.time * speed) * speed * 0.5f;
         rb.velocity = new Vector2((movingRight ? 1 : -1) * speed, verticalMovement);
 
-        // Clamp the fish's position within the tank's vertical limits
         Vector2 clampedPosition = transform.position;
         clampedPosition.y = Mathf.Clamp(clampedPosition.y, yMin, yMax);
         transform.position = clampedPosition;
     }
 
-    // private void SetRandomDirection() // Commented out
-    // {
-    //     movingRight = Random.value > 0.5f; // Commented out
-    //     FlipSprite(); // Commented out
-    // }
-
     private void FlipSprite()
     {
-        Vector3 scale = transform.localScale;
-        scale.x = movingRight ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
-        transform.localScale = scale;
+        SpriteRenderer renderer = gameObject.GetComponent<SpriteRenderer>();
+
+        if (renderer == null) return;
+
+        if (movingRight)
+            renderer.flipX = false;
+        else
+            renderer.flipX = true;
+
+        //Vector3 scale = transform.localScale;
+        //scale.x = movingRight ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
+        //transform.localScale = scale;
     }
 
     private void CheckBounds()
@@ -145,8 +149,7 @@ public class fish : MonoBehaviour
         {
             if (!hasCollided)
             {
-                movingRight = !movingRight; // Direction will now toggle only on collision with the tank edges
-                FlipSprite();
+                movingRight = !movingRight;
                 hasCollided = true;
                 stateTimer = Time.time + 0.1f;
             }
@@ -181,8 +184,8 @@ public class fish : MonoBehaviour
             Debug.Log("Eating food: " + targetFood.name);
             Destroy(targetFood.gameObject);
             targetFood = null;
-            // Increase the fish's size
             transform.localScale += new Vector3(sizeIncreaseAmount, sizeIncreaseAmount, 0);
+            hasEaten = true;
             TransitionToState(State.Idle);
         }
     }
@@ -191,26 +194,58 @@ public class fish : MonoBehaviour
     {
         Vector2 velocity = rb.velocity;
 
-        // Determine pitch angle based on vertical velocity
         float pitchAngle = Mathf.Clamp((velocity.y / speed) * pitchAmount, -pitchAmount, pitchAmount);
 
-        // Apply pitch to rotation
         if (Mathf.Abs(velocity.x) > 0.1f || Mathf.Abs(velocity.y) > 0.1f)
         {
-            // Correctly rotate the fish around its Z-axis
             transform.rotation = Quaternion.Euler(0, 0, pitchAngle);
         }
         else
         {
-            transform.rotation = Quaternion.identity; // Reset rotation if swimming straight
+            transform.rotation = Quaternion.identity;
         }
     }
 
-    // private void SetRandomIntervals() // Commented out
-    // {
-    //     changeDirectionInterval = Random.Range(minChangeDirectionInterval, maxChangeDirectionInterval); // Commented out
-    //     idleDuration = Random.Range(minIdleDuration, maxIdleDuration); // Commented out
-    // }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("fish"))
+        {
+            fish otherFish = other.GetComponent<fish>();
+            if (otherFish != null && hasEaten && otherFish.hasEaten && canBreed && otherFish.canBreed)
+            {
+                Debug.Log("Breeding fish");
+                Breed(otherFish);
+            }
+        }
+    }
+
+    private void Breed(fish otherFish)
+    {
+        // Reduce size of the fish that are breeding
+        transform.localScale -= new Vector3(sizeIncreaseAmount, sizeIncreaseAmount, 0);
+        otherFish.transform.localScale -= new Vector3(sizeIncreaseAmount, sizeIncreaseAmount, 0);
+
+        // Ensure the fish size does not go below 1x1x1
+        transform.localScale = Vector3.Max(transform.localScale, new Vector3(1, 1, 1));
+        otherFish.transform.localScale = Vector3.Max(otherFish.transform.localScale, new Vector3(1, 1, 1));
+
+        // Disable breeding and eating temporarily
+        canBreed = false;
+        otherFish.canBreed = false;
+        breedingTimer = Time.time + breedingCooldown;
+        otherFish.breedingTimer = Time.time + breedingCooldown;
+
+        // Spawn a new fish
+        if (fishPrefab != null)
+        {
+            Instantiate(fishPrefab, transform.position, Quaternion.identity);
+            Debug.Log("Spawned new fish");
+        }
+
+        // Reset the eaten state
+        hasEaten = false;
+        otherFish.hasEaten = false;
+    }
 
     private void OnDrawGizmosSelected()
     {

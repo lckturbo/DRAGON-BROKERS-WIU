@@ -8993,7 +8993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fe4b4531130bf945969c055d52a879d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 1
+  sceneIndex: 2
   inventoryManager: {fileID: 1109214222}
 --- !u!114 &1506150948 stripped
 MonoBehaviour:

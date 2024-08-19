@@ -7,6 +7,10 @@ public class FishMovement : MonoBehaviour
     [SerializeField] private float speed = 2f;
     [SerializeField] private float fleeDistance = 5f; // Distance to flee from TrawlerArm
 
+    public GameObject loseEffect;
+    private ParticleSystem loseParticleSystem;
+    public Vector2 loseEffectOffset = new Vector2(1, 1);  // Offset distance for the lose effect
+
     public enum FishState
     {
         Swimming,
@@ -87,6 +91,13 @@ public class FishMovement : MonoBehaviour
             // Check if 5 seconds have passed since the fish was caught
             if (Time.time - caughtTime >= 5f)
             {
+                // Play the lose effect at a position relative to the fish
+                Vector3 loseEffectPosition = transform.position + (Vector3)loseEffectOffset;
+                GameObject effectInstance = Instantiate(loseEffect, loseEffectPosition, Quaternion.identity);
+
+                // Destroy the lose effect after 3 seconds
+                Destroy(effectInstance, 3f);
+
                 Destroy(gameObject);
             }
         }

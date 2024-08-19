@@ -15,6 +15,10 @@ public class TrawlingItem : MonoBehaviour
     private InventoryManager inventoryManager;
     public bool fishCaught = false;
 
+    public GameObject winEffect;
+    private ParticleSystem winParticleSystem;
+    public Vector2 winEffectOffset = new Vector2(1, 1);  // Offset distance for the win effect
+
     private void Start()
     {
         inventoryManager = GameObject.Find("Inventory Canvas Variant").GetComponent<InventoryManager>();
@@ -28,7 +32,16 @@ public class TrawlingItem : MonoBehaviour
             inventoryManager.AddItem(itemName, quantity, sprite, itemDescription, worth, weight);
             fishCaught = true;
             Debug.Log("Caught fish");
-            Destroy(gameObject); // Destroy the fish GameObject
+
+            // Instantiate the win effect at a position relative to the fish, using the offset from the Inspector
+            Vector3 winEffectPosition = transform.position + (Vector3)winEffectOffset;
+            GameObject effectInstance = Instantiate(winEffect, winEffectPosition, Quaternion.identity);
+
+            // Destroy the win effect after 3 seconds
+            Destroy(effectInstance, 3f);
+
+            // Destroy the fish GameObject
+            Destroy(gameObject);
         }
     }
 }

@@ -58,23 +58,6 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         if (weightManager == null)
         {
             Debug.LogError("InventoryWeightManager not found!");
-            // If not found, search again in Update
-            StartCoroutine(LookForWeightManager());
-        }
-    }
-
-    private IEnumerator LookForWeightManager()
-    {
-        yield return new WaitForSeconds(1f); // Wait for 1 second or next frame
-
-        weightManager = FindObjectOfType<WeightManager>();
-        if (weightManager == null)
-        {
-            Debug.LogError("WeightManager still not found! Ensure it exists in the scene.");
-        }
-        else
-        {
-            Debug.Log("WeightManager found successfully.");
         }
     }
 

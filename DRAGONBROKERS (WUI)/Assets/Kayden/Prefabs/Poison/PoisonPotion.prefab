@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5609356660005618161}
   - component: {fileID: 2348906516215013508}
   - component: {fileID: 274649373808467303}
-  - component: {fileID: 1330341672994895131}
+  - component: {fileID: 4244871083056023173}
   m_Layer: 0
   m_Name: PoisonPotion
   m_TagString: PoisonPotion
@@ -149,7 +149,7 @@ CircleCollider2D:
   m_Offset: {x: -0.00040843946, y: 0.0008169517}
   serializedVersion: 2
   m_Radius: 0.054591574
---- !u!114 &1330341672994895131
+--- !u!114 &4244871083056023173
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,5 +169,5 @@ MonoBehaviour:
   poisonWaterCloudPosition: {x: 3.76, y: -5.19, z: 25}
   slowDownFactor: 0.8
   slowDownDuration: 0.2
-  explosionRange: 1.22
+  explosionRange: 2
   presetYPosition: 1.03

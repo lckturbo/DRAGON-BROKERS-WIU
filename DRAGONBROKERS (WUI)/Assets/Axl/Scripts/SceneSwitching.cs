@@ -4,7 +4,9 @@ using UnityEngine.SceneManagement;
 public class SceneSwitching : MonoBehaviour
 {
     public int sceneIndex;
+
     private EnergyDepletion energyDepletion;
+    public InventoryManager inventoryManager;
 
     private void Start()
     {
@@ -15,6 +17,7 @@ public class SceneSwitching : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            inventoryManager.SaveInventory();
             SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
         }
 

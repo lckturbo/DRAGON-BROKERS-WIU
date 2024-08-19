@@ -63,6 +63,14 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    private void Update()
+    {
+        if (weightManager == null)
+        {
+            StartCoroutine(LookForWeightManager());
+        }
+    }
+
     private IEnumerator LookForWeightManager()
     {
         yield return new WaitForSeconds(1f); // Wait for 1 second or next frame

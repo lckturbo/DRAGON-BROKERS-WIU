@@ -8299,6 +8299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 1
+  inventoryManager: {fileID: 1797434964}
 --- !u!1 &1749091313
 GameObject:
   m_ObjectHideFlags: 0
@@ -8919,6 +8920,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6226333345226059170, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+      propertyPath: Data
+      value: 
+      objectReference: {fileID: 11400000, guid: 4fa0f985f11efc248a13ea73ad43a5db, type: 2}
+    - target: {fileID: 6226333345226059170, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: Prices
       value: 
       objectReference: {fileID: 1118762875}
@@ -9323,6 +9328,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2177574141186915912, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
   m_PrefabInstance: {fileID: 1797434959}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1797434964 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6226333345226059170, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
+  m_PrefabInstance: {fileID: 1797434959}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797434960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7e0ef369110dd41a5283188dfafdd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1797434965
 MonoBehaviour:
   m_ObjectHideFlags: 0

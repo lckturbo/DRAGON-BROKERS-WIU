@@ -397,7 +397,8 @@ MonoBehaviour:
   contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
-  dialog: Axl
+  dialogues:
+  - Axl
   playerInRange: 0
 --- !u!1 &85394482
 GameObject:
@@ -29096,6 +29097,8 @@ Transform:
   m_Children:
   - {fileID: 1455852727}
   - {fileID: 673391279}
+  - {fileID: 1665854565}
+  - {fileID: 1422103410}
   - {fileID: 75363249}
   - {fileID: 1200148622}
   - {fileID: 1298470170}
@@ -29930,7 +29933,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!224 &538735971
 RectTransform:
@@ -30523,7 +30526,8 @@ MonoBehaviour:
   contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
-  dialog: Hi
+  dialogues:
+  - Hi
   playerInRange: 0
 --- !u!1 &697072351
 GameObject:
@@ -35604,7 +35608,8 @@ MonoBehaviour:
   contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
-  dialog: In Memory Of Ck
+  dialogues:
+  - In Memory of CK
   playerInRange: 0
 --- !u!1 &1220327909
 GameObject:
@@ -36256,7 +36261,8 @@ MonoBehaviour:
   contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
-  dialog: In Loving Memory of Kayden
+  dialogues:
+  - In Loving Memory of Kayden
   playerInRange: 0
 --- !u!1 &1363477982
 GameObject:
@@ -37313,6 +37319,95 @@ RectTransform:
   m_AnchoredPosition: {x: 71.5, y: -263.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1422103409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1422103410}
+  - component: {fileID: 1422103412}
+  - component: {fileID: 1422103411}
+  m_Layer: 0
+  m_Name: Fish Market Buyer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1422103410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422103409}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.67, y: 9.66, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 385688990}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1422103411
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422103409}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.69083047}
+  serializedVersion: 2
+  m_Radius: 1.1908305
+--- !u!114 &1422103412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422103409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contextOn: {fileID: 11400000, guid: 1d70315fa3a43d64b9865d0955b048cc, type: 2}
+  contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
+  dialogBox: {fileID: 125313197}
+  dialogText: {fileID: 1247918206}
+  dialogues:
+  - Greetings!
+  - Here to sell the fish you caught today?
+  - Sure! I'll buy them all at the high price of 10 gold per fish!
+  playerInRange: 0
 --- !u!224 &1436350504 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8844567574305043957, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
@@ -37367,7 +37462,9 @@ MonoBehaviour:
   contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
-  dialog: Hi
+  dialogues:
+  - Hi
+  - Welcome to Singapura Fishing Village
   playerInRange: 0
 --- !u!58 &1455852729
 CircleCollider2D:
@@ -38494,7 +38591,7 @@ MonoBehaviour:
   contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
-  dialog: GIMME FISH PS
+  dialogues: []
   playerInRange: 0
 --- !u!58 &1640243723
 CircleCollider2D:
@@ -39550,6 +39647,95 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665450435}
   m_CullTransparentMesh: 1
+--- !u!1 &1665854564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1665854565}
+  - component: {fileID: 1665854567}
+  - component: {fileID: 1665854566}
+  m_Layer: 0
+  m_Name: Upgrade Salesman
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1665854565
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665854564}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.64, y: 10.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 385688990}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1665854566
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665854564}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.69083047}
+  serializedVersion: 2
+  m_Radius: 1.1908305
+--- !u!114 &1665854567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665854564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contextOn: {fileID: 11400000, guid: 1d70315fa3a43d64b9865d0955b048cc, type: 2}
+  contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
+  dialogBox: {fileID: 125313197}
+  dialogText: {fileID: 1247918206}
+  dialogues:
+  - Hi!
+  - You want to upgrade your fishing rig?
+  - I have the latest and shiniest equipment in stock!
+  playerInRange: 0
 --- !u!1 &1682909499
 GameObject:
   m_ObjectHideFlags: 0

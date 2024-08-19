@@ -187,7 +187,10 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
                 // Instantiate a fish prefab in the scene
                 if (fishPrefab != null)
                 {
-                    Instantiate(fishPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+                    float randomX = Random.Range(-9f, 9f);
+                    float randomY = Random.Range(-6f, 1f);
+                    Vector3 randomPosition = new Vector3(randomX, randomY, 0);
+                    Instantiate(fishPrefab, randomPosition, Quaternion.identity);
                 }
                 else
                 {

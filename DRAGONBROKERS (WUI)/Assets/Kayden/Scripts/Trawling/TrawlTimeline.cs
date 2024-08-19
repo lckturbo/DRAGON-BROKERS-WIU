@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class TrawlTimelineController : MonoBehaviour
+public class TrawlTimeline : MonoBehaviour
 {
     public PlayableDirector timeline;
     public IKManager ikManager;

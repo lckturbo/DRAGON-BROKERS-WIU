@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.Collections;
 using System.Xml.Serialization;
 
 public class ItemSlot : MonoBehaviour, IPointerClickHandler
@@ -38,25 +39,49 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     private void Start()
     {
         inventoryManager = GameObject.Find("Inventory Canvas Variant").GetComponent<InventoryManager>();
-        _goldManager = GameObject.FindObjectOfType<GoldManager>();
-        weightManager = GameObject.FindObjectOfType<WeightManager>();
-
         if (inventoryManager == null)
         {
             Debug.LogError("InventoryManager not found!");
         }
+
+        _goldManager = GameObject.FindObjectOfType<GoldManager>();
         if (_goldManager == null)
         {
             Debug.LogError("GoldManager not found!");
         }
+
+        weightManager = GameObject.FindObjectOfType<WeightManager>();
         if (weightManager == null)
         {
             Debug.LogError("InventoryWeightManager not found!");
+            // If not found, search again in Update
+            StartCoroutine(LookForWeightManager());
+        }
+    }
+
+    private IEnumerator LookForWeightManager()
+    {
+        yield return new WaitForSeconds(1f); // Wait for 1 second or next frame
+
+        weightManager = FindObjectOfType<WeightManager>();
+        if (weightManager == null)
+        {
+            Debug.LogError("WeightManager still not found! Ensure it exists in the scene.");
+        }
+        else
+        {
+            Debug.Log("WeightManager found successfully.");
         }
     }
 
     public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription, int worth, float weight) // Added int worth
     {
+        if (weightManager == null)
+        {
+            Debug.LogError("WeightManager is not assigned or found.");
+            return quantity;
+        }
+
         //Check to see if slot is full
         if (isFull || !weightManager.CanAddItem(weight, quantity))
         {

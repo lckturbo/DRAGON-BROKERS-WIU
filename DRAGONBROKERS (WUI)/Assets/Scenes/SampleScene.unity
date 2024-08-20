@@ -30649,7 +30649,6 @@ GameObject:
   m_Component:
   - component: {fileID: 645160802}
   - component: {fileID: 645160801}
-  - component: {fileID: 645160803}
   m_Layer: 0
   m_Name: Fishing Port
   m_TagString: Untagged
@@ -30717,22 +30716,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1197313769}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &645160803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645160800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a84587ddd427e04a86510aa64c6f133, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneToLoad: FishingPort
-  fadeInPanel: {fileID: 0}
-  inventoryManager: {fileID: 1955292960}
-  goldManager: {fileID: 1891541960}
 --- !u!1 &649203289
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,19 +3,22 @@ using System.Collections;
 
 public class fish : MonoBehaviour
 {
-    public float speed = 2f;
+    public float minSpeed = 1f;
+    public float maxSpeed = 3f;
     public float yMin = -4.5f;
     public float yMax = 4.5f;
     public float detectionRange = 1.3f;
     public LayerMask foodLayer;
-    public float minIdleDuration = 0.25f;
-    public float maxIdleDuration = 0.75f;
+    public float minIdleDuration = 1.0f;
+    public float maxIdleDuration = 4.0f;
     public float pitchAmount = 35f;
     public float foodChaseSpeedMultiplier = 1.5f;
     public float borderBuffer = 0.25f;
     public float sizeIncreaseAmount = 0.05f;
     public float breedingCooldown = 15f;
     public GameObject fishPrefab;
+
+    public float maxSize = 8f;
 
     private Rigidbody2D rb;
     private bool movingRight = true;
@@ -26,7 +29,7 @@ public class fish : MonoBehaviour
     private bool canBreed = true;
     private bool hasEaten = false;
     private float breedingTimer;
-    private ParticleSystem fishParticleSystem;
+    private float speed; // Updated to be a private variable
 
     private enum State { Idle, Swimming, ChasingFood }
     private State currentState;
@@ -34,12 +37,8 @@ public class fish : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        fishParticleSystem = GetComponentInChildren<ParticleSystem>();
-
+        SetRandomSpeed();
         TransitionToState(State.Swimming);
-
-        // Start playing particle effect every 2 seconds
-        StartCoroutine(PlayParticleEffect());
     }
 
     private void Update()
@@ -63,16 +62,6 @@ public class fish : MonoBehaviour
         }
         FlipSprite();
         ApplyPitch();
-        AdjustParticleSystem(); // Adjusts particle system scale and flip
-    }
-
-    private IEnumerator PlayParticleEffect()
-    {
-        while (true)
-        {
-            fishParticleSystem.Play();
-            yield return new WaitForSeconds(2f);
-        }
     }
 
     private void IdleState()
@@ -81,6 +70,7 @@ public class fish : MonoBehaviour
 
         if (Time.time >= stateTimer)
         {
+            SetRandomSpeed(); // Update speed when transitioning out of Idle state
             TransitionToState(State.Swimming);
         }
     }
@@ -122,6 +112,7 @@ public class fish : MonoBehaviour
         switch (newState)
         {
             case State.Idle:
+                idleDuration = Random.Range(minIdleDuration, maxIdleDuration);
                 stateTimer = Time.time + idleDuration;
                 break;
             case State.Swimming:
@@ -142,6 +133,11 @@ public class fish : MonoBehaviour
         transform.position = clampedPosition;
     }
 
+    private void SetRandomSpeed()
+    {
+        speed = Random.Range(minSpeed, maxSpeed);
+    }
+
     private void FlipSprite()
     {
         SpriteRenderer renderer = gameObject.GetComponent<SpriteRenderer>();
@@ -149,21 +145,6 @@ public class fish : MonoBehaviour
         if (renderer == null) return;
 
         renderer.flipX = !movingRight;
-    }
-
-    private void AdjustParticleSystem()
-    {
-        // Flip particle system based on the fish's direction
-        fishParticleSystem.transform.localScale = transform.localScale;
-
-        // Adjust the particle system's position to always be in front of the fish
-        Vector3 particleSystemPosition = fishParticleSystem.transform.localPosition;
-        particleSystemPosition.x = movingRight ? 0.5f : -0.5f;  // Adjust the 0.5f value as needed
-        fishParticleSystem.transform.localPosition = particleSystemPosition;
-
-        // Flip the rotation of the particle system so it faces the correct direction
-        var particleSystemMain = fishParticleSystem.main;
-        particleSystemMain.startRotationYMultiplier = movingRight ? 0 : 180;
     }
 
     private void CheckBounds()
@@ -209,7 +190,16 @@ public class fish : MonoBehaviour
             Debug.Log("Eating food: " + targetFood.name);
             Destroy(targetFood.gameObject);
             targetFood = null;
-            transform.localScale += new Vector3(sizeIncreaseAmount, sizeIncreaseAmount, 0);
+
+            // Increase the fish size but clamp it to the maximum size
+            Vector3 newSize = transform.localScale + new Vector3(sizeIncreaseAmount, sizeIncreaseAmount, 0);
+            newSize = new Vector3(
+                Mathf.Min(newSize.x, maxSize),
+                Mathf.Min(newSize.y, maxSize),
+                newSize.z
+            );
+            transform.localScale = newSize;
+
             hasEaten = true;
             TransitionToState(State.Idle);
         }

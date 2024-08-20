@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class Dialog : MonoBehaviour
 {
-    public SignalGame contextOn;
-    public SignalGame contextOff;
-
     public GameObject dialogBox;
     public Text dialogText;
     public List<string> dialogues; // List to hold multiple lines of dialogue
@@ -54,7 +51,6 @@ public class Dialog : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player entered trigger area.");
-            contextOn.Raise();
             playerInRange = true;
         }
     }
@@ -64,7 +60,6 @@ public class Dialog : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player exited trigger area.");
-            contextOff.Raise();
             playerInRange = false;
             dialogBox.SetActive(false);
         }

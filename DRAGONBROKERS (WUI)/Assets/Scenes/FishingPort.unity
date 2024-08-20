@@ -8546,12 +8546,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
+      propertyPath: winEffect
+      value: 
+      objectReference: {fileID: 3556594886273321251, guid: 598dc32d9ff509f4ba5d712b06ec29d5, type: 3}
+    - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: fishCaught
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: itemDescription
       value: testing testing just a normal fish
+      objectReference: {fileID: 0}
+    - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
+      propertyPath: winEffectOffset.y
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7637590883944924836, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8601,6 +8609,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 8459563568912842280, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
+      propertyPath: loseEffect
+      value: 
+      objectReference: {fileID: 1789771174606477862, guid: 802b0dc7da277dc4cad2b143e7639e1f, type: 3}
     - target: {fileID: 8794887960570443153, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: m_Name
       value: CommonFish (4)
@@ -8718,12 +8730,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
+      propertyPath: winEffect
+      value: 
+      objectReference: {fileID: 3556594886273321251, guid: 598dc32d9ff509f4ba5d712b06ec29d5, type: 3}
+    - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: fishCaught
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: itemDescription
       value: testing testing just a normal fish
+      objectReference: {fileID: 0}
+    - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
+      propertyPath: winEffectOffset.y
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7637590883944924836, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8773,6 +8793,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 8459563568912842280, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
+      propertyPath: loseEffect
+      value: 
+      objectReference: {fileID: 1789771174606477862, guid: 802b0dc7da277dc4cad2b143e7639e1f, type: 3}
     - target: {fileID: 8794887960570443153, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: m_Name
       value: CommonFish (5)
@@ -10630,12 +10654,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
+      propertyPath: winEffect
+      value: 
+      objectReference: {fileID: 3556594886273321251, guid: 598dc32d9ff509f4ba5d712b06ec29d5, type: 3}
+    - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: fishCaught
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: itemDescription
       value: testing testing just a normal fish
+      objectReference: {fileID: 0}
+    - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
+      propertyPath: winEffectOffset.y
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7637590883944924836, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10685,6 +10717,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 8459563568912842280, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
+      propertyPath: loseEffect
+      value: 
+      objectReference: {fileID: 1789771174606477862, guid: 802b0dc7da277dc4cad2b143e7639e1f, type: 3}
     - target: {fileID: 8794887960570443153, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: m_Name
       value: CommonFish (1)
@@ -10715,12 +10751,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
+      propertyPath: winEffect
+      value: 
+      objectReference: {fileID: 3556594886273321251, guid: 598dc32d9ff509f4ba5d712b06ec29d5, type: 3}
+    - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: fishCaught
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: itemDescription
       value: testing testing just a normal fish
+      objectReference: {fileID: 0}
+    - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
+      propertyPath: winEffectOffset.y
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7637590883944924836, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10770,6 +10814,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 8459563568912842280, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
+      propertyPath: loseEffect
+      value: 
+      objectReference: {fileID: 1789771174606477862, guid: 802b0dc7da277dc4cad2b143e7639e1f, type: 3}
     - target: {fileID: 8794887960570443153, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: m_Name
       value: CommonFish (3)
@@ -11944,12 +11992,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
+      propertyPath: winEffect
+      value: 
+      objectReference: {fileID: 3556594886273321251, guid: 598dc32d9ff509f4ba5d712b06ec29d5, type: 3}
+    - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: fishCaught
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: itemDescription
       value: testing testing just a normal fish
+      objectReference: {fileID: 0}
+    - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
+      propertyPath: winEffectOffset.y
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7637590883944924836, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11999,6 +12055,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 8459563568912842280, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
+      propertyPath: loseEffect
+      value: 
+      objectReference: {fileID: 1789771174606477862, guid: 802b0dc7da277dc4cad2b143e7639e1f, type: 3}
     - target: {fileID: 8794887960570443153, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: m_Name
       value: CommonFish (2)
@@ -13401,7 +13461,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1816358484
 Transform:
   m_ObjectHideFlags: 0
@@ -13702,6 +13762,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
+      propertyPath: winEffect
+      value: 
+      objectReference: {fileID: 3556594886273321251, guid: 598dc32d9ff509f4ba5d712b06ec29d5, type: 3}
+    - target: {fileID: 2478506041208659409, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
+      propertyPath: winEffectOffset.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7637590883944924836, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.26
@@ -13750,6 +13818,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 8459563568912842280, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
+      propertyPath: loseEffect
+      value: 
+      objectReference: {fileID: 1789771174606477862, guid: 802b0dc7da277dc4cad2b143e7639e1f, type: 3}
     - target: {fileID: 8794887960570443153, guid: 43d55688bdaa00c44b9b264cd8a23f14, type: 3}
       propertyPath: m_Name
       value: CommonFish

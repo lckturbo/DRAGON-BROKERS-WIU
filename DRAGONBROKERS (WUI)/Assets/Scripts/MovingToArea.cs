@@ -1,41 +1,106 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MovingToArea : MonoBehaviour
 {
-    public Vector2 cameraChange;  // Offset for the camera position change
-    public Vector3 playerChange;  // Offset for the player position change
-    public Vector2 newMinCameraPosition; // New min position for the camera in the new area
-    public Vector2 newMaxCameraPosition; // New max position for the camera in the new area
-    private CameraMovement cam;  // Reference to the CameraMovement script
     public bool needText;
-
     public string placeName;
     public GameObject text;
     public Text placeText;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        cam = Camera.main.GetComponent<CameraMovement>();
-    }
+    // Static flags to manage transitions
+    private static bool enteringSentosa = false;
+    private static bool enteringLakeside = false;
+    private static bool enteringVillageTown = false;
+    private static bool enteringMineForest = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            // Update camera's min and max positions
-            cam.minPosition = newMinCameraPosition;
-            cam.maxPosition = newMaxCameraPosition;
-
-            // Move the player by the defined offset
-            other.transform.position += playerChange;
-
-            if (needText)
+            // Sentosa transitions
+            if (placeName == "Sentosa" && !enteringSentosa)
             {
-                StartCoroutine(placeNameCo());
+                enteringSentosa = true;
+                enteringLakeside = false;
+                enteringVillageTown = false;
+                enteringMineForest = false;
+                if (needText)
+                {
+                    StartCoroutine(placeNameCo());
+                }
+            }
+            else if (placeName == "Singapore" && enteringSentosa)
+            {
+                enteringSentosa = false;
+                if (needText)
+                {
+                    StartCoroutine(placeNameCo());
+                }
+            }
+
+            // Lakeside transitions
+            else if (placeName == "Lakeside" && !enteringLakeside)
+            {
+                enteringLakeside = true;
+                enteringSentosa = false;
+                enteringVillageTown = false;
+                enteringMineForest = false;
+                if (needText)
+                {
+                    StartCoroutine(placeNameCo());
+                }
+            }
+            else if (placeName == "Singapore" && enteringLakeside)
+            {
+                enteringLakeside = false;
+                if (needText)
+                {
+                    StartCoroutine(placeNameCo());
+                }
+            }
+
+            // VillageTown transitions
+            else if (placeName == "VillageTown" && !enteringVillageTown)
+            {
+                enteringVillageTown = true;
+                enteringSentosa = false;
+                enteringLakeside = false;
+                enteringMineForest = false;
+                if (needText)
+                {
+                    StartCoroutine(placeNameCo());
+                }
+            }
+            else if (placeName == "Singapore" && enteringVillageTown)
+            {
+                enteringVillageTown = false;
+                if (needText)
+                {
+                    StartCoroutine(placeNameCo());
+                }
+            }
+
+            // Mine/Forest transitions
+            else if (placeName == "Mine/Forest" && !enteringMineForest)
+            {
+                enteringMineForest = true;
+                enteringSentosa = false;
+                enteringLakeside = false;
+                enteringVillageTown = false;
+                if (needText)
+                {
+                    StartCoroutine(placeNameCo());
+                }
+            }
+            else if (placeName == "SINGLISH" && enteringMineForest)
+            {
+                enteringMineForest = false;
+                if (needText)
+                {
+                    StartCoroutine(placeNameCo());
+                }
             }
         }
     }

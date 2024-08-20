@@ -28,6 +28,8 @@ public class GoldManager : MonoBehaviour
             Debug.Log(goldCount);
             UpdateGoldUI(); // Update the UI every time the gold count changes
         }
+
+        UpdateGoldUI();
     }
 
     public void SaveGold()

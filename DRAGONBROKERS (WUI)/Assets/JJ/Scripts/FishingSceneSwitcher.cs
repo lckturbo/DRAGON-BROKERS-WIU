@@ -8,9 +8,6 @@ public class PanelActivator : MonoBehaviour
     public Button button2;             // The second button
     public Button button3;             // The third button
 
-    private bool activateButton1 = false;  // Boolean to control the activation of button1
-    private bool activateButton2 = false;  // Boolean to control the activation of button2
-
     private void Start()
     {
         // Initially, the panel is inactive

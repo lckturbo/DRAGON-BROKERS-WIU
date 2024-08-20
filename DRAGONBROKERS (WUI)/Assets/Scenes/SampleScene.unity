@@ -40342,7 +40342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 545371317115865633, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -10
+      value: -10.000092
       objectReference: {fileID: 0}
     - target: {fileID: 863597420399552265, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
@@ -43290,7 +43290,7 @@ GameObject:
   - component: {fileID: 1773697655}
   - component: {fileID: 1773697654}
   m_Layer: 5
-  m_Name: Image
+  m_Name: FISHINGMETHOD - SELECTION
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90184,6 +90184,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2531101195043269400, guid: 4575a228521faa840a07c1d567a34383, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2598522880495660570, guid: 4575a228521faa840a07c1d567a34383, type: 3}
       propertyPath: signalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -90191,6 +90195,10 @@ PrefabInstance:
     - target: {fileID: 3966322362675933324, guid: 4575a228521faa840a07c1d567a34383, type: 3}
       propertyPath: m_SortingOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665841639444720860, guid: 4575a228521faa840a07c1d567a34383, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4677805309094214208, guid: 4575a228521faa840a07c1d567a34383, type: 3}
       propertyPath: m_LocalPosition.x

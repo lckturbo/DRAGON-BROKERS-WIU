@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Xml.Serialization;
 
 public class FoodManager : MonoBehaviour
 {
@@ -12,7 +13,14 @@ public class FoodManager : MonoBehaviour
 
     private bool isOnCooldown = false;
 
+    private FishFoodManager fishFoodManager;
+
     // This method will be called by the button's onClick event
+    private void Start()
+    {
+        fishFoodManager = GameObject.FindObjectOfType<FishFoodManager>();
+    }
+
     public void DropFood()
     {
         if (!isOnCooldown)
@@ -30,6 +38,8 @@ public class FoodManager : MonoBehaviour
             Instantiate(foodPrefab, spawnPosition, Quaternion.identity);
             yield return new WaitForSeconds(0f); // delay between spawning each food item
         }
+
+        fishFoodManager.foodCount -= 3;
 
         isOnCooldown = true;
         yield return new WaitForSeconds(cooldownDuration);

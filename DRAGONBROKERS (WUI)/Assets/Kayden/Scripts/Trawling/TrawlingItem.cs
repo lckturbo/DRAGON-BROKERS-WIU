@@ -15,9 +15,13 @@ public class TrawlingItem : MonoBehaviour
     private InventoryManager inventoryManager;
     public bool fishCaught = false;
 
+    private AudioSource sfxAudioSrc;
+    [SerializeField] private AudioClip splashAudioClip;
+
     private void Start()
     {
         inventoryManager = GameObject.Find("Inventory Canvas Variant").GetComponent<InventoryManager>();
+        sfxAudioSrc = GetComponent<AudioSource>();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -25,10 +29,17 @@ public class TrawlingItem : MonoBehaviour
         // Check if the collision is with the surface
         if (collision.gameObject.CompareTag("FishingSurface")) // Make sure your surface GameObject has the tag "Surface"
         {
+            if (!sfxAudioSrc.isPlaying)
+            {
+                Debug.Log("audio playing");
+                sfxAudioSrc.clip = splashAudioClip;
+                sfxAudioSrc.Play();
+            }
+
             inventoryManager.AddItem(itemName, quantity, sprite, itemDescription, worth, weight);
             fishCaught = true;
             Debug.Log("Caught fish");
-            Destroy(gameObject); // Destroy the fish GameObject
+            Destroy(gameObject, splashAudioClip.length); // Adjust the delay if necessary
         }
     }
 }

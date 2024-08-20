@@ -34,6 +34,10 @@ public class FishingScript : MonoBehaviour
     private ParticleSystem winParticleSystem;
     private ParticleSystem loseParticleSystem;
 
+    private AudioSource sfxAudioSrc;
+    [SerializeField] private AudioClip splashAudioClip;
+    [SerializeField] private AudioClip fishAudioClip;
+
     void Start()
     {
         isFishing = false;
@@ -50,6 +54,8 @@ public class FishingScript : MonoBehaviour
         // Make sure the effects are not visible at the start
         winEffect.SetActive(false);
         loseEffect.SetActive(false);
+
+        sfxAudioSrc = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -57,6 +63,11 @@ public class FishingScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isFishing == false && winnerAnim == false)
         {
             poleBack = true;
+            if (!sfxAudioSrc.isPlaying)
+            {
+                sfxAudioSrc.clip = splashAudioClip;
+                sfxAudioSrc.Play();
+            }
         }
         if (isFishing == true)
         {
@@ -68,6 +79,11 @@ public class FishingScript : MonoBehaviour
                 // Trigger the camera shake only once
                 if (!hasShakenCamera)
                 {
+                    if (!sfxAudioSrc.isPlaying)
+                    {
+                        sfxAudioSrc.clip = fishAudioClip;
+                        sfxAudioSrc.Play();
+                    }
                     cameraShake.ShakeCamera();
                     hasShakenCamera = true;
                 }
@@ -131,6 +147,12 @@ public class FishingScript : MonoBehaviour
 
     public void fishGameWon()
     {
+        if (!sfxAudioSrc.isPlaying)
+        {
+            sfxAudioSrc.clip = splashAudioClip;
+            sfxAudioSrc.Play();
+        }
+
         fishingProbability.FishingRodChance(playerAnim);
 
         fishGame.SetActive(false);
@@ -148,6 +170,11 @@ public class FishingScript : MonoBehaviour
 
     public void fishGameLost()
     {
+        if (!sfxAudioSrc.isPlaying)
+        {
+            sfxAudioSrc.clip = splashAudioClip;
+            sfxAudioSrc.Play();
+        }
         playerAnim.Play("playerStill");
         fishGame.SetActive(false);
         poleBack = false;

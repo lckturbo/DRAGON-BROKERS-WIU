@@ -393,8 +393,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 11400000, guid: 1d70315fa3a43d64b9865d0955b048cc, type: 2}
-  contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
   dialogues:
@@ -30579,8 +30577,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 11400000, guid: 1d70315fa3a43d64b9865d0955b048cc, type: 2}
-  contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
   dialogues:
@@ -35932,8 +35928,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 11400000, guid: 1d70315fa3a43d64b9865d0955b048cc, type: 2}
-  contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
   dialogues:
@@ -36589,8 +36583,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 11400000, guid: 1d70315fa3a43d64b9865d0955b048cc, type: 2}
-  contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
   dialogues:
@@ -37090,7 +37082,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391650930}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fa5f5d4f3392354eba66768386553e6, type: 3}
   m_Name: 
@@ -37733,8 +37725,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 11400000, guid: 1d70315fa3a43d64b9865d0955b048cc, type: 2}
-  contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
   dialogues:
@@ -37792,8 +37782,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 11400000, guid: 1d70315fa3a43d64b9865d0955b048cc, type: 2}
-  contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
   dialogues:
@@ -38921,8 +38909,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 11400000, guid: 1d70315fa3a43d64b9865d0955b048cc, type: 2}
-  contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
   dialogues: []
@@ -40091,8 +40077,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42755c0e4170174c9523aae41e6fb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 11400000, guid: 1d70315fa3a43d64b9865d0955b048cc, type: 2}
-  contextOff: {fileID: 11400000, guid: d26240fb15079934ab570c39cdc204f0, type: 2}
   dialogBox: {fileID: 125313197}
   dialogText: {fileID: 1247918206}
   dialogues:
@@ -41820,7 +41804,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1801912243
 Transform:
   m_ObjectHideFlags: 0
@@ -88375,10 +88359,10 @@ SceneRoots:
   - {fileID: 2082540101}
   - {fileID: 385688990}
   - {fileID: 1197313769}
-  - {fileID: 1801912243}
   - {fileID: 538735971}
   - {fileID: 1408971670}
   - {fileID: 191460590182879336}
   - {fileID: 279813549}
   - {fileID: 672586845}
   - {fileID: 885742074}
+  - {fileID: 1801912243}

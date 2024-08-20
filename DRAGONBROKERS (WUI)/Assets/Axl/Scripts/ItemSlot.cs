@@ -143,7 +143,6 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
                 // Update the gold count
                 _goldManager.goldCount += worth;
-                Debug.Log(_goldManager.goldCount);
                 Debug.Log($"Item '{itemName}' worth: {worth}");
 
                 // Update the UI

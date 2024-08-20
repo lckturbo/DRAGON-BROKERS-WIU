@@ -15,11 +15,11 @@ public class SceneSwitching : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            inventoryManager.SaveInventory();
-            SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
-        }
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    inventoryManager.SaveInventory();
+        //    SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
+        //}
 
         if (energyDepletion.stopTimer == true)
         {

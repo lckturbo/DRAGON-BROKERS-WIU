@@ -22,12 +22,7 @@ public class GoldManager : MonoBehaviour
             UpdateGoldUI(); // Update the UI every time the gold count changes
         }
 
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            goldCount = 0;
-            Debug.Log(goldCount);
-            UpdateGoldUI(); // Update the UI every time the gold count changes
-        }
+        UpdateGoldUI();
     }
 
     public void SaveGold()

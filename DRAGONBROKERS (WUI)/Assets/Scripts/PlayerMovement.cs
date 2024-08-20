@@ -10,12 +10,16 @@ public class PlayerMovement : MonoBehaviour
     public VectorValue startingPosition;
     private AudioSource sfxAudioSrc;
     private bool walk = false;
+
+    private Animator animator;
+
     [SerializeField] private AudioClip walkAudioClip;
 
     // Start is called before the first frame update
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         transform.position = startingPosition.initialValue;
         sfxAudioSrc = GetComponent<AudioSource>();
     }
@@ -41,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         {
             walk = false;
         }
+
         if (walk == true)
         {
             sfxAudioSrc.clip = walkAudioClip;
@@ -50,7 +55,24 @@ public class PlayerMovement : MonoBehaviour
                 sfxAudioSrc.Play();
             }
         }
-        MoveCharacter();
+
+        UpdateAnimationAndMove();
+    }
+
+
+    void UpdateAnimationAndMove()
+    {
+        if (change != Vector3.zero)
+        {
+            MoveCharacter();
+            animator.SetFloat("moveX", change.x);
+            animator.SetFloat("moveY", change.y);
+            animator.SetBool("moving", true);
+        }
+        else
+        {
+            animator.SetBool("moving", false);
+        }
     }
 
     void MoveCharacter()

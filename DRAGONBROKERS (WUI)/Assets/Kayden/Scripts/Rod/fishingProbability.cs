@@ -310,7 +310,7 @@ public class FishingProbability : MonoBehaviour
         fishingCount++;
 
         // Check if it's time to degrade the environment
-        if (fishingCount >= 100)
+        if (fishingCount >= 5)
         {
             fishingCount = 0; // Reset the count after degrading the environment
             DegradeEnvironment();
@@ -340,38 +340,52 @@ public class FishingProbability : MonoBehaviour
         float nothingThreshold = rareThreshold + NothingChance;
         float legendaryThreshold = nothingThreshold + LegendaryChance;
 
-        //Debug.Log($"Chance: {chance}, Thresholds -> On-Season: {onSeasonThreshold}, Off-Season: {offSeasonThreshold}, Rare: {rareThreshold}, Nothing: {nothingThreshold}, Legendary: {legendaryThreshold}");
-
         // Determine the result based on the chance and thresholds
+        string result;
+
         if (chance < onSeasonThreshold)
         {
             // On-season fish
             Debug.Log("Result: On-Season Fish");
-            return GetOnSeasonFishName();
+            result = GetOnSeasonFishName();
         }
         else if (chance < offSeasonThreshold)
         {
             // Off-season fish
             Debug.Log("Result: Off-Season Fish");
-            return GetOffSeasonFishName();
+            result = GetOffSeasonFishName();
         }
         else if (chance < rareThreshold)
         {
             Debug.Log("Result: Rare Fish");
-            return "Rare Fish";
+            result = "Rare Fish";
         }
         else if (chance < nothingThreshold)
         {
             Debug.Log("Result: No Fish Caught");
-            return "No Fish";
+            result = "No Fish";
         }
         else if (chance < legendaryThreshold)
         {
             Debug.Log("Result: Legendary Fish");
-            return "Legendary Fish";
+            result = "Legendary Fish";
+        }
+        else
+        {
+            result = "Unknown";
         }
 
-        return "Unknown";
+        // Increment the fishing attempt count
+        fishingCount++;
+
+        // Check if it's time to degrade the environment
+        if (fishingCount >= 5)
+        {
+            fishingCount = 0; // Reset the count after degrading the environment
+            DegradeEnvironment();
+        }
+
+        return result;
     }
 
     // Helper method to get the on-season fish name based on the current season

@@ -11,6 +11,7 @@ public class SceneTransition2 : MonoBehaviour
     public GameObject fadeInPanel;
     public InventoryManager inventoryManager;
     public GoldManager goldManager;
+    public FishFoodManager fishFoodManager;
 
 
     public void Awake()
@@ -27,6 +28,7 @@ public class SceneTransition2 : MonoBehaviour
         {
             inventoryManager.SaveInventory();
             goldManager.SaveGold();
+            fishFoodManager.SaveFood();
             SceneManager.LoadScene(sceneToLoad);
         }
     }

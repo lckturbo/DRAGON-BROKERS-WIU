@@ -9,6 +9,7 @@ public class EnergyDepletion : MonoBehaviour
     public bool stopTimer = false;
     public InventoryManager inventoryManager;
     public GoldManager goldManager;
+    public FishFoodManager fishFoodManager;
 
     private void Start()
     {
@@ -33,6 +34,7 @@ public class EnergyDepletion : MonoBehaviour
             {
                 inventoryManager.SaveInventory();
                 goldManager.SaveGold();
+                fishFoodManager.SaveFood();
                 stopTimer = true;
             }
 

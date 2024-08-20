@@ -20,6 +20,9 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public int worth;
     public float weight;
 
+    // Declare a variable to track the number of items removed
+    private int itemsRemovedCount = 0;
+
     //ITEM SLOT
     public TMP_Text quantityText;
     public Image itemImage;
@@ -36,6 +39,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public InventoryManager inventoryManager;
     public GoldManager _goldManager;
     public WeightManager weightManager;
+    public FishingProbability fish;
 
     //FISH PREFAB (Fish Tank)
     public GameObject fishPrefab;
@@ -58,6 +62,12 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         if (weightManager == null)
         {
             Debug.LogError("InventoryWeightManager not found!");
+        }
+
+        fish = GameObject.FindObjectOfType<FishingProbability>();
+        if (fish == null)
+        {
+            Debug.LogError("fishingProbability not found!");
         }
     }
 
@@ -190,6 +200,36 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
                     ClearSlot();
                 }
             }
+            return; // Exit to prevent further execution
+        }
+
+        if (SceneManager.GetActiveScene().name == "FishingPort")
+        {
+            // Logic for the FishingPort scene
+            if (quantity > 0)
+            {
+                quantity--;
+                weightManager.RemoveWeight(weight, 1); // Remove the weight of the sold item
+                itemsRemovedCount++; // Increment the count of items removed
+
+                // Update the UI
+                if (quantity > 0)
+                {
+                    quantityText.text = quantity.ToString();
+                }
+                else
+                {
+                    ClearSlot();
+                }
+
+                // Check if 5 items have been removed
+                if (itemsRemovedCount >= 5)
+                {
+                    itemsRemovedCount = 0; // Reset the count after degrading the environment
+                    fish.DegradeEnvironment();
+                }
+            }
+
             return; // Exit to prevent further execution
         }
     }

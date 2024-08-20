@@ -218,7 +218,7 @@ public class FishingProbability : MonoBehaviour
     }
 
     // Method to worsen the environment by 1 level each time
-    private void DegradeEnvironment()
+    public void DegradeEnvironment()
     {
         switch (currentEnvironment)
         {
@@ -235,6 +235,8 @@ public class FishingProbability : MonoBehaviour
                 Debug.Log("Environment is already at the lowest level: Severely Damaged.");
                 break;
         }
+
+        Debug.LogWarning("Environment has been degraded.");
     }
 
     private void AddFishToInventory(string fishName, int fishQuantity, Sprite fishSprite, string fishDescription, int fishWorth, Animator playerAnim, float weight)
@@ -310,19 +312,13 @@ public class FishingProbability : MonoBehaviour
         fishingCount++;
 
         // Check if it's time to degrade the environment
-        if (fishingCount >= 100)
+        if (fishingCount >= 5)
         {
             fishingCount = 0; // Reset the count after degrading the environment
             DegradeEnvironment();
         }
     }
 
-    /*
-     Eveything meant for debugging will be below here!
-    | | | |
-    | | | |
-    | | | |
-     */
     // Method to determine the result based on the current chances
     public string FishingChance()
     {
@@ -340,38 +336,52 @@ public class FishingProbability : MonoBehaviour
         float nothingThreshold = rareThreshold + NothingChance;
         float legendaryThreshold = nothingThreshold + LegendaryChance;
 
-        //Debug.Log($"Chance: {chance}, Thresholds -> On-Season: {onSeasonThreshold}, Off-Season: {offSeasonThreshold}, Rare: {rareThreshold}, Nothing: {nothingThreshold}, Legendary: {legendaryThreshold}");
-
         // Determine the result based on the chance and thresholds
+        string result;
+
         if (chance < onSeasonThreshold)
         {
             // On-season fish
-            //Debug.Log("Result: On-Season Fish");
-            return GetOnSeasonFishName();
+            Debug.Log("Result: On-Season Fish");
+            result = GetOnSeasonFishName();
         }
         else if (chance < offSeasonThreshold)
         {
             // Off-season fish
-            //Debug.Log("Result: Off-Season Fish");
-            return GetOffSeasonFishName();
+            Debug.Log("Result: Off-Season Fish");
+            result = GetOffSeasonFishName();
         }
         else if (chance < rareThreshold)
         {
-            //Debug.Log("Result: Rare Fish");
-            return "Rare Fish";
+            Debug.Log("Result: Rare Fish");
+            result = "Rare Fish";
         }
         else if (chance < nothingThreshold)
         {
-            //Debug.Log("Result: No Fish Caught");
-            return "No Fish";
+            Debug.Log("Result: No Fish Caught");
+            result = "No Fish";
         }
         else if (chance < legendaryThreshold)
         {
-            //Debug.Log("Result: Legendary Fish");
-            return "Legendary Fish";
+            Debug.Log("Result: Legendary Fish");
+            result = "Legendary Fish";
+        }
+        else
+        {
+            result = "Unknown";
         }
 
-        return "Unknown";
+        // Increment the fishing attempt count
+        fishingCount++;
+
+        // Check if it's time to degrade the environment
+        if (fishingCount >= 5)
+        {
+            fishingCount = 0; // Reset the count after degrading the environment
+            DegradeEnvironment();
+        }
+
+        return result;
     }
 
     // Helper method to get the on-season fish name based on the current season

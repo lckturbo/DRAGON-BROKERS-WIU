@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldCount: 0
   goldText: {fileID: 0}
+  goldData: {fileID: 0}
 --- !u!114 &7201163017358685218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,3 +63,6 @@ MonoBehaviour:
   energySlider: {fileID: 0}
   energyTimer: 5
   stopTimer: 0
+  inventoryManager: {fileID: 0}
+  goldManager: {fileID: 0}
+  fishFoodManager: {fileID: 0}

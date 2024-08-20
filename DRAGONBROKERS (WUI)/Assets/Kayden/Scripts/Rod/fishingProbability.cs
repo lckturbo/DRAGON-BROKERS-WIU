@@ -346,28 +346,28 @@ public class FishingProbability : MonoBehaviour
         if (chance < onSeasonThreshold)
         {
             // On-season fish
-            //Debug.Log("Result: On-Season Fish");
+            Debug.Log("Result: On-Season Fish");
             return GetOnSeasonFishName();
         }
         else if (chance < offSeasonThreshold)
         {
             // Off-season fish
-            //Debug.Log("Result: Off-Season Fish");
+            Debug.Log("Result: Off-Season Fish");
             return GetOffSeasonFishName();
         }
         else if (chance < rareThreshold)
         {
-            //Debug.Log("Result: Rare Fish");
+            Debug.Log("Result: Rare Fish");
             return "Rare Fish";
         }
         else if (chance < nothingThreshold)
         {
-            //Debug.Log("Result: No Fish Caught");
+            Debug.Log("Result: No Fish Caught");
             return "No Fish";
         }
         else if (chance < legendaryThreshold)
         {
-            //Debug.Log("Result: Legendary Fish");
+            Debug.Log("Result: Legendary Fish");
             return "Legendary Fish";
         }
 

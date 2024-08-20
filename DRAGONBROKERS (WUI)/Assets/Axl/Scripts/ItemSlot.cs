@@ -192,6 +192,11 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             }
             return; // Exit to prevent further execution
         }
+
+        //if ()
+        //{
+
+        //}
     }
 
     void ClearSlot()

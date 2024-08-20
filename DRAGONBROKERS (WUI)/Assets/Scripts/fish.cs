@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class fish : MonoBehaviour
 {
@@ -9,15 +10,15 @@ public class fish : MonoBehaviour
     public LayerMask foodLayer;
     public float minIdleDuration = 0.25f;
     public float maxIdleDuration = 0.75f;
-    public float pitchAmount = 35f; // Angle for pitching up/down
+    public float pitchAmount = 35f;
     public float foodChaseSpeedMultiplier = 1.5f;
     public float borderBuffer = 0.25f;
-    public float sizeIncreaseAmount = 0.05f; // Amount to increase size each time the fish eats
-    public float breedingCooldown = 15f; // Time before fish can eat or breed again
-    public GameObject fishPrefab; // Prefab for the new fish
+    public float sizeIncreaseAmount = 0.05f;
+    public float breedingCooldown = 15f;
+    public GameObject fishPrefab;
 
     private Rigidbody2D rb;
-    private bool movingRight = true; // Indicates current direction
+    private bool movingRight = true;
     private Transform targetFood;
     private float stateTimer;
     private float idleDuration;
@@ -25,6 +26,7 @@ public class fish : MonoBehaviour
     private bool canBreed = true;
     private bool hasEaten = false;
     private float breedingTimer;
+    private ParticleSystem fishParticleSystem;
 
     private enum State { Idle, Swimming, ChasingFood }
     private State currentState;
@@ -32,7 +34,12 @@ public class fish : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        TransitionToState(State.Swimming); // Start in the Swimming state 
+        fishParticleSystem = GetComponentInChildren<ParticleSystem>();
+
+        TransitionToState(State.Swimming);
+
+        // Start playing particle effect every 2 seconds
+        StartCoroutine(PlayParticleEffect());
     }
 
     private void Update()
@@ -56,6 +63,16 @@ public class fish : MonoBehaviour
         }
         FlipSprite();
         ApplyPitch();
+        AdjustParticleSystem(); // Adjusts particle system scale and flip
+    }
+
+    private IEnumerator PlayParticleEffect()
+    {
+        while (true)
+        {
+            fishParticleSystem.Play();
+            yield return new WaitForSeconds(2f);
+        }
     }
 
     private void IdleState()
@@ -131,14 +148,22 @@ public class fish : MonoBehaviour
 
         if (renderer == null) return;
 
-        if (movingRight)
-            renderer.flipX = false;
-        else
-            renderer.flipX = true;
+        renderer.flipX = !movingRight;
+    }
 
-        //Vector3 scale = transform.localScale;
-        //scale.x = movingRight ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
-        //transform.localScale = scale;
+    private void AdjustParticleSystem()
+    {
+        // Flip particle system based on the fish's direction
+        fishParticleSystem.transform.localScale = transform.localScale;
+
+        // Adjust the particle system's position to always be in front of the fish
+        Vector3 particleSystemPosition = fishParticleSystem.transform.localPosition;
+        particleSystemPosition.x = movingRight ? 0.5f : -0.5f;  // Adjust the 0.5f value as needed
+        fishParticleSystem.transform.localPosition = particleSystemPosition;
+
+        // Flip the rotation of the particle system so it faces the correct direction
+        var particleSystemMain = fishParticleSystem.main;
+        particleSystemMain.startRotationYMultiplier = movingRight ? 0 : 180;
     }
 
     private void CheckBounds()
@@ -221,28 +246,23 @@ public class fish : MonoBehaviour
 
     private void Breed(fish otherFish)
     {
-        // Reduce size of the fish that are breeding
         transform.localScale -= new Vector3(sizeIncreaseAmount, sizeIncreaseAmount, 0);
         otherFish.transform.localScale -= new Vector3(sizeIncreaseAmount, sizeIncreaseAmount, 0);
 
-        // Ensure the fish size does not go below 1x1x1
         transform.localScale = Vector3.Max(transform.localScale, new Vector3(1, 1, 1));
         otherFish.transform.localScale = Vector3.Max(otherFish.transform.localScale, new Vector3(1, 1, 1));
 
-        // Disable breeding and eating temporarily
         canBreed = false;
         otherFish.canBreed = false;
         breedingTimer = Time.time + breedingCooldown;
         otherFish.breedingTimer = Time.time + breedingCooldown;
 
-        // Spawn a new fish
         if (fishPrefab != null)
         {
             Instantiate(fishPrefab, transform.position, Quaternion.identity);
             Debug.Log("Spawned new fish");
         }
 
-        // Reset the eaten state
         hasEaten = false;
         otherFish.hasEaten = false;
     }

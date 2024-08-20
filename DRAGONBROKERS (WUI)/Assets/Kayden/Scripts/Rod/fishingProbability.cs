@@ -218,7 +218,7 @@ public class FishingProbability : MonoBehaviour
     }
 
     // Method to worsen the environment by 1 level each time
-    private void DegradeEnvironment()
+    public void DegradeEnvironment()
     {
         switch (currentEnvironment)
         {
@@ -235,6 +235,8 @@ public class FishingProbability : MonoBehaviour
                 Debug.Log("Environment is already at the lowest level: Severely Damaged.");
                 break;
         }
+
+        Debug.LogWarning("Environment has been degraded.");
     }
 
     private void AddFishToInventory(string fishName, int fishQuantity, Sprite fishSprite, string fishDescription, int fishWorth, Animator playerAnim, float weight)
@@ -317,12 +319,6 @@ public class FishingProbability : MonoBehaviour
         }
     }
 
-    /*
-     Eveything meant for debugging will be below here!
-    | | | |
-    | | | |
-    | | | |
-     */
     // Method to determine the result based on the current chances
     public string FishingChance()
     {

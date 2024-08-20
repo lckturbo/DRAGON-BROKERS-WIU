@@ -20,10 +20,14 @@ public class PoisonItem : MonoBehaviour
     private ParticleSystem winParticleSystem;
     public Vector2 winEffectOffset = new Vector2(1, 1);  // Offset distance for the win effect
 
+    private AudioSource sfxAudioSrc;
+    [SerializeField] private AudioClip splashAudioClip;
+
     private void Start()
     {
         inventoryManager = GameObject.Find("Inventory Canvas Variant").GetComponent<InventoryManager>();
         fishingProbability = GameObject.FindObjectOfType<FishingProbability>(); // Find the FishingProbability component
+        sfxAudioSrc = GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -31,6 +35,12 @@ public class PoisonItem : MonoBehaviour
         // Check if the collision is with the surface
         if (collision.gameObject.CompareTag("FishingSurface"))
         {
+            if (!sfxAudioSrc.isPlaying)
+            {
+                sfxAudioSrc.clip = splashAudioClip;
+                sfxAudioSrc.Play();
+            }
+
             // Get the random fish/item from FishingProbability
             string caughtFishName = fishingProbability.FishingChance();
 

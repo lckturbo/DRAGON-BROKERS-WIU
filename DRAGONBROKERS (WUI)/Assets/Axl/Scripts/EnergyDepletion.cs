@@ -7,6 +7,8 @@ public class EnergyDepletion : MonoBehaviour
     public Slider energySlider;
     public float energyTimer;
     public bool stopTimer = false;
+    public InventoryManager inventoryManager;
+    public GoldManager goldManager;
 
     private void Start()
     {
@@ -29,6 +31,8 @@ public class EnergyDepletion : MonoBehaviour
 
             if (energyTimer <= 0)
             {
+                inventoryManager.SaveInventory();
+                goldManager.SaveGold();
                 stopTimer = true;
             }
 

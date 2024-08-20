@@ -125,7 +125,6 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-
     public void LoadInventory()
     {
         // Check if Data is null or if it contains no items

@@ -12,6 +12,7 @@ public class SceneTransition3 : MonoBehaviour
     public float fadeWait;
     public InventoryManager inventoryManager;
     public GoldManager goldManager;
+    public FishFoodManager fishFoodManager;
 
     public void Awake()
     {
@@ -33,6 +34,7 @@ public class SceneTransition3 : MonoBehaviour
         // Save the player's inventory, gold, and position before transitioning
         inventoryManager.SaveInventory();
         goldManager.SaveGold();
+        fishFoodManager.SaveFood();
         playerStorageposition.initialValue = playerPosition;
 
         if (fadeOutPanel != null)

@@ -3787,6 +3787,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045aa700eebb9f748b2c16e3a98fec63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1002940149 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8242885532902905103, guid: 7c235cd8964567e42989b77395660244, type: 3}
+  m_PrefabInstance: {fileID: 1002940144}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002940145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934e7e6551526404d865933e968558d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1058650964
 GameObject:
   m_ObjectHideFlags: 0
@@ -9243,6 +9254,7 @@ MonoBehaviour:
   inventoryManager: {fileID: 145232475}
   goldManager: {fileID: 1002940146}
   fishFoodManager: {fileID: 1002940147}
+  fishingProbability: {fileID: 1002940149}
 --- !u!61 &1698459920
 BoxCollider2D:
   m_ObjectHideFlags: 0

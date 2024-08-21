@@ -50186,6 +50186,113 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &446254358
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2179499295775335973, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: m_Name
+      value: Tutorial NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101651422836684795, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: dialogBox
+      value: 
+      objectReference: {fileID: 125313197}
+    - target: {fileID: 5101651422836684795, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101651422836684795, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: dialogText
+      value: 
+      objectReference: {fileID: 1247918206}
+    - target: {fileID: 5101651422836684795, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101651422836684795, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: dialogues.Array.data[0]
+      value: Welcome to Singapura Fishing Village!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101651422836684795, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: dialogues.Array.data[1]
+      value: I see, so you are the new Head of Fishing?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101651422836684795, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: dialogues.Array.data[2]
+      value: Well, as the Village Elder, let me give you a run through of your tasks.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101651422836684795, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: dialogues.Array.data[3]
+      value: You have to catch as much fish as you can in order to feed our entire
+        village. But make sure you do this smartly, or else dire consequences will
+        have to be faced.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101651422836684795, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: dialogues.Array.data[4]
+      value: Walk around with WASD, and press TAB to see what you have on hand. Press
+        SPACE to interact with objects or NPCs like me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101651422836684795, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: dialogues.Array.data[5]
+      value: Look at the top left of the screen! That is how much gold and fish food
+        you have. That green bar? That is the amount of time you have before I return
+        to assess your skills as Head of Fishing.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101651422836684795, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: dialogues.Array.data[6]
+      value: If you're ready, then head on down to the port and start reeling 'em
+        in!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679209918458317435, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.62893
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679209918458317435, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679209918458317435, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679209918458317435, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679209918458317435, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679209918458317435, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679209918458317435, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679209918458317435, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679209918458317435, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679209918458317435, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
 --- !u!1 &477263991
 GameObject:
   m_ObjectHideFlags: 0
@@ -61799,7 +61906,7 @@ GameObject:
   - component: {fileID: 1455852728}
   - component: {fileID: 1455852729}
   m_Layer: 0
-  m_Name: SignCollider
+  m_Name: Tutorial NPC Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61814,7 +61921,7 @@ Transform:
   m_GameObject: {fileID: 1455852726}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.359, y: -0.068, z: 0}
+  m_LocalPosition: {x: 0.457, y: 0.263, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -61836,6 +61943,16 @@ MonoBehaviour:
   dialogText: {fileID: 1247918206}
   dialogues:
   - Welcome to Singapura Fishing Village!
+  - I see, so you are the new Head of Fishing?
+  - Well, as the Village Elder, let me give you a run through of your tasks.
+  - You have to catch as much fish as you can in order to feed our entire village.
+  - But make sure to do this smartly, or you will be met with dire consequences.
+  - Walk around with WASD, and press TAB to see what you have on hand. Press SPACE
+    to interact with objects or NPCs like me.
+  - Look at the top left of the screen! That is how much gold and fish food you have.
+  - That green bar? That is the amount of time you have before I return to assess
+    your skills as Head of Fishing.
+  - If you're ready, then head on down to the port and start reeling 'em in!
   playerInRange: 0
 --- !u!58 &1455852729
 CircleCollider2D:
@@ -143268,7 +143385,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fe4b4531130bf945969c055d52a879d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 3
   inventoryManager: {fileID: 1955292960}
 --- !u!114 &1955292960 stripped
 MonoBehaviour:
@@ -144405,3 +144521,4 @@ SceneRoots:
   - {fileID: 1408971670}
   - {fileID: 885742074}
   - {fileID: 253271662}
+  - {fileID: 446254358}

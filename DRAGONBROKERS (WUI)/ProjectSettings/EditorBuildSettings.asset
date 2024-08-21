@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Club.unity
     guid: fbde3a4a9b83e194793a6a2ae524b4f7
+  - enabled: 1
+    path: Assets/Axl/Scenes/Ending.unity
+    guid: 5e84356738058cf4eb1272ec2ae4aea5
   m_configObjects: {}

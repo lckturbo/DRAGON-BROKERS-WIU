@@ -1128,6 +1128,7 @@ MonoBehaviour:
   goldManager: {fileID: 1559604362}
   fishFoodManager: {fileID: 1559604359}
   fishingProbability: {fileID: 1559604357}
+  buyItems: {fileID: 0}
 --- !u!61 &546338023
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5717,7 +5718,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fe4b4531130bf945969c055d52a879d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 3
   inventoryManager: {fileID: 322907931}
 --- !u!114 &1559604357 stripped
 MonoBehaviour:
@@ -5784,7 +5784,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3664951365466068053, guid: 9cb71a03d59e76c4bae232ccbdc92e34, type: 2}
-  m_audioClip: {fileID: 8300000, guid: a6d002b54821d254f89a248be7ad6901, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7a061991af8ebcb4496dd6f5a0f545f6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

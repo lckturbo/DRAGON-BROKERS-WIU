@@ -8935,11 +8935,11 @@ PrefabInstance:
       objectReference: {fileID: 1981963937}
     - target: {fileID: 522547270695877976, guid: f550e36305aff3f45b26612e208f710b, type: 3}
       propertyPath: playerPosition.x
-      value: -18.5
+      value: -19
       objectReference: {fileID: 0}
     - target: {fileID: 522547270695877976, guid: f550e36305aff3f45b26612e208f710b, type: 3}
       propertyPath: playerPosition.y
-      value: -47.25
+      value: -32
       objectReference: {fileID: 0}
     - target: {fileID: 1538161155318810776, guid: f550e36305aff3f45b26612e208f710b, type: 3}
       propertyPath: m_Pivot.x

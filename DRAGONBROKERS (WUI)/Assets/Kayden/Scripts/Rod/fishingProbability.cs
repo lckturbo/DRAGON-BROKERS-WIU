@@ -12,6 +12,7 @@ public class FishingProbability : MonoBehaviour
 
     //Inventory
     public bool addToInv = true;
+    private InventoryManager inventoryManager;
 
     //OverFishing Count
     private int fishingCount = 0;
@@ -25,8 +26,7 @@ public class FishingProbability : MonoBehaviour
         SeverelyDamaged
     }
 
-    private Environment currentEnvironment = Environment.Perfect;
-    private InventoryManager inventoryManager;
+    private Environment currentEnvironment;
 
     //Seasons
     public enum Season
@@ -37,7 +37,7 @@ public class FishingProbability : MonoBehaviour
         Winter
     }
 
-    public Season currentSeason = Season.Spring;
+    public Season currentSeason;
 
     //Fish Init
     // Seasonal fish for each season
@@ -165,7 +165,17 @@ public class FishingProbability : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.B))
             {
+                Debug.Log("Environment Saved: " + gameData.currentEnvironment + " ,Season Saved: " + gameData.currentSeason);
                 Debug.Log("Environment: " + currentEnvironment + " ,Season: " + currentSeason);
+            }
+
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                gameData.currentEnvironment = Environment.Perfect;
+                gameData.currentSeason = Season.Spring;
+
+                currentEnvironment = Environment.Perfect;
+                currentSeason = Season.Spring;
             }
         }
 
@@ -174,7 +184,7 @@ public class FishingProbability : MonoBehaviour
     // Method to set the environment type [ENVIRONMENT]
     public void SetEnvironment(Environment environment)
     {
-        gameData.currentEnvironment = environment;
+        currentEnvironment = environment;
 
         switch (currentEnvironment)
         {
@@ -219,7 +229,7 @@ public class FishingProbability : MonoBehaviour
     // Method to set the season type [SEASON]
     public void SetSeason(Season newSeason)
     {
-        gameData.currentSeason = newSeason;
+        currentSeason = newSeason;
         Debug.Log($"Season set to: {currentSeason}");
     }
 
@@ -431,7 +441,7 @@ public class FishingProbability : MonoBehaviour
     }
 
     // Helper method to get an off-season fish name (random season other than the current one)
-    private string GetOffSeasonFishName()
+    private string GetOffSeasonFishName()   
     {
         var offSeasons = new List<Season> { Season.Spring, Season.Summer, Season.Autumn, Season.Winter };
         offSeasons.Remove(currentSeason);

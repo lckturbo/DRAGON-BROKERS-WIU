@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Kayden/Scenes/FishingPoison.unity
     guid: bced371f7bc11cf40b25e143a2b3ea46
+  - enabled: 1
+    path: Assets/Scenes/Church.unity
+    guid: d3039be459531c64a863c9137fd6961c
   m_configObjects: {}

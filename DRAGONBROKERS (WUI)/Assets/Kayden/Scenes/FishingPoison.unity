@@ -5660,7 +5660,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.07
 --- !u!64 &209574452
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6378,6 +6377,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3759689944238056537, guid: 7c235cd8964567e42989b77395660244, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3829929350829119513, guid: 7c235cd8964567e42989b77395660244, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -6456,6 +6459,7 @@ PrefabInstance:
       objectReference: {fileID: 1753335466}
     m_RemovedComponents:
     - {fileID: 5365541725443643092, guid: 7c235cd8964567e42989b77395660244, type: 3}
+    - {fileID: 3759689944238056537, guid: 7c235cd8964567e42989b77395660244, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -6642,7 +6646,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.02
 --- !u!64 &864706500
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7645,7 +7648,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.04
 --- !u!64 &1316567032
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7740,11 +7742,11 @@ PrefabInstance:
       objectReference: {fileID: 1417132828}
     - target: {fileID: 522547270695877976, guid: f550e36305aff3f45b26612e208f710b, type: 3}
       propertyPath: playerPosition.x
-      value: -18.5
+      value: -19.5
       objectReference: {fileID: 0}
     - target: {fileID: 522547270695877976, guid: f550e36305aff3f45b26612e208f710b, type: 3}
       propertyPath: playerPosition.y
-      value: -47.25
+      value: -32
       objectReference: {fileID: 0}
     - target: {fileID: 1538161155318810776, guid: f550e36305aff3f45b26612e208f710b, type: 3}
       propertyPath: m_Pivot.x
@@ -9545,7 +9547,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.05
 --- !u!64 &1745399128
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10017,7 +10018,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.09
 --- !u!64 &1878155143
 MeshCollider:
   m_ObjectHideFlags: 0

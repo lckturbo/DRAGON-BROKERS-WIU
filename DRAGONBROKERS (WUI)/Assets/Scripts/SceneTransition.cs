@@ -18,6 +18,7 @@ public class SceneTransition : MonoBehaviour
     public GoldManager goldManager;
     public FishFoodManager fishFoodManager;
     public FishingProbability fishingProbability;
+    public BuyItems buyItems;
 
     public void Awake()
     {
@@ -35,6 +36,7 @@ public class SceneTransition : MonoBehaviour
             goldManager.SaveGold();
             fishFoodManager.SaveFood();
             fishingProbability.SaveData();
+            buyItems.SaveBuyItems();
             playerStorageposition.initialValue = playerPosition;
             StartCoroutine(FadeCo());
         }

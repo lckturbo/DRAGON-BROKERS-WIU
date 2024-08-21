@@ -7,6 +7,7 @@ public class BuyItems : MonoBehaviour
     private GoldManager goldManager;
     private FishFoodManager fishFoodManager;
     private WeightManager weightManager;
+    public BuyItemsData buyItemsData;
 
     public bool poisonActive = false; //Poison
     public bool trawlActive = false; //Trawling Boat Add on
@@ -126,5 +127,39 @@ public class BuyItems : MonoBehaviour
         {
             Debug.Log("Not Enough Money for IRod");
         }
+    }
+
+    public void SaveBuyItems()
+    {
+        buyItemsData.poisonActive = poisonActive;
+        buyItemsData.trawlActive = trawlActive;
+        buyItemsData.IncreaseWeight = IncreaseWeight;
+        buyItemsData.PlatRod = PlatRod;
+        buyItemsData.EmeRod = EmeRod;
+        buyItemsData.IRod = IRod;
+
+        Debug.Log("poisonActive: " + poisonActive);
+        Debug.Log("trawlActive: " + trawlActive);
+        Debug.Log("increaseweight: " + IncreaseWeight);
+        Debug.Log("platrod: " + PlatRod);
+        Debug.Log("emerod: " + EmeRod);
+        Debug.Log("irod: " + IRod);
+    }
+
+    public void LoadGold()
+    {
+        poisonActive = buyItemsData.poisonActive;
+        trawlActive = buyItemsData.trawlActive;
+        IncreaseWeight = buyItemsData.IncreaseWeight;
+        PlatRod = buyItemsData.PlatRod;
+        EmeRod = buyItemsData.EmeRod;
+        IRod = buyItemsData.IRod;
+
+        Debug.Log("poisonActive: " + poisonActive);
+        Debug.Log("trawlActive: " + trawlActive);
+        Debug.Log("increaseweight: " + IncreaseWeight);
+        Debug.Log("platrod: " + PlatRod);
+        Debug.Log("emerod: " + EmeRod);
+        Debug.Log("irod: " + IRod);
     }
 }

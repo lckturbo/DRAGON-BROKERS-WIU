@@ -8673,7 +8673,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3829929350829119513, guid: 7c235cd8964567e42989b77395660244, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1557703707}
+      addedObject: {fileID: 1557703711}
   m_SourcePrefab: {fileID: 100100000, guid: 7c235cd8964567e42989b77395660244, type: 3}
 --- !u!114 &1557703696 stripped
 MonoBehaviour:
@@ -8713,7 +8713,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5833080655468639841, guid: 7c235cd8964567e42989b77395660244, type: 3}
   m_PrefabInstance: {fileID: 1557703695}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1557703707
+--- !u!114 &1557703711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

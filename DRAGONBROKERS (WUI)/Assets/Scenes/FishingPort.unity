@@ -283,10 +283,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 20735472}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
+  m_Script: {fileID: 11500000, guid: 57221e7a83c05d9488832b68d7d31d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.05
+  backgroundScrollSpeed: 0.1
 --- !u!64 &20735474
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1107,7 +1107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.2
 --- !u!1 &224240503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,10 +1223,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 224240503}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
+  m_Script: {fileID: 11500000, guid: 57221e7a83c05d9488832b68d7d31d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.02
+  backgroundScrollSpeed: 0.1
 --- !u!1001 &260120946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2164,7 +2163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.2
 --- !u!4 &392114530 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4273675922434973477, guid: 91c3c580b27447d429919819b2f2a405, type: 3}
@@ -2859,7 +2857,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.2
 --- !u!212 &545296869
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8718,6 +8715,7 @@ PrefabInstance:
       objectReference: {fileID: 884717320}
     m_RemovedComponents:
     - {fileID: 5365541725443643092, guid: 7c235cd8964567e42989b77395660244, type: 3}
+    - {fileID: 3759689944238056537, guid: 7c235cd8964567e42989b77395660244, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -9199,7 +9197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.2
 --- !u!1 &998834861
 GameObject:
   m_ObjectHideFlags: 0
@@ -9297,7 +9294,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.2
 --- !u!1001 &1046985899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9942,10 +9938,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1167034099}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
+  m_Script: {fileID: 11500000, guid: 57221e7a83c05d9488832b68d7d31d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.09
+  backgroundScrollSpeed: 0.1
 --- !u!64 &1167034101
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10174,7 +10170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.2
 --- !u!1001 &1204932444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10584,10 +10579,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1275403247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
+  m_Script: {fileID: 11500000, guid: 57221e7a83c05d9488832b68d7d31d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.04
+  backgroundScrollSpeed: 0.1
 --- !u!64 &1275403249
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10858,10 +10853,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1320262478}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
+  m_Script: {fileID: 11500000, guid: 57221e7a83c05d9488832b68d7d31d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.07
+  backgroundScrollSpeed: 0.1
 --- !u!64 &1320262480
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14027,7 +14022,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1816358484
 Transform:
   m_ObjectHideFlags: 0

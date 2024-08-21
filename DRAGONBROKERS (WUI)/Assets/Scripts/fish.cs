@@ -96,14 +96,14 @@ public class fish : MonoBehaviour
             return;
         }
 
-        // Calculate direction towards the food
+        // calculate direction towards the food
         Vector2 direction = (targetFood.position - transform.position).normalized;
 
-        // Apply the seek behavior: Set velocity towards the food
+        // apply the seek behaviorby setting the velocity towards the food
         Vector2 desiredVelocity = direction * speed * foodChaseSpeedMultiplier;
         rb.velocity = desiredVelocity;
 
-        // Check if the fish is close enough to eat the food
+        // check if the fish is close enough to eat the food
         if (Vector2.Distance(transform.position, targetFood.position) < 1.0f)
         {
             EatFood();

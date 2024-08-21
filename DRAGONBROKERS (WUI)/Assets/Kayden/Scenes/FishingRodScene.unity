@@ -5376,10 +5376,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 62010732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
+  m_Script: {fileID: 11500000, guid: 57221e7a83c05d9488832b68d7d31d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.02
+  backgroundScrollSpeed: 0.1
 --- !u!64 &62010735
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9340,10 +9340,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1598849075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
+  m_Script: {fileID: 11500000, guid: 57221e7a83c05d9488832b68d7d31d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.04
+  backgroundScrollSpeed: 0.1
 --- !u!64 &1598849078
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9460,10 +9460,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1612930523}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
+  m_Script: {fileID: 11500000, guid: 57221e7a83c05d9488832b68d7d31d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.05
+  backgroundScrollSpeed: 0.1
 --- !u!64 &1612930526
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9580,10 +9580,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1648876730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
+  m_Script: {fileID: 11500000, guid: 57221e7a83c05d9488832b68d7d31d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.09
+  backgroundScrollSpeed: 0.1
 --- !u!64 &1648876733
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9898,10 +9898,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1785968493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b37d1a3f56603f46a9a3a8483a850be, type: 3}
+  m_Script: {fileID: 11500000, guid: 57221e7a83c05d9488832b68d7d31d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.07
+  backgroundScrollSpeed: 0.1
 --- !u!64 &1785968496
 MeshCollider:
   m_ObjectHideFlags: 0

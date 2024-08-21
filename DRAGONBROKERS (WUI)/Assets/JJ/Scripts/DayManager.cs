@@ -9,7 +9,7 @@ public class DayManager : MonoBehaviour
 
     private void Update()
     {
-        if (energyDepletion.stopTimer)
+        if (energyDepletion.stopTimer2)
         {
             ChangeDay();
         }

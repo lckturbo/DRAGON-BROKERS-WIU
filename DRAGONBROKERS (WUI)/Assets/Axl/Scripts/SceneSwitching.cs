@@ -25,7 +25,7 @@ public class SceneSwitching : MonoBehaviour
         //    SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
         //}
 
-        if (energyDepletion != null && energyDepletion.stopTimer == true)
+        if (energyDepletion.stopTimer)
         {
             SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
             Debug.Log("Scene switched to index: " + sceneIndex);

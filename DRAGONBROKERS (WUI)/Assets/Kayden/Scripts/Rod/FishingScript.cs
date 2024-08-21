@@ -38,6 +38,8 @@ public class FishingScript : MonoBehaviour
     [SerializeField] private AudioClip splashAudioClip;
     [SerializeField] private AudioClip fishAudioClip;
 
+    public static int rodFishCaught = 0;
+
     void Start()
     {
         isFishing = false;
@@ -152,6 +154,9 @@ public class FishingScript : MonoBehaviour
             sfxAudioSrc.clip = splashAudioClip;
             sfxAudioSrc.Play();
         }
+
+        rodFishCaught++;
+        Debug.Log("YOU ARE TOUCHING ME: " +  rodFishCaught);
 
         fishingProbability.FishingRodChance(playerAnim);
 

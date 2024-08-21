@@ -23,6 +23,8 @@ public class PoisonItem : MonoBehaviour
     private AudioSource sfxAudioSrc;
     [SerializeField] private AudioClip splashAudioClip;
 
+    public static int poisonFishCaught = 0;
+
     private void Start()
     {
         inventoryManager = GameObject.Find("Inventory Canvas Variant").GetComponent<InventoryManager>();
@@ -40,6 +42,9 @@ public class PoisonItem : MonoBehaviour
                 sfxAudioSrc.clip = splashAudioClip;
                 sfxAudioSrc.Play();
             }
+
+            poisonFishCaught++;
+            Debug.Log("I WANT TO TOUCH YOU: " + poisonFishCaught);
 
             // Get the random fish/item from FishingProbability
             string caughtFishName = fishingProbability.FishingChance();

@@ -25,7 +25,7 @@ public class FishingProbability : MonoBehaviour
         SeverelyDamaged
     }
 
-    private Environment currentEnvironment = Environment.Perfect;
+    private Environment currentEnvironment;
     private InventoryManager inventoryManager;
 
     //Seasons
@@ -37,7 +37,7 @@ public class FishingProbability : MonoBehaviour
         Winter
     }
 
-    public Season currentSeason = Season.Spring;
+    public Season currentSeason;
 
     //Fish Init
     // Seasonal fish for each season
@@ -165,7 +165,13 @@ public class FishingProbability : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.B))
             {
-                Debug.Log("Environment: " + currentEnvironment + " ,Season: " + currentSeason);
+                Debug.Log("Environment: " + gameData.currentEnvironment + " ,Season: " + gameData.currentSeason);
+            }
+
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                gameData.currentEnvironment = Environment.Perfect;
+                gameData.currentSeason = Season.Spring;
             }
         }
 
@@ -176,7 +182,7 @@ public class FishingProbability : MonoBehaviour
     {
         gameData.currentEnvironment = environment;
 
-        switch (currentEnvironment)
+        switch (gameData.currentEnvironment)
         {
             case Environment.Perfect:
                 SeasonalChance = BaseSeasonalChance;
@@ -220,13 +226,13 @@ public class FishingProbability : MonoBehaviour
     public void SetSeason(Season newSeason)
     {
         gameData.currentSeason = newSeason;
-        Debug.Log($"Season set to: {currentSeason}");
+        Debug.Log($"Season set to: {gameData.currentSeason}");
     }
 
     // Method to worsen the environment by 1 level each time
     public void DegradeEnvironment()
     {
-        switch (currentEnvironment)
+        switch (gameData.currentEnvironment)
         {
             case Environment.Perfect:
                 SetEnvironment(Environment.SlightDamage);
@@ -248,7 +254,7 @@ public class FishingProbability : MonoBehaviour
     // Method to change the season
     public void ChangeSeason()
     {
-        switch (currentSeason)
+        switch (gameData.currentSeason)
         {
             case Season.Spring:
                 currentSeason = Season.Summer;
@@ -265,7 +271,7 @@ public class FishingProbability : MonoBehaviour
         }
 
         // Log the change
-        Debug.Log($"Season changed to: {currentSeason}");
+        Debug.Log($"Season changed to: {gameData.currentSeason}");
     }
 
     private void AddFishToInventory(string fishName, int fishQuantity, Sprite fishSprite, string fishDescription, int fishWorth, Animator playerAnim, float weight)
@@ -431,7 +437,7 @@ public class FishingProbability : MonoBehaviour
     }
 
     // Helper method to get an off-season fish name (random season other than the current one)
-    private string GetOffSeasonFishName()
+    private string GetOffSeasonFishName()   
     {
         var offSeasons = new List<Season> { Season.Spring, Season.Summer, Season.Autumn, Season.Winter };
         offSeasons.Remove(currentSeason);

@@ -105,6 +105,7 @@ public class PanelActivator : MonoBehaviour
         goldManager.SaveGold();
         fishFoodManager.SaveFood();
         fishingProbability.SaveData();
+        buyItems.SaveBuyItems();
 
         SceneManager.LoadScene("FishingRodScene");
     }
@@ -117,6 +118,7 @@ public class PanelActivator : MonoBehaviour
         goldManager.SaveGold();
         fishFoodManager.SaveFood();
         fishingProbability.SaveData();
+        buyItems.SaveBuyItems();
 
         SceneManager.LoadScene("FishingPort");
     }
@@ -129,6 +131,7 @@ public class PanelActivator : MonoBehaviour
         goldManager.SaveGold();
         fishFoodManager.SaveFood();
         fishingProbability.SaveData();
+        buyItems.SaveBuyItems();
 
         SceneManager.LoadScene("FishingPoison");
     }

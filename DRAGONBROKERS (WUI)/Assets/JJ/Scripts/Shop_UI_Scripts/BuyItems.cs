@@ -162,4 +162,12 @@ public class BuyItems : MonoBehaviour
         Debug.Log("emerod: " + EmeRod);
         Debug.Log("irod: " + IRod);
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("PLATINUM ROD IS " + PlatRod);
+        }
+    }
 }

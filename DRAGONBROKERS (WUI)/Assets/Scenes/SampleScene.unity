@@ -53870,7 +53870,7 @@ MonoBehaviour:
   goldManager: {fileID: 1891541960}
   fishFoodManager: {fileID: 1891541961}
   fishingProbability: {fileID: 1891541962}
-  buyItems: {fileID: 0}
+  buyItems: {fileID: 2047379480}
 --- !u!61 &810407750
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -55123,7 +55123,7 @@ MonoBehaviour:
   goldManager: {fileID: 1891541960}
   fishFoodManager: {fileID: 1891541961}
   fishingProbability: {fileID: 1891541962}
-  buyItems: {fileID: 0}
+  buyItems: {fileID: 2047379480}
 --- !u!1 &991173680
 GameObject:
   m_ObjectHideFlags: 0
@@ -66924,7 +66924,7 @@ MonoBehaviour:
   goldManager: {fileID: 1891541960}
   fishFoodManager: {fileID: 1891541961}
   fishingProbability: {fileID: 1891541962}
-  buyItems: {fileID: 0}
+  buyItems: {fileID: 2047379480}
 --- !u!1 &1832065077
 GameObject:
   m_ObjectHideFlags: 0

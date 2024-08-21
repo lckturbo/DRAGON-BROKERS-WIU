@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Kayden/Scenes/MainMenu.unity
     guid: 7ac272a3132fcc342b2cf9392ad49409
   - enabled: 1
-    path: Assets/Kayden/Scenes/FishingRodScene.unity
+    path: Assets/Scenes/FishingRodScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/FishingPort.unity
     guid: 3a64c725752ee9242a8736879cacda5a
   - enabled: 1
-    path: Assets/Kayden/Scenes/FishingPoison.unity
+    path: Assets/Scenes/FishingPoison.unity
     guid: bced371f7bc11cf40b25e143a2b3ea46
   - enabled: 1
     path: Assets/Scenes/Church.unity

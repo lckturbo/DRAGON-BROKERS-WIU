@@ -17,8 +17,15 @@ public class BuyItems : MonoBehaviour
 
     public void OnBuyPoison()
     {
-        goldManager.goldCount -= 100;
-        poisonActive = true;   
+        if (goldManager.goldCount >= 100)
+        {
+            goldManager.goldCount -= 100;
+            poisonActive = true;
+        }
+        else
+        {
+            Debug.Log("Not Enough Money for Poison");
+        }
     }
 
     public void BuyFishFood()

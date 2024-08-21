@@ -16,11 +16,11 @@ public class EnergyDepletion : MonoBehaviour
         // Initialize energyTimer at 150 only if it's the first run
         if (energyData.currentEnergy <= 0)
         {
-            energyData.currentEnergy = 50f;
+            energyData.currentEnergy = 150f;
         }
 
         // Set up the slider
-        energySlider.maxValue = 50f;
+        energySlider.maxValue = 150f;
         energySlider.value = energyData.currentEnergy;
 
         StartTimer();
@@ -32,6 +32,7 @@ public class EnergyDepletion : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {
             ResetEnergy();
+            Debug.Log(energyData.currentEnergy);
         }
     }
 
@@ -65,7 +66,7 @@ public class EnergyDepletion : MonoBehaviour
         // Method to reset the energy back to full
     public void ResetEnergy()
     {
-        energyData.currentEnergy = 50f;
+        energyData.currentEnergy = 150f;
         energySlider.value = energyData.currentEnergy;
         stopTimer = false; // Restart the timer if it was stopped
         StartTimer(); // Start the timer again

@@ -9,9 +9,10 @@ public class PanelActivator : MonoBehaviour
     public Button button2;             // The second button
     public Button button3;             // The third button
 
-    public string sceneForButton1;     // The scene name for button1
-    public string sceneForButton2;         // The scene name for button2
-    public string sceneForButton3;       // The scene name for button3
+    public InventoryManager inventoryManager;
+    public GoldManager goldManager;
+    public FishFoodManager fishFoodManager;
+    public FishingProbability fishingProbability;
 
     private void Start()
     {
@@ -26,6 +27,30 @@ public class PanelActivator : MonoBehaviour
         button1.onClick.AddListener(OnButton1Clicked);
         button2.onClick.AddListener(OnButton2Clicked);
         button3.onClick.AddListener(OnButton3Clicked);
+
+        inventoryManager = GameObject.Find("Inventory Canvas Variant").GetComponent<InventoryManager>();
+        if (inventoryManager == null)
+        {
+            Debug.LogError("InventoryManager not found!");
+        }
+
+        goldManager = GameObject.FindObjectOfType<GoldManager>();
+        if (goldManager == null)
+        {
+            Debug.LogError("GoldManager not found!");
+        }
+
+        fishFoodManager = GameObject.FindObjectOfType<FishFoodManager>();
+        if (fishFoodManager == null)
+        {
+            Debug.LogError("FishFoodManager not found!");
+        }
+
+        fishingProbability = GameObject.FindObjectOfType<FishingProbability>();
+        if (fishingProbability == null)
+        {
+            Debug.LogError("fishingProbability not found!");
+        }
     }
 
     private void Update()
@@ -52,7 +77,7 @@ public class PanelActivator : MonoBehaviour
         }
         else
         {
-            Debug.Log("Trigger detected, but the object is not tagged as 'Player'.");
+            //Debug.Log("Trigger detected, but the object is not tagged as 'Player'.");
         }
     }
 
@@ -67,19 +92,37 @@ public class PanelActivator : MonoBehaviour
 
     private void OnButton1Clicked()
     {
-        Debug.Log("Button1 clicked, switching to scene: " + sceneForButton1);
-        SceneManager.LoadScene(sceneForButton1);
+        Debug.Log("Button1 clicked, switching to scene: ");
+
+        inventoryManager.SaveInventory();
+        goldManager.SaveGold();
+        fishFoodManager.SaveFood();
+        fishingProbability.SaveData();
+
+        SceneManager.LoadScene("FishingRodScene");
     }
 
     private void OnButton2Clicked()
     {
-        Debug.Log("Button2 clicked, switching to scene: " + sceneForButton2);
-        SceneManager.LoadScene(sceneForButton2);
+        Debug.Log("Button2 clicked, switching to scene: ");
+
+        inventoryManager.SaveInventory();
+        goldManager.SaveGold();
+        fishFoodManager.SaveFood();
+        fishingProbability.SaveData();
+
+        SceneManager.LoadScene("FishingPort");
     }
 
     private void OnButton3Clicked()
     {
-        Debug.Log("Button3 clicked, switching to scene: " + sceneForButton3);
-        SceneManager.LoadScene(sceneForButton3);
+        Debug.Log("Button3 clicked, switching to scene: ");
+
+        inventoryManager.SaveInventory();
+        goldManager.SaveGold();
+        fishFoodManager.SaveFood();
+        fishingProbability.SaveData();
+
+        //SceneManager.LoadScene();
     }
 }

@@ -4,34 +4,27 @@ using UnityEngine;
 
 public class BuyItems : MonoBehaviour
 {
-    private InventoryManager inventoryManager;
     private GoldManager goldManager;
     private FishFoodManager fishFoodManager;
 
-    public string PoisonName;
-    public int PoisonQuantity;
-    public Sprite PoisonSprite;
-    [TextArea] public string PoisonDescription;
-    public int PoisonWorth;
-    public float PosionWeight;
+    public bool poisonActive = false;
 
     private void Start()
     {
-        inventoryManager = GameObject.Find("Inventory Canvas Variant").GetComponent<InventoryManager>();
         goldManager = GameObject.FindObjectOfType<GoldManager>();
         fishFoodManager = GameObject.FindObjectOfType<FishFoodManager>();
     }
 
     public void OnBuyPoison()
     {
-        if (inventoryManager != null)
+        if (goldManager.goldCount >= 100)
         {
-            goldManager.goldCount -= 10;
-            inventoryManager.AddItem(PoisonName, PoisonQuantity, PoisonSprite, PoisonDescription, PoisonWorth, PosionWeight);
+            goldManager.goldCount -= 100;
+            poisonActive = true;
         }
         else
         {
-            Debug.LogError("InventoryManager is not assigned.");
+            Debug.Log("Not Enough Money for Poison");
         }
     }
 

@@ -13,6 +13,7 @@ public class SceneTransition3 : MonoBehaviour
     public InventoryManager inventoryManager;
     public GoldManager goldManager;
     public FishFoodManager fishFoodManager;
+    public FishingProbability fishingProbability;
 
     public void Awake()
     {
@@ -35,6 +36,7 @@ public class SceneTransition3 : MonoBehaviour
         inventoryManager.SaveInventory();
         goldManager.SaveGold();
         fishFoodManager.SaveFood();
+        fishingProbability.SaveData();
         playerStorageposition.initialValue = playerPosition;
 
         if (fadeOutPanel != null)

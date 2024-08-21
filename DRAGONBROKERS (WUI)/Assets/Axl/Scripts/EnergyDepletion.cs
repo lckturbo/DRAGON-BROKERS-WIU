@@ -7,9 +7,11 @@ public class EnergyDepletion : MonoBehaviour
     public Slider energySlider;
     public EnergyData energyData; // Reference to the ScriptableObject
     public bool stopTimer = false;
+
     public InventoryManager inventoryManager;
     public GoldManager goldManager;
     public FishFoodManager fishFoodManager;
+    public FishingProbability fishingProbability;
 
     private void Start()
     {
@@ -32,6 +34,7 @@ public class EnergyDepletion : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {
             ResetEnergy();
+            Debug.Log(energyData.currentEnergy);
         }
     }
 
@@ -52,6 +55,7 @@ public class EnergyDepletion : MonoBehaviour
                 inventoryManager.SaveInventory();
                 goldManager.SaveGold();
                 fishFoodManager.SaveFood();
+                fishingProbability.SaveData();
                 stopTimer = true;
             }
 

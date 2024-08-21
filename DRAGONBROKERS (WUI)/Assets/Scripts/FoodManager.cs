@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using System.Xml.Serialization;
 
 public class FoodManager : MonoBehaviour
 {
@@ -15,7 +14,6 @@ public class FoodManager : MonoBehaviour
 
     private FishFoodManager fishFoodManager;
 
-    // This method will be called by the button's onClick event
     private void Start()
     {
         fishFoodManager = GameObject.FindObjectOfType<FishFoodManager>();
@@ -25,7 +23,19 @@ public class FoodManager : MonoBehaviour
     {
         if (!isOnCooldown)
         {
-            StartCoroutine(SpawnFoodRoutine());
+            // Check if the player has enough food
+            if (fishFoodManager.foodCount >= 3)
+            {
+                StartCoroutine(SpawnFoodRoutine());
+            }
+            else
+            {
+                Debug.Log("Not enough food to drop. You need at least 3 food items.");
+            }
+        }
+        else
+        {
+            Debug.Log("Drop food is on cooldown.");
         }
     }
 
@@ -39,6 +49,7 @@ public class FoodManager : MonoBehaviour
             yield return new WaitForSeconds(0f); // delay between spawning each food item
         }
 
+        // Decrease food count by 3 after dropping food
         fishFoodManager.foodCount -= 3;
 
         isOnCooldown = true;

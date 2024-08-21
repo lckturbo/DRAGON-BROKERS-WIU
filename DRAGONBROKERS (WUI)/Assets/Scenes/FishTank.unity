@@ -3145,7 +3145,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3664951365466068053, guid: 9cb71a03d59e76c4bae232ccbdc92e34, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 86b0996162ca79547a68f856801efa91, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 840d4022f0dc11a4ca0d9cb77d8cd1c2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -3934,6 +3934,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3759689944238056537, guid: 7c235cd8964567e42989b77395660244, type: 3}
+      propertyPath: foodText
+      value: 
+      objectReference: {fileID: 1839415801}
     - target: {fileID: 3829929350829119513, guid: 7c235cd8964567e42989b77395660244, type: 3}
       propertyPath: m_Name
       value: GameManager

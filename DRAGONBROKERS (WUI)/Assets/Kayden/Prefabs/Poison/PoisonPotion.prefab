@@ -169,5 +169,5 @@ MonoBehaviour:
   poisonWaterCloudPosition: {x: 3.76, y: -5.19, z: 25}
   slowDownFactor: 0.8
   slowDownDuration: 0.2
-  explosionRange: 2
+  explosionRange: 10
   presetYPosition: 1.03

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5833080655468639841}
   - component: {fileID: 9181714579972955367}
   - component: {fileID: 7201163017358685218}
+  - component: {fileID: 5120957909123196447}
+  - component: {fileID: 3759689944238056537}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -47,8 +49,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldCount: 0
   goldText: {fileID: 0}
-  goldData: {fileID: 0}
+  goldData: {fileID: 11400000, guid: 9d95fbfde1b9fbf4eb188938ea452630, type: 2}
 --- !u!114 &7201163017358685218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3829929350829119513}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3571bb73cde2994e8eeeaf8306f3ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energySlider: {fileID: 0}
+  energyData: {fileID: 11400000, guid: 9fa0e2d8ea195be49bebd5fb6ae3136b, type: 2}
+  stopTimer: 0
+  inventoryManager: {fileID: 0}
+  goldManager: {fileID: 9181714579972955367}
+  fishFoodManager: {fileID: 3759689944238056537}
+--- !u!114 &5120957909123196447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3829929350829119513}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 045aa700eebb9f748b2c16e3a98fec63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3759689944238056537
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,12 +89,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3829929350829119513}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3571bb73cde2994e8eeeaf8306f3ddb, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a8a23dfe7e38ca41945c7bbf9391e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energySlider: {fileID: 0}
-  energyTimer: 5
-  stopTimer: 0
-  inventoryManager: {fileID: 0}
-  goldManager: {fileID: 0}
-  fishFoodManager: {fileID: 0}
+  foodCount: 0
+  foodText: {fileID: 0}
+  foodData: {fileID: 11400000, guid: 9837730f375938045befbdd566508dcd, type: 2}

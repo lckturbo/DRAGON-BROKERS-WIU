@@ -100,7 +100,7 @@ public class FishingProbability : MonoBehaviour
         SetEnvironment(Environment.Perfect);
 
         // Init the Season
-        SetSeason(Season.Summer);
+        SetSeason(Season.Spring);
 
         inventoryManager = GameObject.Find("Inventory Canvas Variant").GetComponent<InventoryManager>();
     }
@@ -237,6 +237,29 @@ public class FishingProbability : MonoBehaviour
         }
 
         Debug.LogWarning("Environment has been degraded.");
+    }
+
+    // Method to change the season
+    public void ChangeSeason()
+    {
+        switch (currentSeason)
+        {
+            case Season.Spring:
+                currentSeason = Season.Summer;
+                break;
+            case Season.Summer:
+                currentSeason = Season.Autumn;
+                break;
+            case Season.Autumn:
+                currentSeason = Season.Winter;
+                break;
+            case Season.Winter:
+                currentSeason = Season.Spring;
+                break;
+        }
+
+        // Log the change
+        Debug.Log($"Season changed to: {currentSeason}");
     }
 
     private void AddFishToInventory(string fishName, int fishQuantity, Sprite fishSprite, string fishDescription, int fishWorth, Animator playerAnim, float weight)

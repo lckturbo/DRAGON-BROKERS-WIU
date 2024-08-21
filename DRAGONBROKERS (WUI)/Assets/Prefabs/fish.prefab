@@ -131,7 +131,7 @@ MonoBehaviour:
   maxSpeed: 3
   yMin: -6.5
   yMax: 1.65
-  detectionRange: 1.3
+  detectionRange: 8
   foodLayer:
     serializedVersion: 2
     m_Bits: 1048576

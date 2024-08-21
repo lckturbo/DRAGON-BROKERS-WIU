@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class EnergyDepletion : MonoBehaviour
 {
     public Slider energySlider;
-    public float energyTimer;
+    public EnergyData energyData; // Reference to the ScriptableObject
     public bool stopTimer = false;
     public InventoryManager inventoryManager;
     public GoldManager goldManager;
@@ -13,9 +13,26 @@ public class EnergyDepletion : MonoBehaviour
 
     private void Start()
     {
-        energySlider.maxValue = energyTimer;
-        energySlider.value = energyTimer;
+        // Initialize energyTimer at 150 only if it's the first run
+        if (energyData.currentEnergy <= 0)
+        {
+            energyData.currentEnergy = 50f;
+        }
+
+        // Set up the slider
+        energySlider.maxValue = 50f;
+        energySlider.value = energyData.currentEnergy;
+
         StartTimer();
+    }
+        
+    private void Update()
+    {
+        // Check for 'L' key press to reset energy
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            ResetEnergy();
+        }
     }
 
     public void StartTimer()
@@ -25,12 +42,12 @@ public class EnergyDepletion : MonoBehaviour
 
     IEnumerator TimeStart()
     {
-        while (stopTimer == false)
+        while (!stopTimer)
         {
-            energyTimer -= Time.deltaTime;
-            yield return new WaitForSeconds(0.001f);
+            energyData.currentEnergy -= Time.deltaTime;
+            yield return null; // Update every frame
 
-            if (energyTimer <= 0)
+            if (energyData.currentEnergy <= 0)
             {
                 inventoryManager.SaveInventory();
                 goldManager.SaveGold();
@@ -38,10 +55,19 @@ public class EnergyDepletion : MonoBehaviour
                 stopTimer = true;
             }
 
-            if (stopTimer == false)
+            if (!stopTimer)
             {
-                energySlider.value = energyTimer;
+                energySlider.value = energyData.currentEnergy;
             }
         }
+    }
+
+        // Method to reset the energy back to full
+    public void ResetEnergy()
+    {
+        energyData.currentEnergy = 50f;
+        energySlider.value = energyData.currentEnergy;
+        stopTimer = false; // Restart the timer if it was stopped
+        StartTimer(); // Start the timer again
     }
 }

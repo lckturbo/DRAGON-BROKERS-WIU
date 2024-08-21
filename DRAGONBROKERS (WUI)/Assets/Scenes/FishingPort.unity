@@ -8690,7 +8690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7201163017358685218, guid: 7c235cd8964567e42989b77395660244, type: 3}
       propertyPath: energyTimer
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7201163017358685218, guid: 7c235cd8964567e42989b77395660244, type: 3}
       propertyPath: goldManager
@@ -12629,7 +12629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fe4b4531130bf945969c055d52a879d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 2
+  sceneIndex: 3
   inventoryManager: {fileID: 1981963937}
 --- !u!114 &1722687674
 MonoBehaviour:

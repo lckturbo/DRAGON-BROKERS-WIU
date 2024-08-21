@@ -162,6 +162,11 @@ public class FishingProbability : MonoBehaviour
             {
                 FishingChance();
             }
+
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                Debug.Log("Environment: " + currentEnvironment + " ,Season: " + currentSeason);
+            }
         }
 
     }

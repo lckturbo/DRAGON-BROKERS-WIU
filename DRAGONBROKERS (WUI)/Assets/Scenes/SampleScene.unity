@@ -2326,115 +2326,6 @@ RectTransform:
   m_AnchoredPosition: {x: -100, y: 150}
   m_SizeDelta: {x: 103, y: 37}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &321823504
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 157001237}
-    m_Modifications:
-    - target: {fileID: 1850134045442718524, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_Name
-      value: Food Counter
-      objectReference: {fileID: 0}
-    - target: {fileID: 2965727578769312394, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_Name
-      value: Food Counter
-      objectReference: {fileID: 0}
-    - target: {fileID: 5487890701621408939, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 1550783987, guid: 78c8e45ca1c26f541966fc552859af11, type: 3}
-    - target: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 326
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -34.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7538294407450192765, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-      propertyPath: m_Name
-      value: Food Image
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
 --- !u!1 &349393185
 GameObject:
   m_ObjectHideFlags: 0
@@ -39953,7 +39844,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420033}
   - component: {fileID: 519420034}
   - component: {fileID: 519420035}
   m_Layer: 0
@@ -40037,18 +39927,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5380020ea7652443bb203290af03764, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40719,9 +40597,10 @@ MonoBehaviour:
   button1: {fileID: 1735161315}
   button2: {fileID: 1301765389}
   button3: {fileID: 1184587821}
-  sceneForButton1: FishingRodScene
-  sceneForButton2: FishingPort
-  sceneForButton3: FishingPoison
+  inventoryManager: {fileID: 1955292960}
+  goldManager: {fileID: 1891541960}
+  fishFoodManager: {fileID: 1891541961}
+  fishingProbability: {fileID: 1891541962}
 --- !u!1 &649203289
 GameObject:
   m_ObjectHideFlags: 0
@@ -41027,18 +40906,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3353084574039576651, guid: 0063a18d9bad0f7448d4186234391b6c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353084574039576651, guid: 0063a18d9bad0f7448d4186234391b6c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353084574039576651, guid: 0063a18d9bad0f7448d4186234391b6c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353084574039576651, guid: 0063a18d9bad0f7448d4186234391b6c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -41090,20 +40957,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Canvas Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 5188191910856692259, guid: 0063a18d9bad0f7448d4186234391b6c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5501391219676622124, guid: 0063a18d9bad0f7448d4186234391b6c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3353084574039576651, guid: 0063a18d9bad0f7448d4186234391b6c, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 1982727575}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0063a18d9bad0f7448d4186234391b6c, type: 3}
 --- !u!1 &697072351
@@ -43450,6 +43306,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 672586845}
     m_Modifications:
+    - target: {fileID: 1768052401347769320, guid: 7c235cd8964567e42989b77395660244, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1028757792}
     - target: {fileID: 3759689944238056537, guid: 7c235cd8964567e42989b77395660244, type: 3}
       propertyPath: foodText
       value: 
@@ -43457,10 +43317,6 @@ PrefabInstance:
     - target: {fileID: 3829929350829119513, guid: 7c235cd8964567e42989b77395660244, type: 3}
       propertyPath: m_Name
       value: GameManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 5120957909123196447, guid: 7c235cd8964567e42989b77395660244, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5833080655468639841, guid: 7c235cd8964567e42989b77395660244, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43503,10 +43359,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7201163017358685218, guid: 7c235cd8964567e42989b77395660244, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7201163017358685218, guid: 7c235cd8964567e42989b77395660244, type: 3}
       propertyPath: energySlider
       value: 
       objectReference: {fileID: 397373011}
@@ -43521,13 +43373,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3829929350829119513, guid: 7c235cd8964567e42989b77395660244, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1891541964}
-    - targetCorrespondingSourceObject: {fileID: 3829929350829119513, guid: 7c235cd8964567e42989b77395660244, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1891541965}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c235cd8964567e42989b77395660244, type: 3}
 --- !u!4 &962605607 stripped
 Transform:
@@ -43728,6 +43574,7 @@ MonoBehaviour:
   inventoryManager: {fileID: 1955292960}
   goldManager: {fileID: 1891541960}
   fishFoodManager: {fileID: 1891541961}
+  fishingProbability: {fileID: 1891541962}
 --- !u!1 &991173680
 GameObject:
   m_ObjectHideFlags: 0
@@ -44190,9 +44037,10 @@ MonoBehaviour:
   button1: {fileID: 1735161315}
   button2: {fileID: 1301765389}
   button3: {fileID: 1184587821}
-  sceneForButton1: 
-  sceneForButton2: 
-  sceneForButton3: 
+  inventoryManager: {fileID: 0}
+  goldManager: {fileID: 0}
+  fishFoodManager: {fileID: 0}
+  fishingProbability: {fileID: 0}
 --- !u!1 &1031155714
 GameObject:
   m_ObjectHideFlags: 0
@@ -46322,8 +46170,8 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!114 &1185270748 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2492086060204902084, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-  m_PrefabInstance: {fileID: 321823504}
+  m_CorrespondingSourceObject: {fileID: 4350859820238153581, guid: 0063a18d9bad0f7448d4186234391b6c, type: 3}
+  m_PrefabInstance: {fileID: 693039696}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -46992,11 +46840,7 @@ MonoBehaviour:
   inventoryManager: {fileID: 1955292960}
   goldManager: {fileID: 1891541960}
   fishFoodManager: {fileID: 1891541961}
---- !u!1 &1254297386 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3829929350829119513, guid: 7c235cd8964567e42989b77395660244, type: 3}
-  m_PrefabInstance: {fileID: 962605606}
-  m_PrefabAsset: {fileID: 0}
+  fishingProbability: {fileID: 1891541962}
 --- !u!1 &1259770130
 GameObject:
   m_ObjectHideFlags: 0
@@ -130164,7 +130008,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9181714579972955367, guid: 7c235cd8964567e42989b77395660244, type: 3}
   m_PrefabInstance: {fileID: 962605606}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254297386}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1e2b5b358902f24ebe9af705e24e32f, type: 3}
@@ -130175,99 +130019,23 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3759689944238056537, guid: 7c235cd8964567e42989b77395660244, type: 3}
   m_PrefabInstance: {fileID: 962605606}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254297386}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a8a23dfe7e38ca41945c7bbf9391e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1891541963 stripped
+--- !u!114 &1891541962 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7201163017358685218, guid: 7c235cd8964567e42989b77395660244, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8242885532902905103, guid: 7c235cd8964567e42989b77395660244, type: 3}
   m_PrefabInstance: {fileID: 962605606}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254297386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3571bb73cde2994e8eeeaf8306f3ddb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1891541964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254297386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a26f6360741617488919a74331a4486, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentDay: 1
-  maxDays: 4
-  energyDepletion: {fileID: 1891541963}
-  fishingProbability: {fileID: 1891541965}
-  gameData: {fileID: 11400000, guid: 2a99cb6ee63f9174b980cda81b42b1e7, type: 2}
-  player: {fileID: 1028757792}
---- !u!114 &1891541965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254297386}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 934e7e6551526404d865933e968558d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameData: {fileID: 11400000, guid: 2a99cb6ee63f9174b980cda81b42b1e7, type: 2}
-  addToInv: 1
-  currentSeason: 0
-  springFishName: Spring Fish
-  springFishQuantity: 1
-  springFishSprite: {fileID: -2139780386, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
-  springFishDescription: A commonly appearing fish during the season of Spring
-  springFishWorth: 30
-  springFishWeight: 5
-  summerFishName: Summer Fish
-  summerFishQuantity: 1
-  summerFishSprite: {fileID: 935802225, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
-  summerFishDescription: A fish that enjoys revelling in the summer heat
-  summerFishWorth: 30
-  summerFishWeight: 5
-  autumnFishName: Autumn Fish
-  autumnFishQuantity: 1
-  autumnFishSprite: {fileID: 1631992957, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
-  autumnFishDescription: This fish swims down the mountain stream as the dried leaves
-    fall off the autumn trees
-  autumnFishWorth: 30
-  autumnFishWeight: 5
-  winterFishName: Winter Fish
-  winterFishQuantity: 1
-  winterFishSprite: {fileID: 1506719059, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
-  winterFishDescription: This fish has developed a special skin to counter the cold
-  winterFishWorth: 30
-  winterFishWeight: 5
-  rareItemName: Salmonella
-  rareQuantity: 1
-  rareSprite: {fileID: -1356672625, guid: 8951fa33070aee0469cedca6c395039c, type: 3}
-  rareItemDescription: YOU HAVE CAUGHT SALMONELLA!!!
-  rworth: 150
-  rWeight: 15
-  legendaryItemName: Big Daddy
-  legendaryQuantity: 1
-  legendarySprite: {fileID: -1131299430, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
-  legendaryItemDescription: Even the developer's have not caught this fish. Gambler
-    or Grinder
-  lworth: 0
-  lWeight: 0
-  BaseSeasonalChance: 0.6
-  BaseRareChance: 0.29
-  BaseNothingChance: 0.1
-  BaseLegendaryChance: 0.01
-  offSeasonModifier: 0.1
 --- !u!1 &1913171556
 GameObject:
   m_ObjectHideFlags: 0
@@ -130631,11 +130399,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8738351, y: 0.37597036}
   m_EdgeRadius: 0
---- !u!224 &1982727575 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6831793531480864311, guid: bd17b991e8e1eb44fb304ef30e3071d8, type: 3}
-  m_PrefabInstance: {fileID: 321823504}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1994732161
 GameObject:
   m_ObjectHideFlags: 0

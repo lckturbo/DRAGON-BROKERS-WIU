@@ -2,16 +2,10 @@ using UnityEngine;
 
 public class DayManager : MonoBehaviour
 {
-    public int currentDay = 1;
     public int maxDays = 4;
     public EnergyDepletion energyDepletion;
     public FishingProbability fishingProbability;
     public GameData gameData;
-
-    //public GameObject bed;
-    public GameObject player;
-
-    private Collider2D bedCollider;
 
     private void Update()
     {
@@ -19,14 +13,16 @@ public class DayManager : MonoBehaviour
         {
             ChangeDay();
         }
-    }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        // Check if the player has voluntarily gone to bed
-        if (other.gameObject == player)
+        if (Input.GetKeyDown(KeyCode.B))
         {
-            ChangeDay();
+            Debug.Log("Day: " + gameData.currentDay);
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            gameData.currentDay = 1;
+            Debug.Log("Day: " + gameData.currentDay);
         }
     }
 
@@ -37,13 +33,13 @@ public class DayManager : MonoBehaviour
         fishingProbability.ChangeSeason();
 
         // Check if we've reached the maximum number of days
-        if (currentDay > maxDays)
+        if (gameData.currentDay > maxDays)
         {
             //LOGIC TO END GAME
         }
 
         // Reset the energy
         energyDepletion.ResetEnergy();
-        Debug.Log("Day changed to: " + currentDay);
+        Debug.Log("Day changed to: " + gameData.currentDay);
     }
 }

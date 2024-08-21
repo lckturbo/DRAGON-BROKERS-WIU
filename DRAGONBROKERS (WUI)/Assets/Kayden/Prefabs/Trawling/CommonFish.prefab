@@ -76,7 +76,6 @@ GameObject:
   - component: {fileID: 6615291524311961172}
   - component: {fileID: 2478506041208659409}
   - component: {fileID: 8459563568912842280}
-  - component: {fileID: 7583749816628355999}
   m_Layer: 21
   m_Name: Fish
   m_TagString: Untagged
@@ -235,13 +234,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d44477ee6eae8744c8e63802b969a912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Common Fish
-  quantity: 1
-  sprite: {fileID: -2139780386, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
-  itemDescription: testing testing just a normal fish
+  itemName: 
+  quantity: 0
+  sprite: {fileID: 21300000, guid: f079a82568907e94bba346e510daf22d, type: 3}
+  itemDescription: 
   worth: 0
-  weight: 10
-  fishingProbability: {fileID: 7583749816628355999}
+  weight: 0
+  fishingProbability: {fileID: 0}
   fishCaught: 0
   winEffect: {fileID: 3556594886273321251, guid: 598dc32d9ff509f4ba5d712b06ec29d5, type: 3}
   winEffectOffset: {x: 1, y: 5}
@@ -263,61 +262,6 @@ MonoBehaviour:
   fleeDistance: 5
   loseEffect: {fileID: 1789771174606477862, guid: 802b0dc7da277dc4cad2b143e7639e1f, type: 3}
   loseEffectOffset: {x: 1, y: 1}
---- !u!114 &7583749816628355999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7968833897907866059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 934e7e6551526404d865933e968558d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  addToInv: 1
-  currentSeason: 0
-  springFishName: spring
-  springFishQuantity: 1
-  springFishSprite: {fileID: 21300000, guid: 5c398cf3aedd7cc4eaebc2e346d81efb, type: 3}
-  springFishDescription: spring
-  springFishWorth: 1
-  springFishWeight: 1
-  summerFishName: summer
-  summerFishQuantity: 1
-  summerFishSprite: {fileID: 21300000, guid: 9c2df5832d9aa544d91e5a82867981a2, type: 3}
-  summerFishDescription: summer
-  summerFishWorth: 1
-  summerFishWeight: 1
-  autumnFishName: autumn
-  autumnFishQuantity: 1
-  autumnFishSprite: {fileID: 21300000, guid: 265efabbd5dd3da47a1e989d7d3e2e26, type: 3}
-  autumnFishDescription: autumn
-  autumnFishWorth: 1
-  autumnFishWeight: 1
-  winterFishName: winter
-  winterFishQuantity: 1
-  winterFishSprite: {fileID: 21300000, guid: b070355e90b4f4a4a808e8f2fdff6f4c, type: 3}
-  winterFishDescription: winter
-  winterFishWorth: 1
-  winterFishWeight: 1
-  rareItemName: rare
-  rareQuantity: 1
-  rareSprite: {fileID: 21300000, guid: 006e699bac84e8b439e29f77967e01a5, type: 3}
-  rareItemDescription: rare
-  rworth: 1
-  rWeight: 1
-  legendaryItemName: legend
-  legendaryQuantity: 1
-  legendarySprite: {fileID: 21300000, guid: 193437cd1d5e700479b41f5264cc2bff, type: 3}
-  legendaryItemDescription: legend
-  lworth: 1
-  lWeight: 1
-  BaseSeasonalChance: 0.6
-  BaseRareChance: 0.29
-  BaseNothingChance: 0.1
-  BaseLegendaryChance: 0.01
-  offSeasonModifier: 0.1
 --- !u!1 &8794887960570443153
 GameObject:
   m_ObjectHideFlags: 0

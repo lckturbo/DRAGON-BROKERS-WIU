@@ -7,20 +7,22 @@ public class EnergyDepletion : MonoBehaviour
     public Slider energySlider;
     public EnergyData energyData; // Reference to the ScriptableObject
     public bool stopTimer = false;
+
     public InventoryManager inventoryManager;
     public GoldManager goldManager;
     public FishFoodManager fishFoodManager;
+    public FishingProbability fishingProbability;
 
     private void Start()
     {
         // Initialize energyTimer at 150 only if it's the first run
         if (energyData.currentEnergy <= 0)
         {
-            energyData.currentEnergy = 150f;
+            energyData.currentEnergy = 50f;
         }
 
         // Set up the slider
-        energySlider.maxValue = 150f;
+        energySlider.maxValue = 50f;
         energySlider.value = energyData.currentEnergy;
 
         StartTimer();
@@ -53,6 +55,7 @@ public class EnergyDepletion : MonoBehaviour
                 inventoryManager.SaveInventory();
                 goldManager.SaveGold();
                 fishFoodManager.SaveFood();
+                fishingProbability.SaveData();
                 stopTimer = true;
             }
 
@@ -66,7 +69,7 @@ public class EnergyDepletion : MonoBehaviour
         // Method to reset the energy back to full
     public void ResetEnergy()
     {
-        energyData.currentEnergy = 150f;
+        energyData.currentEnergy = 50f;
         energySlider.value = energyData.currentEnergy;
         stopTimer = false; // Restart the timer if it was stopped
         StartTimer(); // Start the timer again

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7201163017358685218}
   - component: {fileID: 5120957909123196447}
   - component: {fileID: 3759689944238056537}
+  - component: {fileID: 1768052401347769320}
+  - component: {fileID: 8242885532902905103}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -57,7 +59,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3829929350829119513}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3571bb73cde2994e8eeeaf8306f3ddb, type: 3}
   m_Name: 
@@ -68,6 +70,7 @@ MonoBehaviour:
   inventoryManager: {fileID: 0}
   goldManager: {fileID: 9181714579972955367}
   fishFoodManager: {fileID: 3759689944238056537}
+  fishingProbability: {fileID: 8242885532902905103}
 --- !u!114 &5120957909123196447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,7 +78,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3829929350829119513}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 045aa700eebb9f748b2c16e3a98fec63, type: 3}
   m_Name: 
@@ -95,3 +98,78 @@ MonoBehaviour:
   foodCount: 0
   foodText: {fileID: 0}
   foodData: {fileID: 11400000, guid: 9837730f375938045befbdd566508dcd, type: 2}
+--- !u!114 &1768052401347769320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3829929350829119513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a26f6360741617488919a74331a4486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDays: 4
+  energyDepletion: {fileID: 7201163017358685218}
+  fishingProbability: {fileID: 8242885532902905103}
+  gameData: {fileID: 11400000, guid: 2a99cb6ee63f9174b980cda81b42b1e7, type: 2}
+  player: {fileID: 0}
+--- !u!114 &8242885532902905103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3829929350829119513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934e7e6551526404d865933e968558d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData: {fileID: 11400000, guid: 2a99cb6ee63f9174b980cda81b42b1e7, type: 2}
+  addToInv: 1
+  currentSeason: 0
+  springFishName: Spring Fish
+  springFishQuantity: 1
+  springFishSprite: {fileID: -2139780386, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
+  springFishDescription: A commonly appearing fish during the season of Spring
+  springFishWorth: 30
+  springFishWeight: 5
+  summerFishName: Summer Fish
+  summerFishQuantity: 1
+  summerFishSprite: {fileID: 935802225, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
+  summerFishDescription: A fish that enjoys revelling in the summer heat
+  summerFishWorth: 30
+  summerFishWeight: 5
+  autumnFishName: Autumn Fish
+  autumnFishQuantity: 1
+  autumnFishSprite: {fileID: 1631992957, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
+  autumnFishDescription: This fish swims down the mountain stream as the dried leaves
+    fall off the autumn trees
+  autumnFishWorth: 30
+  autumnFishWeight: 5
+  winterFishName: Winter Fish
+  winterFishQuantity: 1
+  winterFishSprite: {fileID: 1506719059, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
+  winterFishDescription: This fish has developed a special skin to counter the cold
+  winterFishWorth: 30
+  winterFishWeight: 5
+  rareItemName: Salmonella
+  rareQuantity: 1
+  rareSprite: {fileID: -1356672625, guid: 8951fa33070aee0469cedca6c395039c, type: 3}
+  rareItemDescription: YOU HAVE CAUGHT SALMONELLA!!!
+  rworth: 150
+  rWeight: 15
+  legendaryItemName: Big Daddy
+  legendaryQuantity: 1
+  legendarySprite: {fileID: -1131299430, guid: 947e64488a1274f4dbbdeba15807cd0c, type: 3}
+  legendaryItemDescription: Even the developer's have not caught this fish. Gambler
+    or Grinder
+  lworth: 0
+  lWeight: 0
+  BaseSeasonalChance: 0.6
+  BaseRareChance: 0.29
+  BaseNothingChance: 0.1
+  BaseLegendaryChance: 0.01
+  offSeasonModifier: 0.1

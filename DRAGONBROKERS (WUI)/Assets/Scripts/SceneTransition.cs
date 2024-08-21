@@ -34,7 +34,6 @@ public class SceneTransition : MonoBehaviour
             fishFoodManager.SaveFood();
             playerStorageposition.initialValue = playerPosition;
             StartCoroutine(FadeCo());
-            //SceneManager.LoadScene(sceneToLoad);
         }
     }
 

@@ -94,7 +94,7 @@ public class MovingToArea : MonoBehaviour
                     StartCoroutine(placeNameCo());
                 }
             }
-            else if (placeName == "SINGLISH" && enteringMineForest)
+            else if (placeName == "Singapore" && enteringMineForest)
             {
                 enteringMineForest = false;
                 if (needText)

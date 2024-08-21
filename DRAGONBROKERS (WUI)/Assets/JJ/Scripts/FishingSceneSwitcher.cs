@@ -9,8 +9,9 @@ public class PanelActivator : MonoBehaviour
     public Button button2;             // The second button
     public Button button3;             // The third button
 
-    public string FishingPort; // The scene name for button2
-    public string FishingPoison; // The scene name for button3
+    public string sceneForButton1;     // The scene name for button1
+    public string sceneForButton2;         // The scene name for button2
+    public string sceneForButton3;       // The scene name for button3
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class PanelActivator : MonoBehaviour
         button3.gameObject.SetActive(false);
 
         // Add listeners to the buttons
+        button1.onClick.AddListener(OnButton1Clicked);
         button2.onClick.AddListener(OnButton2Clicked);
         button3.onClick.AddListener(OnButton3Clicked);
     }
@@ -43,25 +45,41 @@ public class PanelActivator : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Port"))
+        // Check if the player entered the area
+        if (other.CompareTag("Player"))
         {
             panel.SetActive(true);
         }
         else
         {
-            Debug.Log("Trigger detected, but the object is not tagged as 'Port'");
+            Debug.Log("Trigger detected, but the object is not tagged as 'Player'.");
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        // Check if the player left the area
+        if (other.CompareTag("Player"))
+        {
+            panel.SetActive(false);
+        }
+    }
+
+    private void OnButton1Clicked()
+    {
+        Debug.Log("Button1 clicked, switching to scene: " + sceneForButton1);
+        SceneManager.LoadScene(sceneForButton1);
     }
 
     private void OnButton2Clicked()
     {
-        Debug.Log("Button2 clicked, switching to scene: " + FishingPort);
-        SceneManager.LoadScene(FishingPort);
+        Debug.Log("Button2 clicked, switching to scene: " + sceneForButton2);
+        SceneManager.LoadScene(sceneForButton2);
     }
 
     private void OnButton3Clicked()
     {
-        Debug.Log("Button3 clicked, switching to scene: " + FishingPoison);
-        SceneManager.LoadScene(FishingPoison);
+        Debug.Log("Button3 clicked, switching to scene: " + sceneForButton3);
+        SceneManager.LoadScene(sceneForButton3);
     }
 }

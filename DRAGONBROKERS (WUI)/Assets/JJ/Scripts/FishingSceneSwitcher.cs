@@ -13,6 +13,7 @@ public class PanelActivator : MonoBehaviour
     public GoldManager goldManager;
     public FishFoodManager fishFoodManager;
     public FishingProbability fishingProbability;
+    public BuyItems buyItems;
 
     private void Start()
     {
@@ -51,18 +52,24 @@ public class PanelActivator : MonoBehaviour
         {
             Debug.LogError("fishingProbability not found!");
         }
+
+        buyItems = GameObject.FindObjectOfType<BuyItems>();
+        if (buyItems == null)
+        {
+            Debug.Log("BuyItems not found");
+        }
     }
 
     private void Update()
     {
         // Toggle the first boolean with the 7 key
-        if (Input.GetKeyDown(KeyCode.Alpha7))
+        if (buyItems.trawlActive == true)
         {
             button2.gameObject.SetActive(true);
         }
 
         // Toggle the second boolean with the 8 key
-        if (Input.GetKeyDown(KeyCode.Alpha8))
+        if (buyItems.poisonActive == true)
         {
             button3.gameObject.SetActive(true);
         }
@@ -123,6 +130,6 @@ public class PanelActivator : MonoBehaviour
         fishFoodManager.SaveFood();
         fishingProbability.SaveData();
 
-        //SceneManager.LoadScene();
+        SceneManager.LoadScene("FishingPoison");
     }
 }

@@ -33802,9 +33802,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 672586845}
     m_Modifications:
+    - target: {fileID: 3759689944238056537, guid: 7c235cd8964567e42989b77395660244, type: 3}
+      propertyPath: foodText
+      value: 
+      objectReference: {fileID: 1185270748}
     - target: {fileID: 3829929350829119513, guid: 7c235cd8964567e42989b77395660244, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5120957909123196447, guid: 7c235cd8964567e42989b77395660244, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5833080655468639841, guid: 7c235cd8964567e42989b77395660244, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33848,43 +33856,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7201163017358685218, guid: 7c235cd8964567e42989b77395660244, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7201163017358685218, guid: 7c235cd8964567e42989b77395660244, type: 3}
-      propertyPath: goldManager
-      value: 
-      objectReference: {fileID: 1891541960}
     - target: {fileID: 7201163017358685218, guid: 7c235cd8964567e42989b77395660244, type: 3}
       propertyPath: energySlider
       value: 
       objectReference: {fileID: 397373011}
     - target: {fileID: 7201163017358685218, guid: 7c235cd8964567e42989b77395660244, type: 3}
-      propertyPath: fishFoodManager
-      value: 
-      objectReference: {fileID: 1891541961}
-    - target: {fileID: 7201163017358685218, guid: 7c235cd8964567e42989b77395660244, type: 3}
       propertyPath: inventoryManager
       value: 
       objectReference: {fileID: 1955292960}
     - target: {fileID: 9181714579972955367, guid: 7c235cd8964567e42989b77395660244, type: 3}
-      propertyPath: goldData
-      value: 
-      objectReference: {fileID: 11400000, guid: 9d95fbfde1b9fbf4eb188938ea452630, type: 2}
-    - target: {fileID: 9181714579972955367, guid: 7c235cd8964567e42989b77395660244, type: 3}
       propertyPath: goldText
       value: 
       objectReference: {fileID: 1787862152}
-    m_RemovedComponents:
-    - {fileID: 5365541725443643092, guid: 7c235cd8964567e42989b77395660244, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3829929350829119513, guid: 7c235cd8964567e42989b77395660244, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1891541958}
+      addedObject: {fileID: 1891541964}
     - targetCorrespondingSourceObject: {fileID: 3829929350829119513, guid: 7c235cd8964567e42989b77395660244, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1891541961}
+      addedObject: {fileID: 1891541965}
   m_SourcePrefab: {fileID: 100100000, guid: 7c235cd8964567e42989b77395660244, type: 3}
 --- !u!4 &962605607 stripped
 Transform:
@@ -37256,6 +37251,11 @@ MonoBehaviour:
   inventoryManager: {fileID: 1955292960}
   goldManager: {fileID: 1891541960}
   fishFoodManager: {fileID: 1891541961}
+--- !u!1 &1254297386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3829929350829119513, guid: 7c235cd8964567e42989b77395660244, type: 3}
+  m_PrefabInstance: {fileID: 962605606}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1259770130
 GameObject:
   m_ObjectHideFlags: 0
@@ -41793,7 +41793,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1695438254}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1627813719}
+        m_TargetAssemblyTypeName: BuyItems, Assembly-CSharp
+        m_MethodName: BuyFishFood
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1695438254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88591,49 +88603,111 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886152198}
   m_CullTransparentMesh: 1
---- !u!1 &1891541956 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3829929350829119513, guid: 7c235cd8964567e42989b77395660244, type: 3}
-  m_PrefabInstance: {fileID: 962605606}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1891541958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1891541956}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 045aa700eebb9f748b2c16e3a98fec63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1891541960 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9181714579972955367, guid: 7c235cd8964567e42989b77395660244, type: 3}
   m_PrefabInstance: {fileID: 962605606}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1891541956}
+  m_GameObject: {fileID: 1254297386}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1e2b5b358902f24ebe9af705e24e32f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1891541961
+--- !u!114 &1891541961 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3759689944238056537, guid: 7c235cd8964567e42989b77395660244, type: 3}
+  m_PrefabInstance: {fileID: 962605606}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1891541956}
+  m_GameObject: {fileID: 1254297386}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a8a23dfe7e38ca41945c7bbf9391e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCount: 0
-  foodText: {fileID: 1185270748}
-  foodData: {fileID: 11400000, guid: 9837730f375938045befbdd566508dcd, type: 2}
+--- !u!114 &1891541963 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7201163017358685218, guid: 7c235cd8964567e42989b77395660244, type: 3}
+  m_PrefabInstance: {fileID: 962605606}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254297386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3571bb73cde2994e8eeeaf8306f3ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1891541964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254297386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a26f6360741617488919a74331a4486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentDay: 1
+  maxDays: 4
+  energyDepletion: {fileID: 1891541963}
+  fishingProbability: {fileID: 1891541965}
+  player: {fileID: 1028757792}
+--- !u!114 &1891541965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254297386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934e7e6551526404d865933e968558d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addToInv: 1
+  currentSeason: 0
+  springFishName: 
+  springFishQuantity: 0
+  springFishSprite: {fileID: 0}
+  springFishDescription: 
+  springFishWorth: 0
+  springFishWeight: 0
+  summerFishName: 
+  summerFishQuantity: 0
+  summerFishSprite: {fileID: 0}
+  summerFishDescription: 
+  summerFishWorth: 0
+  summerFishWeight: 0
+  autumnFishName: 
+  autumnFishQuantity: 0
+  autumnFishSprite: {fileID: 0}
+  autumnFishDescription: 
+  autumnFishWorth: 0
+  autumnFishWeight: 0
+  winterFishName: 
+  winterFishQuantity: 0
+  winterFishSprite: {fileID: 0}
+  winterFishDescription: 
+  winterFishWorth: 0
+  winterFishWeight: 0
+  rareItemName: 
+  rareQuantity: 0
+  rareSprite: {fileID: 0}
+  rareItemDescription: 
+  rworth: 0
+  rWeight: 0
+  legendaryItemName: 
+  legendaryQuantity: 0
+  legendarySprite: {fileID: 0}
+  legendaryItemDescription: 
+  lworth: 0
+  lWeight: 0
+  BaseSeasonalChance: 0.6
+  BaseRareChance: 0.29
+  BaseNothingChance: 0.1
+  BaseLegendaryChance: 0.01
+  offSeasonModifier: 0.1
 --- !u!1 &1913171556
 GameObject:
   m_ObjectHideFlags: 0

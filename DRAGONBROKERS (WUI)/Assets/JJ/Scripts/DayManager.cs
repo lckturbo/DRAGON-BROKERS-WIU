@@ -7,26 +7,18 @@ public class DayManager : MonoBehaviour
     public EnergyDepletion energyDepletion;
     public FishingProbability fishingProbability;
 
-    //public GameObject bed; // Reference to the bed GameObject
-    public GameObject player; // Reference to the player object
+    //public GameObject bed;
+    public GameObject player;
 
     private Collider2D bedCollider;
 
     private void Start()
     {
-        // Get the bed's collider component
-        //bedCollider = bed.GetComponent<Collider2D>();
 
-        //if (bedCollider == null)
-        //{
-        //    Debug.LogError("No Collider2D found on the bed GameObject.");
-        //    return;
-        //}
     }
 
     private void Update()
     {
-        // Check if energy has depleted
         if (energyDepletion.stopTimer)
         {
             ChangeDay();
@@ -44,7 +36,6 @@ public class DayManager : MonoBehaviour
 
     public void ChangeDay()
     {
-        // Increment the day
         currentDay++;
 
         fishingProbability.ChangeSeason();
@@ -57,8 +48,6 @@ public class DayManager : MonoBehaviour
 
         // Reset the energy
         energyDepletion.ResetEnergy();
-
-        // Optional: Trigger any day-related events or updates here
         Debug.Log("Day changed to: " + currentDay);
     }
 }

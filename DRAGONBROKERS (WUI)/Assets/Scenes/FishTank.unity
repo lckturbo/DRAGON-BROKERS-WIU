@@ -3984,7 +3984,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7201163017358685218, guid: 7c235cd8964567e42989b77395660244, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7201163017358685218, guid: 7c235cd8964567e42989b77395660244, type: 3}
       propertyPath: goldManager
@@ -4012,6 +4012,7 @@ PrefabInstance:
       objectReference: {fileID: 1446370228}
     m_RemovedComponents:
     - {fileID: 5365541725443643092, guid: 7c235cd8964567e42989b77395660244, type: 3}
+    - {fileID: 3759689944238056537, guid: 7c235cd8964567e42989b77395660244, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

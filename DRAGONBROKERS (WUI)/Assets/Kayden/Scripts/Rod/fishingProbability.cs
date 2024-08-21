@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.U2D;
+using static FishingProbability;
 
 public class FishingProbability : MonoBehaviour
 {
+    //Scriptable Objects
+    public GameData gameData;
+
     //Inventory
     public bool addToInv = true;
 
@@ -21,7 +25,7 @@ public class FishingProbability : MonoBehaviour
         SeverelyDamaged
     }
 
-    private Environment currentEnvironment;
+    private Environment currentEnvironment = Environment.Perfect;
     private InventoryManager inventoryManager;
 
     //Seasons
@@ -33,7 +37,7 @@ public class FishingProbability : MonoBehaviour
         Winter
     }
 
-    public Season currentSeason;
+    public Season currentSeason = Season.Spring;
 
     //Fish Init
     // Seasonal fish for each season
@@ -96,11 +100,8 @@ public class FishingProbability : MonoBehaviour
     //START
     private void Start()
     {
-        // Initialize to a default environment (Start with Perfect)
-        SetEnvironment(Environment.Perfect);
-
-        // Init the Season
-        SetSeason(Season.Spring);
+        SetEnvironment(gameData.currentEnvironment);
+        SetSeason(gameData.currentSeason);
 
         inventoryManager = GameObject.Find("Inventory Canvas Variant").GetComponent<InventoryManager>();
     }
@@ -168,7 +169,7 @@ public class FishingProbability : MonoBehaviour
     // Method to set the environment type [ENVIRONMENT]
     public void SetEnvironment(Environment environment)
     {
-        currentEnvironment = environment;
+        gameData.currentEnvironment = environment;
 
         switch (currentEnvironment)
         {
@@ -213,7 +214,7 @@ public class FishingProbability : MonoBehaviour
     // Method to set the season type [SEASON]
     public void SetSeason(Season newSeason)
     {
-        currentSeason = newSeason;
+        gameData.currentSeason = newSeason;
         Debug.Log($"Season set to: {currentSeason}");
     }
 
@@ -498,4 +499,12 @@ public class FishingProbability : MonoBehaviour
         // Degrade the environment after 100 rolls
         DegradeEnvironment();
     }
+
+    //Saving Environment and Seasons
+    public void SaveData()
+    {
+        gameData.currentSeason = currentSeason;
+        gameData.currentEnvironment = currentEnvironment;
+    }
+
 }

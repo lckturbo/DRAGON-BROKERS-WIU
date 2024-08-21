@@ -6,16 +6,12 @@ public class DayManager : MonoBehaviour
     public int maxDays = 4;
     public EnergyDepletion energyDepletion;
     public FishingProbability fishingProbability;
+    public GameData gameData;
 
     //public GameObject bed;
     public GameObject player;
 
     private Collider2D bedCollider;
-
-    private void Start()
-    {
-
-    }
 
     private void Update()
     {
@@ -36,7 +32,7 @@ public class DayManager : MonoBehaviour
 
     public void ChangeDay()
     {
-        currentDay++;
+        gameData.currentDay++;
 
         fishingProbability.ChangeSeason();
 

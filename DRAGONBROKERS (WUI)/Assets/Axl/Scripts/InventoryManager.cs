@@ -5,7 +5,6 @@ public class InventoryManager : MonoBehaviour
     //Selective Display of UI elements
     public GameObject InventoryMenu;
     public GameObject DescriptionPortion;
-    public GameObject Prices;
 
     //Booleans to handle UI elements display
     public bool menuActivated;
@@ -37,7 +36,6 @@ public class InventoryManager : MonoBehaviour
             {
                 InventoryMenu.SetActive(true);
                 shopActivated = true;
-                Prices.SetActive(true);
             }
         }
         else if (!shopOpen && shopActivated)
@@ -45,7 +43,6 @@ public class InventoryManager : MonoBehaviour
             // Close the inventory if shopOpen is false and the menu is active
             InventoryMenu.SetActive(false);
             shopActivated = false;
-            Prices.SetActive(false);
         }
         else if (Input.GetKeyDown(KeyCode.Tab) && !shopOpen)
         {

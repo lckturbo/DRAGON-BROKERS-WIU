@@ -400,6 +400,7 @@ GameObject:
   - component: {fileID: 20735476}
   - component: {fileID: 20735475}
   - component: {fileID: 20735474}
+  - component: {fileID: 20735478}
   m_Layer: 0
   m_Name: BG_Clouds
   m_TagString: Untagged
@@ -494,6 +495,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1249122901}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &20735478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20735472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57221e7a83c05d9488832b68d7d31d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundScrollSpeed: 0.1
 --- !u!1 &54660659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,6 +1676,7 @@ GameObject:
   - component: {fileID: 224240506}
   - component: {fileID: 224240505}
   - component: {fileID: 224240504}
+  - component: {fileID: 224240508}
   m_Layer: 0
   m_Name: BG_Sky
   m_TagString: Untagged
@@ -1756,6 +1771,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1249122901}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &224240508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224240503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57221e7a83c05d9488832b68d7d31d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundScrollSpeed: 0.1
 --- !u!1001 &260120946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11883,7 +11911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 3
-  inventoryManager: {fileID: 509986841}
+  energyDepletion: {fileID: 0}
 --- !u!1 &997227224
 GameObject:
   m_ObjectHideFlags: 0
@@ -12736,6 +12764,7 @@ GameObject:
   - component: {fileID: 1167034103}
   - component: {fileID: 1167034102}
   - component: {fileID: 1167034101}
+  - component: {fileID: 1167034105}
   m_Layer: 0
   m_Name: BG_Clouds3
   m_TagString: Untagged
@@ -12830,6 +12859,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1249122901}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1167034105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167034099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57221e7a83c05d9488832b68d7d31d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundScrollSpeed: 0.1
 --- !u!1 &1167101351
 GameObject:
   m_ObjectHideFlags: 0
@@ -13655,6 +13697,7 @@ GameObject:
   - component: {fileID: 1275403251}
   - component: {fileID: 1275403250}
   - component: {fileID: 1275403249}
+  - component: {fileID: 1275403253}
   m_Layer: 0
   m_Name: BG_Sea
   m_TagString: Untagged
@@ -13749,6 +13792,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1249122901}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1275403253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275403247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57221e7a83c05d9488832b68d7d31d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundScrollSpeed: 0.1
 --- !u!1 &1297482200
 GameObject:
   m_ObjectHideFlags: 0
@@ -14177,6 +14233,7 @@ GameObject:
   - component: {fileID: 1320262482}
   - component: {fileID: 1320262481}
   - component: {fileID: 1320262480}
+  - component: {fileID: 1320262484}
   m_Layer: 0
   m_Name: BG_Clouds2
   m_TagString: Untagged
@@ -14271,6 +14328,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1249122901}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1320262484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320262478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57221e7a83c05d9488832b68d7d31d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundScrollSpeed: 0.1
 --- !u!1001 &1359623148
 PrefabInstance:
   m_ObjectHideFlags: 0

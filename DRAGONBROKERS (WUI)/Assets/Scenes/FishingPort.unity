@@ -2293,13 +2293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2228cc7440b98a4fafd80cd9c24643e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buyItemsData: {fileID: 11400000, guid: cb8c7fd7cf31a80498ee4207f57bd645, type: 2}
-  poisonActive: 0
-  trawlActive: 0
-  IncreaseWeight: 0
-  PlatRod: 0
-  EmeRod: 0
-  IRod: 0
+  buyItemsData: {fileID: 11400000, guid: 11dacae19d06a7d4a9c119c2ae9c985d, type: 2}
 --- !u!114 &326360011
 MonoBehaviour:
   m_ObjectHideFlags: 0

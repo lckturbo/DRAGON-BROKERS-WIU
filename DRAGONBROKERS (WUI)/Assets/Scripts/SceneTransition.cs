@@ -36,7 +36,6 @@ public class SceneTransition : MonoBehaviour
             goldManager.SaveGold();
             fishFoodManager.SaveFood();
             fishingProbability.SaveData();
-            buyItems.SaveBuyItems();
             playerStorageposition.initialValue = playerPosition;
             StartCoroutine(FadeCo());
         }

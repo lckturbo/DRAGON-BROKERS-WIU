@@ -63,13 +63,13 @@ public class PanelActivator : MonoBehaviour
     private void Update()
     {
         // Toggle the first boolean with the 7 key
-        if (buyItems.trawlActive == true)
+        if (buyItems.buyItemsData.trawlActive == true)
         {
             button2.gameObject.SetActive(true);
         }
 
         // Toggle the second boolean with the 8 key
-        if (buyItems.poisonActive == true)
+        if (buyItems.buyItemsData.poisonActive == true)
         {
             button3.gameObject.SetActive(true);
         }
@@ -105,7 +105,6 @@ public class PanelActivator : MonoBehaviour
         goldManager.SaveGold();
         fishFoodManager.SaveFood();
         fishingProbability.SaveData();
-        buyItems.SaveBuyItems();
 
         SceneManager.LoadScene("FishingRodScene");
     }
@@ -118,7 +117,6 @@ public class PanelActivator : MonoBehaviour
         goldManager.SaveGold();
         fishFoodManager.SaveFood();
         fishingProbability.SaveData();
-        buyItems.SaveBuyItems();
 
         SceneManager.LoadScene("FishingPort");
     }
@@ -131,7 +129,6 @@ public class PanelActivator : MonoBehaviour
         goldManager.SaveGold();
         fishFoodManager.SaveFood();
         fishingProbability.SaveData();
-        buyItems.SaveBuyItems();
 
         SceneManager.LoadScene("FishingPoison");
     }

@@ -1,47 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UpgradeBar : MonoBehaviour
 {
-    //public BuyItems buyItems;
-
     public GameObject Bar;
+    public BuyItems buyItems;
 
-    // Start is called before the first frame update
+    private bool scaleDoubled = false;
+    private bool scaleTripled = false;
+
     void Start()
     {
-        //buyItems = GetComponent<BuyItems>();
-        //if (buyItems == null )
-        //{
-        //    Debug.Log("BuyItems cant be found");
-        //}
+        buyItems.GetComponent<BuyItems>();
+        if (buyItems == null)
+        {
+            Debug.LogError("BuyItems reference is not assigned.");
+        }
 
         if (Bar == null)
         {
-            Debug.Log("Bar is not assigned.");
+            Debug.LogError("Bar is not assigned.");
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.U)) //buyItems.PlatRod
+        if (!scaleDoubled && buyItems.buyItemsData.PlatRod)
         {
             // Increase Size by x2
             Vector3 currentScale = Bar.transform.localScale;
             currentScale.y *= 2;  // Double the y-scale
             Bar.transform.localScale = currentScale;  // Apply the updated scale
-            Debug.Log("U pressed: Scale doubled.");
+            scaleDoubled = true;
+            Debug.Log("PlatRod active: Scale doubled.");
         }
 
-        if (Input.GetKeyDown(KeyCode.I)) //buyItems.IRod
+        if (!scaleTripled && buyItems.buyItemsData.IRod)
         {
             // Increase Size to the fullest
             Vector3 currentScale = Bar.transform.localScale;
             currentScale.y *= 3;  // Triple the y-scale
             Bar.transform.localScale = currentScale;  // Apply the updated scale
-            Debug.Log("I pressed: Scale tripled.");
+            scaleTripled = true;
+            Debug.Log("IRod active: Scale tripled.");
         }
     }
 }

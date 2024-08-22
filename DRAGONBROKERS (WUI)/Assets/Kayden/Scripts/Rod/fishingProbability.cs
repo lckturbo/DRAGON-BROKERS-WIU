@@ -110,57 +110,57 @@ public class FishingProbability : MonoBehaviour
     {
         //Inputs here are meant for debugging
         {
-            //Cycle ENVIRONMENT
-            {
-                if (Input.GetKeyDown(KeyCode.Alpha1))
-                {
-                    SetEnvironment(Environment.Perfect);
-                }
-                else if (Input.GetKeyDown(KeyCode.Alpha2))
-                {
-                    SetEnvironment(Environment.SlightDamage);
-                }
-                else if (Input.GetKeyDown(KeyCode.Alpha3))
-                {
-                    SetEnvironment(Environment.ModerateDamage);
-                }
-                else if (Input.GetKeyDown(KeyCode.Alpha4))
-                {
-                    SetEnvironment(Environment.SeverelyDamaged);
-                }
-            }
+            ////Cycle ENVIRONMENT
+            //{
+            //    if (Input.GetKeyDown(KeyCode.Alpha1))
+            //    {
+            //        SetEnvironment(Environment.Perfect);
+            //    }
+            //    else if (Input.GetKeyDown(KeyCode.Alpha2))
+            //    {
+            //        SetEnvironment(Environment.SlightDamage);
+            //    }
+            //    else if (Input.GetKeyDown(KeyCode.Alpha3))
+            //    {
+            //        SetEnvironment(Environment.ModerateDamage);
+            //    }
+            //    else if (Input.GetKeyDown(KeyCode.Alpha4))
+            //    {
+            //        SetEnvironment(Environment.SeverelyDamaged);
+            //    }
+            //}
 
-            //Cycel SEASON
-            {
-                if (Input.GetKeyDown(KeyCode.Alpha5))
-                {
-                    SetSeason(Season.Spring);
-                }
-                else if (Input.GetKeyDown(KeyCode.Alpha6))
-                {
-                    SetSeason(Season.Summer);
-                }
-                else if (Input.GetKeyDown(KeyCode.Alpha7))
-                {
-                    SetSeason(Season.Autumn);
-                }
-                else if (Input.GetKeyDown(KeyCode.Alpha8))
-                {
-                    SetSeason(Season.Winter);
-                }
-            }
+            ////Cycel SEASON
+            //{
+            //    if (Input.GetKeyDown(KeyCode.Alpha5))
+            //    {
+            //        SetSeason(Season.Spring);
+            //    }
+            //    else if (Input.GetKeyDown(KeyCode.Alpha6))
+            //    {
+            //        SetSeason(Season.Summer);
+            //    }
+            //    else if (Input.GetKeyDown(KeyCode.Alpha7))
+            //    {
+            //        SetSeason(Season.Autumn);
+            //    }
+            //    else if (Input.GetKeyDown(KeyCode.Alpha8))
+            //    {
+            //        SetSeason(Season.Winter);
+            //    }
+            //}
 
-            // Roll the chances 100 times with the press of "M"
-            if (Input.GetKeyDown(KeyCode.M))
-            {
-                TestFishingProbability(100);
-            }
+            //// Roll the chances 100 times with the press of "M"
+            //if (Input.GetKeyDown(KeyCode.M))
+            //{
+            //    TestFishingProbability(100);
+            //}
 
-            // Roll the chances once with the press of "R"
-            if (Input.GetKeyDown(KeyCode.N))
-            {
-                FishingChance();
-            }
+            //// Roll the chances once with the press of "R"
+            //if (Input.GetKeyDown(KeyCode.N))
+            //{
+            //    FishingChance();
+            //}
 
             if (Input.GetKeyDown(KeyCode.B))
             {

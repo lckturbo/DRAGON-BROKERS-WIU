@@ -1,24 +1,28 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "UpgradesData", menuName = "Upgrades/UpgradesData")]
 public class BuyItemsData : ScriptableObject
 {
-    public bool poisonActive = false;
-    public bool trawlActive = false;
-    public bool IncreaseWeight = false;
-    public bool PlatRod = false;
-    public bool EmeRod = false;
-    public bool IRod = false;
-}
+    public static BuyItemsData Instance { get; private set; }
 
-[System.Serializable]
-public class PlayerUpgrades
-{
-    public bool poisonActive = false;
-    public bool trawlActive = false;
-    public bool IncreaseWeight = false;
-    public bool PlatRod = false;
-    public bool EmeRod = false;
-    public bool IRod = false;
+    public bool poisonActive;
+    public bool trawlActive;
+    public bool IncreaseWeight;
+    public bool PlatRod;
+    public bool EmeRod;
+    public bool IRod;
+
+    private void OnEnable()
+    {
+        // Ensure there is only one instance of this ScriptableObject
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else if (Instance != this)
+        {
+            Destroy(this);
+        }
+    }
 }

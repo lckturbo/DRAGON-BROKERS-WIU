@@ -38,7 +38,6 @@ public class SceneTransition3 : MonoBehaviour
         goldManager.SaveGold();
         fishFoodManager.SaveFood();
         fishingProbability.SaveData();
-        buyItems.SaveBuyItems();
         playerStorageposition.initialValue = playerPosition;
 
         if (fadeOutPanel != null)

@@ -9,14 +9,6 @@ public class BuyItems : MonoBehaviour
     private WeightManager weightManager;
     public BuyItemsData buyItemsData;
 
-    public bool poisonActive = false; //Poison
-    public bool trawlActive = false; //Trawling Boat Add on
-    public bool IncreaseWeight = false; //Max Weight Increase Add on
-
-    public bool PlatRod = false;
-    public bool EmeRod = false;
-    public bool IRod = false;
-
     private void Start()
     {
         goldManager = GameObject.FindObjectOfType<GoldManager>();
@@ -43,7 +35,7 @@ public class BuyItems : MonoBehaviour
         if (goldManager.goldCount >= 300)
         {
             goldManager.goldCount -= 300;
-            trawlActive = true;
+            buyItemsData.trawlActive = true;
         }
         else
         {
@@ -56,7 +48,7 @@ public class BuyItems : MonoBehaviour
         if (goldManager.goldCount >= 800)
         {
             goldManager.goldCount -= 800;
-            IncreaseWeight = true;
+            buyItemsData.IncreaseWeight = true;
         }
         else
         {
@@ -69,7 +61,7 @@ public class BuyItems : MonoBehaviour
         if (goldManager.goldCount >= 100)
         {
             goldManager.goldCount -= 100;
-            poisonActive = true;
+            buyItemsData.poisonActive = true;
         }
         else
         {
@@ -95,7 +87,7 @@ public class BuyItems : MonoBehaviour
         if (goldManager.goldCount >= 100)
         {
             goldManager.goldCount -= 100;
-            PlatRod = true;
+            buyItemsData.PlatRod = true;
         }
         else
         {
@@ -108,7 +100,8 @@ public class BuyItems : MonoBehaviour
         if (goldManager.goldCount >= 400)
         {
             goldManager.goldCount -= 400;
-            EmeRod = true;
+            buyItemsData.IRod = false;
+            buyItemsData.EmeRod = true;
         }
         else
         {
@@ -121,7 +114,8 @@ public class BuyItems : MonoBehaviour
         if (goldManager.goldCount >= 600)
         {
             goldManager.goldCount -= 600;
-            IRod = true;
+            buyItemsData.EmeRod = false;
+            buyItemsData.IRod = true;
         }
         else
         {
@@ -129,45 +123,22 @@ public class BuyItems : MonoBehaviour
         }
     }
 
-    public void SaveBuyItems()
-    {
-        buyItemsData.poisonActive = poisonActive;
-        buyItemsData.trawlActive = trawlActive;
-        buyItemsData.IncreaseWeight = IncreaseWeight;
-        buyItemsData.PlatRod = PlatRod;
-        buyItemsData.EmeRod = EmeRod;
-        buyItemsData.IRod = IRod;
-
-        Debug.Log("poisonActive: " + poisonActive);
-        Debug.Log("trawlActive: " + trawlActive);
-        Debug.Log("increaseweight: " + IncreaseWeight);
-        Debug.Log("platrod: " + PlatRod);
-        Debug.Log("emerod: " + EmeRod);
-        Debug.Log("irod: " + IRod);
-    }
-
-    public void LoadGold()
-    {
-        poisonActive = buyItemsData.poisonActive;
-        trawlActive = buyItemsData.trawlActive;
-        IncreaseWeight = buyItemsData.IncreaseWeight;
-        PlatRod = buyItemsData.PlatRod;
-        EmeRod = buyItemsData.EmeRod;
-        IRod = buyItemsData.IRod;
-
-        Debug.Log("poisonActive: " + poisonActive);
-        Debug.Log("trawlActive: " + trawlActive);
-        Debug.Log("increaseweight: " + IncreaseWeight);
-        Debug.Log("platrod: " + PlatRod);
-        Debug.Log("emerod: " + EmeRod);
-        Debug.Log("irod: " + IRod);
-    }
-
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.B))
         {
-            Debug.Log("PLATINUM ROD IS " + PlatRod);
+            Debug.Log("Trawl: " + buyItemsData.trawlActive + " , MoreWeight: " + buyItemsData.IncreaseWeight + " ,Poision: " + buyItemsData.poisonActive 
+                + " ,PlatRod: " + buyItemsData.PlatRod + " ,EmeRod: " + buyItemsData.EmeRod + ", IRod: " + buyItemsData.IRod);
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            buyItemsData.poisonActive = false;
+            buyItemsData.trawlActive = false;
+            buyItemsData.IncreaseWeight = false;
+            buyItemsData.PlatRod = false;
+            buyItemsData.EmeRod = false;
+            buyItemsData.IRod = false;
         }
     }
 }

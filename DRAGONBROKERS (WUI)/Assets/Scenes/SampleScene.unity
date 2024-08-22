@@ -51043,6 +51043,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 125313197}
     - target: {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 1247918206}
@@ -51090,7 +51094,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_NIIKA (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -51454,6 +51459,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 125313197}
     - target: {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 1247918206}
@@ -51501,7 +51510,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_NIIKA (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -51658,6 +51668,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 125313197}
     - target: {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 1247918206}
@@ -51709,7 +51723,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_NIIKA
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -54716,6 +54731,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 125313197}
     - target: {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 1247918206}
@@ -54779,7 +54798,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_NIIKA (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -55837,6 +55857,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 125313197}
     - target: {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 1247918206}
@@ -55884,7 +55908,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_NIIKA (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -60077,6 +60102,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 125313197}
     - target: {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 1247918206}
@@ -60124,7 +60153,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_NIIKA (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -61994,6 +62024,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 125313197}
     - target: {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 1247918206}
@@ -62041,7 +62075,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_NIIKA (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -62216,6 +62251,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 125313197}
     - target: {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 1247918206}
@@ -62263,7 +62302,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_NIIKA (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -63182,6 +63222,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 125313197}
     - target: {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 1247918206}
@@ -63229,7 +63273,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_NIIKA (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -66876,6 +66921,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 125313197}
     - target: {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 1247918206}
@@ -66923,7 +66972,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_NIIKA (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4646686691862945245, guid: f8990bd9ba273e1479c0ca35f9272a35, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

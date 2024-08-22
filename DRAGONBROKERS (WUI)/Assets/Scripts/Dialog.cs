@@ -5,22 +5,26 @@ using UnityEngine.UI;
 
 public class Dialog : MonoBehaviour
 {
-    public GameObject dialogBox;
-    public Text dialogText;
-    public List<string> dialogues; // List to hold multiple lines of dialogue
+    public GameObject dialogBox;       // The dialog box UI element
+    public Text dialogText;            // The UI text component for the dialog
+    public List<string> dialogues;     // List to hold multiple lines of dialogue
+    public GameObject contextSignal;   // The context signal UI element
+
     private int currentDialogueIndex = 0; // Index to keep track of the current line
     public bool playerInRange;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (dialogues.Count > 0)
         {
             dialogText.text = dialogues[0];
         }
+
+        // Make sure the dialog box and context signal are hidden initially
+        dialogBox.SetActive(false);
+        contextSignal.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
@@ -36,12 +40,14 @@ public class Dialog : MonoBehaviour
                 {
                     dialogBox.SetActive(false);
                     currentDialogueIndex = 0; // Reset to the first line if needed
+                    contextSignal.SetActive(true); // Show the context signal again after dialog ends
                 }
             }
             else
             {
                 dialogBox.SetActive(true);
                 dialogText.text = dialogues[currentDialogueIndex];
+                contextSignal.SetActive(false); // Hide the context signal when dialog starts
             }
         }
     }
@@ -52,6 +58,7 @@ public class Dialog : MonoBehaviour
         {
             Debug.Log("Player entered trigger area.");
             playerInRange = true;
+            contextSignal.SetActive(true); // Show the context signal when the player enters
         }
     }
 
@@ -62,7 +69,7 @@ public class Dialog : MonoBehaviour
             Debug.Log("Player exited trigger area.");
             playerInRange = false;
             dialogBox.SetActive(false);
+            contextSignal.SetActive(false); // Hide the context signal when the player leaves
         }
     }
-
 }

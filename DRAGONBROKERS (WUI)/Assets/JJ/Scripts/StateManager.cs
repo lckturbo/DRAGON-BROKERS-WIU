@@ -4,6 +4,5 @@ using UnityEngine;
 public class GameData : ScriptableObject
 {
     public FishingProbability.Environment currentEnvironment;
-    public FishingProbability.Season currentSeason;
     public int currentDay;
 }

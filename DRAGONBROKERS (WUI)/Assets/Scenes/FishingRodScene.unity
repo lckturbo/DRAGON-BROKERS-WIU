@@ -15952,7 +15952,7 @@ PrefabInstance:
     - target: {fileID: 5570223464320414778, guid: 5c2d35b1fcdce804889a6452974a1a1d, type: 3}
       propertyPath: fishingProbability
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1318491508}
     - target: {fileID: 6361946961605542899, guid: 5c2d35b1fcdce804889a6452974a1a1d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.481

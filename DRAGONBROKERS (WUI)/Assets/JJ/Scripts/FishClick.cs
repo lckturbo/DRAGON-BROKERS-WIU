@@ -2,14 +2,15 @@ using UnityEngine;
 
 public class FishClickHandler : MonoBehaviour
 {
-    public string itemName;  // Name of the fish/item
-    public int quantity = 1;  // Quantity to add to the inventory
-    public Sprite itemSprite;  // The sprite of the fish/item
-    public string itemDescription;  // Description of the fish/item
-    public int worth = 10;  // Value of the fish/item
-    public float weight = 1f;  // Weight of the fish/item
+    private string itemName;  // Name of the fish/item
+    private int quantity = 1;  // Quantity to add to the inventory
+    private Sprite itemSprite;  // The sprite of the fish/item
+    private string itemDescription;  // Description of the fish/item
+    private int worth = 10;  // Value of the fish/item
+    private float weight = 1f;  // Weight of the fish/item
 
     private InventoryManager inventoryManager;
+    private FishingProbability fishingProbability;
 
     private void Start()
     {
@@ -19,10 +20,23 @@ public class FishClickHandler : MonoBehaviour
         {
             Debug.LogError("InventoryManager not found in the scene!");
         }
+
+        fishingProbability = FindAnyObjectByType<FishingProbability>();
+        if (fishingProbability == null)
+        {
+            Debug.LogError("Fishing Probability is not found");
+        }
     }
 
     private void OnMouseDown()
     {
+        itemName = fishingProbability.rareItemName;
+        quantity = fishingProbability.rareQuantity;
+        itemSprite = fishingProbability.rareSprite;
+        itemDescription = fishingProbability.rareItemDescription;
+        worth = fishingProbability.rworth;
+        weight = fishingProbability.rWeight;
+
         if (inventoryManager != null)
         {
             // Add the item to the inventory

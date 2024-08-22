@@ -172,7 +172,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         if (SceneManager.GetActiveScene().name == "FishTank")
         {
             // Logic for the FishTank scene
-            if (quantity > 0)
+            if (quantity > 0 && itemName == "Salmonella")
             {
                 quantity--;
                 weightManager.RemoveWeight(weight, 1); // Remove the weight of the sold item
@@ -200,6 +200,11 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
                     ClearSlot();
                 }
             }
+            else if (itemName != "Salmonella")
+            {
+                Debug.LogWarning("Only Salmonella fish can be dropped in the FishTank scene.");
+            }
+
             return; // Exit to prevent further execution
         }
 

@@ -323,11 +323,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8134b711483ccd49b98f7d45a1578e7, type: 3}
---- !u!1 &442530743 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5998394333193510118, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
-  m_PrefabInstance: {fileID: 1390119815}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &470852272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -342,7 +337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1768052401347769320, guid: 7c235cd8964567e42989b77395660244, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3759689944238056537, guid: 7c235cd8964567e42989b77395660244, type: 3}
       propertyPath: foodText
@@ -468,7 +463,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 3
-  inventoryManager: {fileID: 1390119821}
+  energyDepletion: {fileID: 470852281}
+--- !u!114 &470852281 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7201163017358685218, guid: 7c235cd8964567e42989b77395660244, type: 3}
+  m_PrefabInstance: {fileID: 470852272}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470852277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3571bb73cde2994e8eeeaf8306f3ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &496213868
 Mesh:
   m_ObjectHideFlags: 0
@@ -1996,7 +2002,7 @@ PrefabInstance:
     - target: {fileID: 863597420399552265, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: fishPrefab
       value: 
-      objectReference: {fileID: 442530743}
+      objectReference: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
     - target: {fileID: 863597420399552265, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -2004,7 +2010,7 @@ PrefabInstance:
     - target: {fileID: 908457769507103070, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: fishPrefab
       value: 
-      objectReference: {fileID: 442530743}
+      objectReference: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
     - target: {fileID: 908457769507103070, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -2012,7 +2018,7 @@ PrefabInstance:
     - target: {fileID: 957864398387850603, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: fishPrefab
       value: 
-      objectReference: {fileID: 442530743}
+      objectReference: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
     - target: {fileID: 957864398387850603, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -2020,7 +2026,7 @@ PrefabInstance:
     - target: {fileID: 1155688881725262280, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: fishPrefab
       value: 
-      objectReference: {fileID: 442530743}
+      objectReference: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
     - target: {fileID: 1155688881725262280, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -2052,7 +2058,7 @@ PrefabInstance:
     - target: {fileID: 1720596757130211606, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: fishPrefab
       value: 
-      objectReference: {fileID: 442530743}
+      objectReference: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
     - target: {fileID: 1720596757130211606, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -2064,7 +2070,7 @@ PrefabInstance:
     - target: {fileID: 2028823612048595752, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: fishPrefab
       value: 
-      objectReference: {fileID: 442530743}
+      objectReference: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
     - target: {fileID: 2028823612048595752, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -2076,7 +2082,7 @@ PrefabInstance:
     - target: {fileID: 2519213545427868022, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: fishPrefab
       value: 
-      objectReference: {fileID: 442530743}
+      objectReference: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
     - target: {fileID: 2519213545427868022, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -2108,7 +2114,7 @@ PrefabInstance:
     - target: {fileID: 3203384186371380016, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: fishPrefab
       value: 
-      objectReference: {fileID: 442530743}
+      objectReference: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
     - target: {fileID: 3203384186371380016, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -2116,7 +2122,7 @@ PrefabInstance:
     - target: {fileID: 3378934947048101605, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: fishPrefab
       value: 
-      objectReference: {fileID: 442530743}
+      objectReference: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
     - target: {fileID: 3378934947048101605, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -2172,7 +2178,7 @@ PrefabInstance:
     - target: {fileID: 3612138743942818161, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: fishPrefab
       value: 
-      objectReference: {fileID: 442530743}
+      objectReference: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
     - target: {fileID: 3612138743942818161, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -2296,7 +2302,7 @@ PrefabInstance:
     - target: {fileID: 4150497475226441736, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: fishPrefab
       value: 
-      objectReference: {fileID: 442530743}
+      objectReference: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
     - target: {fileID: 4150497475226441736, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: _goldManager
       value: 
@@ -2356,7 +2362,7 @@ PrefabInstance:
     - target: {fileID: 4614844674317478136, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: fishPrefab
       value: 
-      objectReference: {fileID: 442530743}
+      objectReference: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
     - target: {fileID: 4614844674317478136, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -2612,7 +2618,7 @@ PrefabInstance:
     - target: {fileID: 7140619658737389388, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: fishPrefab
       value: 
-      objectReference: {fileID: 442530743}
+      objectReference: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
     - target: {fileID: 7140619658737389388, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -2620,7 +2626,7 @@ PrefabInstance:
     - target: {fileID: 7183433249879693190, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: fishPrefab
       value: 
-      objectReference: {fileID: 442530743}
+      objectReference: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
     - target: {fileID: 7183433249879693190, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -2652,7 +2658,7 @@ PrefabInstance:
     - target: {fileID: 7590385910816436825, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: fishPrefab
       value: 
-      objectReference: {fileID: 442530743}
+      objectReference: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
     - target: {fileID: 7590385910816436825, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -2660,7 +2666,7 @@ PrefabInstance:
     - target: {fileID: 7691187908594320534, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: fishPrefab
       value: 
-      objectReference: {fileID: 442530743}
+      objectReference: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
     - target: {fileID: 7691187908594320534, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -2668,7 +2674,7 @@ PrefabInstance:
     - target: {fileID: 7878487570167703584, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: fishPrefab
       value: 
-      objectReference: {fileID: 442530743}
+      objectReference: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
     - target: {fileID: 7878487570167703584, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -2716,7 +2722,7 @@ PrefabInstance:
     - target: {fileID: 8338926488258571306, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: fishPrefab
       value: 
-      objectReference: {fileID: 442530743}
+      objectReference: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
     - target: {fileID: 8338926488258571306, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -2880,7 +2886,7 @@ PrefabInstance:
     - target: {fileID: 8892046319064596622, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: fishPrefab
       value: 
-      objectReference: {fileID: 442530743}
+      objectReference: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
     - target: {fileID: 8892046319064596622, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5
@@ -2888,7 +2894,7 @@ PrefabInstance:
     - target: {fileID: 8913280310473935819, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: fishPrefab
       value: 
-      objectReference: {fileID: 442530743}
+      objectReference: {fileID: 3047077325036644975, guid: 008c303ac46dd174897b266f6a62f8cd, type: 3}
     - target: {fileID: 8913280310473935819, guid: edf13151e9064d149bcbc0f0a1011a7b, type: 3}
       propertyPath: maxNumberOfItems
       value: 5

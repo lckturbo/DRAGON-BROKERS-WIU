@@ -7,7 +7,7 @@ public class EnergyDepletion : MonoBehaviour
     public Slider energySlider;
     public EnergyData energyData; // Reference to the ScriptableObject
     public bool stopTimer = false;
-    public bool stopTimer2 = false;
+    public bool stopTimerDay = false;
 
     public InventoryManager inventoryManager;
     public GoldManager goldManager;
@@ -58,7 +58,7 @@ public class EnergyDepletion : MonoBehaviour
                 fishFoodManager.SaveFood();
                 fishingProbability.SaveData();
                 stopTimer = true;
-                stopTimer2 = true;
+                stopTimerDay = true;
             }
 
             if (!stopTimer)
@@ -74,6 +74,7 @@ public class EnergyDepletion : MonoBehaviour
         energyData.currentEnergy = 50f;
         energySlider.value = energyData.currentEnergy;
         stopTimer = false; // Restart the timer if it was stopped
+        stopTimerDay = false;
         StartTimer(); // Start the timer again
     }
 }

@@ -3,9 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitching : MonoBehaviour
 {
-    private int sceneIndex = 9;
-    private EnergyDepletion energyDepletion;
-    public InventoryManager inventoryManager;
+    public int sceneIndex = 9;
+    public EnergyDepletion energyDepletion;
 
     private void Start()
     {

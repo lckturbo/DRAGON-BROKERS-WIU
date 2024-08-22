@@ -101,7 +101,6 @@ public class FishingProbability : MonoBehaviour
     private void Start()
     {
         SetEnvironment(gameData.currentEnvironment);
-        SetSeason(gameData.currentSeason);
 
         inventoryManager = GameObject.Find("Inventory Canvas Variant").GetComponent<InventoryManager>();
     }
@@ -165,17 +164,15 @@ public class FishingProbability : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.B))
             {
-                Debug.Log("Environment Saved: " + gameData.currentEnvironment + " ,Season Saved: " + gameData.currentSeason);
-                Debug.Log("Environment: " + currentEnvironment + " ,Season: " + currentSeason);
+                Debug.Log("Environment Saved: " + gameData.currentEnvironment + " ,Day Saved: " + gameData.currentDay + " ,Current Season: " + currentSeason);
+                Debug.Log("Environment: " + currentEnvironment + " ,Current Day/Day Saved: " + gameData.currentDay + ",Season: " + currentSeason);
             }
 
             if (Input.GetKeyDown(KeyCode.L))
             {
                 gameData.currentEnvironment = Environment.Perfect;
-                gameData.currentSeason = Season.Spring;
 
                 currentEnvironment = Environment.Perfect;
-                currentSeason = Season.Spring;
             }
         }
 
@@ -253,29 +250,6 @@ public class FishingProbability : MonoBehaviour
         }
 
         Debug.LogWarning("Environment has been degraded.");
-    }
-
-    // Method to change the season
-    public void ChangeSeason()
-    {
-        switch (currentSeason)
-        {
-            case Season.Spring:
-                currentSeason = Season.Summer;
-                break;
-            case Season.Summer:
-                currentSeason = Season.Autumn;
-                break;
-            case Season.Autumn:
-                currentSeason = Season.Winter;
-                break;
-            case Season.Winter:
-                currentSeason = Season.Spring;
-                break;
-        }
-
-        // Log the change
-        Debug.Log($"Season changed to: {currentSeason}");
     }
 
     private void AddFishToInventory(string fishName, int fishQuantity, Sprite fishSprite, string fishDescription, int fishWorth, Animator playerAnim, float weight)
@@ -518,7 +492,6 @@ public class FishingProbability : MonoBehaviour
     //Saving Environment and Seasons
     public void SaveData()
     {
-        gameData.currentSeason = currentSeason;
         gameData.currentEnvironment = currentEnvironment;
     }
 

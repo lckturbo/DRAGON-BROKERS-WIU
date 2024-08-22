@@ -4918,7 +4918,7 @@ MonoBehaviour:
   dialogText: {fileID: 252397957}
   dialogues:
   - Hello CHILD
-  contextSignal: {fileID: 0}
+  contextSignal: {fileID: 1773322133}
   playerInRange: 0
 --- !u!4 &569581229
 Transform:
@@ -13972,6 +13972,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 252397957}
     - target: {fileID: 5101651422836684795, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
+      propertyPath: contextSignal
+      value: 
+      objectReference: {fileID: 1773322133}
+    - target: {fileID: 5101651422836684795, guid: 0a20e8006ad6e1148a0ad0d4c8c842e1, type: 3}
       propertyPath: dialogues.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -18479,6 +18483,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1773322133 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6949015163662633123, guid: 4575a228521faa840a07c1d567a34383, type: 3}
+  m_PrefabInstance: {fileID: 1773322130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1795756632
 GameObject:
   m_ObjectHideFlags: 0

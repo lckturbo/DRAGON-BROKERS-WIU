@@ -7,7 +7,7 @@ public class DayManager : MonoBehaviour
     public EnergyDepletion energyDepletion;
     public FishingProbability fishingProbability;
     public GameData gameData;
-
+    public VectorValue playerPosition;
     private void Start()
     {
         SeasonChange();
@@ -71,6 +71,8 @@ public class DayManager : MonoBehaviour
         else
         {
             SceneManager.LoadScene("Home");
+            
+            playerPosition.initialValue = new Vector2(-3.5f, -0.05f);
         }
 
         // Reset the energy
@@ -78,4 +80,5 @@ public class DayManager : MonoBehaviour
 
         Debug.Log("Day changed to: " + gameData.currentDay);
     }
+
 }
